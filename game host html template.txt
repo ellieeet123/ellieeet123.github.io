@@ -1,0 +1,9 @@
+<!doctype html>
+<head>
+  <script src="https://ellieeet123.github.io/ruffle/ruffle.js"></script>
+  <h1>GAME TITLE</h1>
+</head>
+<body>
+  <br>
+  <embed width="900" height="900" src="https://ellieeet123.github.io/games/FILE.SWF"></embed>
+</body>
