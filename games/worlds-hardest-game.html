@@ -2,6 +2,7 @@
 
 <html>
   <head>
+    <script type="application/javascript">function resizeIframe(obj){obj.height = (obj.contentWindow.document.body.scrollHeight + 20);}</script>
     <script src="/ruffle/ruffle.js"></script>
     <style>
       body {
@@ -15,31 +16,9 @@
         margin-top: -13px;
         left: 15;
       }
-
-      .main h1 {
-        font: bold 2.0rem trebuchet ms;
-      }  
-
-      .main h2 {
-        font: bold 1.6rem arial;
-      }  
-
       .main h3 {
         font: bold 1.4rem arial;
       }  
-
-      .main h4 {
-        font: bold 1.2rem arial;
-      }  
-
-      .main h5 {
-        font: bold 1.0rem arial;
-      }  
-
-      .main h6 {
-        font: bold 0.8rem arial;
-      }  
-
       .main p {
       font: 1.2rem trebuchet ms;
       text-align: left;
@@ -48,12 +27,6 @@
     <style>
       .main_text {
         margin: 20px;
-      }
-    </style>
-    <style>
-      .fancy p {
-        color: #0011ff;
-	      font: 1.2rem georgia;
       }
     </style>
     <link rel="shortcut icon" href="/favicon.ico">
@@ -83,10 +56,7 @@
         <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
       </div>
       <div>
-      <iframe frameborder="0" style="float: left;
-        margin-top: 350;
-	      top: 350;
-        " height="1000" width="160" src="/sidebar.html"></iframe>
+      	<iframe frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this)'></iframe>
       </div>
       <div class="main">
         <div class="main_text">
@@ -95,12 +65,10 @@
           
           <br>
 	  <p>Not responsible for broken keyboards.</p><br>
-	  <embed src="/games/worlds-hardest-game.swf" height="700" width="1000"></embed>
-	  
+		<embed src="/games/worlds-hardest-game.swf" height="700" width="1000"></embed>
 	  <!-- 
 To anyone digging in the source code, click the /games/file.swf link to download the .swf :)
 	  !-->
-          
 	      </div>
       </div>
   </body>
