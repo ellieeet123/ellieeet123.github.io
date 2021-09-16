@@ -2,6 +2,7 @@
 
 <html>
   <head>
+	<script type="application/javascript">function resizeIframe(obj){obj.height = (obj.contentWindow.document.body.scrollHeight + 20);}</script>
     <script src="/ruffle/ruffle.js"></script>
     <style>
       body {
@@ -83,10 +84,8 @@
         <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
       </div>
       <div>
-      <iframe frameborder="0" style="float: left;
-        margin-top: 350;
-	      top: 350;
-        " height="1000" width="160" src="/sidebar.html"></iframe>
+      <iframe frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this)'></iframe>
+
       </div>
       <div class="main">
         <div class="main_text">
