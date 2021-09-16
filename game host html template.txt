@@ -86,7 +86,7 @@
 
         <br>
         <p>ADD OPTIONAL TEXT HERE, OR DELETE ALL OF THIS LINE TO HAVE NO TEXT</p><br>
-        <embed src="/games/FILE.swf" height="800" width="800"></embed>
+        <embed src="/games/FILE.swf" height="700" width="1000"></embed>
         <!-- 
                  To anyone digging in the source code, click the /games/file.swf link to download the .swf :)
         !-->
