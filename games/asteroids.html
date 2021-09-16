@@ -3,6 +3,11 @@
 <html>
   <head>
     <script src="/ruffle/ruffle.js"></script>
+    <script>
+      function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+      }
+    </script>
     <style>
       body {
         background-image: url('https://ellieeet123.github.io/old_pring_bg.png');
@@ -86,7 +91,7 @@
       <iframe frameborder="0" style="float: left;
         margin-top: 350;
 	      top: 350;
-        " height="1000" width="160" src="/sidebar.html"></iframe>
+        " scrolling="no" width="160" src="/sidebar.html" onload="resizeIframe(this)"></iframe>
       </div>
       <div class="main">
         <div class="main_text">
