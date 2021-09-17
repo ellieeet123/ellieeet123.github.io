@@ -6,6 +6,15 @@
     <script>
 	    function popup(url) {popupWindow = window.open(url,'popUpWindow','height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')}
     </script>
+	  <script>
+	    function setCookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      let expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    </script>
+    <script>setCookie("test", "123", 1)</script>
     <style>
       body {
         background-image: url('/old_pring_bg.png');
