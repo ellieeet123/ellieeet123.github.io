@@ -3,6 +3,9 @@
 <html>
   <head>
 	  <script type="application/javascript">function resizeIframe(obj){obj.height = (obj.contentWindow.document.body.scrollHeight + 20);}</script>
+    <script>
+	    function popup(url) {popupWindow = window.open(url,'popUpWindow','height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')}
+    </script>
     <style>
       body {
         background-image: url('/old_pring_bg.png');
@@ -222,6 +225,7 @@
             <p>*Enjoy*</p>
           </div>
           <p>ps. dont ask why it's called pringles.</p>
+          <a href="https://ellieeet123.github.io" onclick="popup(this.href);return false">Open page as Chrome App</a>
           <br>
           <div class="p_big">
             <p>Shoutout to you for actually reading the home page!</p>
