@@ -25,13 +25,13 @@
           return c.substring(name.length, c.length);
         }
       }
-      return "";
+      return "nope";
     }
     </script>
-    <script>let testpopup0 = getCookie("test0");
-    if (testpopup0 == "") {
+    <script>let testpopup = getCookie("testing");
+    if (testpopup == "nope") {
       popup('https://ellieeet123.github.io');
-      setCookie("test0", "true", 1)
+      setCookie("testing", "hello", 1)
     </script>
     <style>
       body {
