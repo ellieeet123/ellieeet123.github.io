@@ -1,0 +1,5 @@
+body {background-image: url('/old_pring_bg.png');}
+.main {background-color: #eeeeff;margin-left: 170px;margin-top: -13px;left: 15;}
+.main h3 {font: bold 1.4rem arial;}
+.main p {font: 1.2rem trebuchet ms;text-align: left;}
+.main_text {margin: 20px;}
