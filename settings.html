@@ -31,15 +31,15 @@
         function updateDark() {
           let dark = getCookie("darkmode");
           if (dark == 'yes') {
-            document.getElementById("main").style.background-color = #222233;
-            document.getElementById("main_p").style.color = #eeeeee;
-            document.getElementById("main_h3").style.color = #ffffff;
-            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #222233;
+            document.getElementById("main").style.background = '#222233';
+            document.getElementById("main_p").style.color = '#eeeeee';
+            document.getElementById("main_h3").style.color = '#ffffff';
+            document.getElementById("sidebar").contentWindow.document.body.style.background = '#222233';
           } else {
-            document.getElementById("main").style.background-color = #eeeeff;
-            document.getElementById("main_p").style.color = #000000;
-            document.getElementById("main_h3").style.color = #000000;
-            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #eeeeff;
+            document.getElementById("main").style.background = '#eeeeff';
+            document.getElementById("main_p").style.color = '#000000';
+            document.getElementById("main_h3").style.color = '#000000';
+            document.getElementById("sidebar").contentWindow.document.body.style.background = '#eeeeff';
           }
         }
         function toggleDark() {
