@@ -68,38 +68,37 @@
       <div class="squares">
         <a id="darkToggle" href="#" onclick="toggleDark(); return false;">Toggle Dark Mode</a>
       <script>
-      function darkDisp() {
-        let dark = getCookie("darkmode");
-        if (dark == true) {
-          document.getElementById("darkDisp").innerHTML = "Dark Mode: ON";
+        function darkDisp() {
+          let dark = getCookie("darkmode");
+          if (dark == 'yes') {
+            document.getElementById("darkDisp").innerHTML = "Dark Mode: ON";
+          }
+        } 
+        function updateDark() {
+          let dark = getCookie("darkmode");
+          if (dark == 'yes') {
+            document.getElementById("main").style.background-color = #222233;
+            document.getElementById("main_p").style.color = #eeeeee;
+            document.getElementById("main_h3").style.color = #ffffff;
+            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #222233;
+          } else {
+            document.getElementById("main").style.background-color = #eeeeff;
+            document.getElementById("main_p").style.color = #000000;
+            document.getElementById("main_h3").style.color = #000000;
+            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #eeeeff;
+          }
         }
-      } 
-      function updateDark() {
-        let dark = getCookie("darkmode");
-        if (dark == true) {
-          document.getElementById("main").style.background-color = #222233;
-          document.getElementById("main_p").style.color = #eeeeee;
-          document.getElementById("main_h3").style.color = #ffffff;
-          document.getElementById("sidebar").contentWindow.document.body.style.background-color = #222233;
-        } else {
-          document.getElementById("main").style.background-color = #eeeeff;
-          document.getElementById("main_p").style.color = #000000;
-          document.getElementById("main_h3").style.color = #000000;
-          document.getElementById("sidebar").contentWindow.document.body.style.background-color = #eeeeff;
+        function toggleDark() {
+          let dark = getCookie("darkmode");
+          if (dark == 'yes') {
+            setCookie("darkmode", 'no', 1000);
+          } else {
+            setCookie("darkmode", 'yes', 1000);
+          }
+          darkDisp();
+          updateDark();
         }
-      }
-      function toggleDark() {
-        let dark = getCookie("darkmode");
-        if (dark == true) {
-          setCookie("darkmode", false, 100000);
-        } else {
-          setCookie("darkmode", true, 100000);
-        }
-        darkDisp();
-        updateDark();
-      }
-      //popup('/test-popup.html');
-      //setCookie("darkmode", true, 100000)
-        
+        document.getElementById("main_p").innerHTML = 'javascript test';
+        toggleDark()
       </script>
 </div></div></body></html>
