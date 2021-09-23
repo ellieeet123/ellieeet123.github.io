@@ -1,104 +1,209 @@
-<!DOCTYPE html>
-
-<html>
-  <head>
-    <script type="application/javascript">function resizeIframe(obj){obj.height = (obj.contentWindow.document.body.scrollHeight + 20);}</script>
+<!doctype html><html><head>
     <script src="/ruffle/ruffle.js"></script>
-    <style>
-      body {
-        background-image: url('https://ellieeet123.github.io/old_pring_bg.png');
-      }
+    <script type="application/javascript">function resizeIframe(obj){obj.height = (obj.contentWindow.document.body.scrollHeight + 20);}</script>
+    <style>body {background-image: url('https://ellieeet123.github.io/old_pring_bg.png');}
+    .main {background-color: #eeeeff;margin-left: 170px;margin-top: -13px;left: 15;}
+    .main h3 {font: bold 1.4rem arial;}
+    .main p {font: 1.2rem trebuchet ms;text-align: left;}
+    .main_text {margin: 20px;}
     </style>
-    <style>
-      .main {
-        background-color: #eeeeff;
-        margin-left: 170px;
-        margin-top: -13px;
-        left: 15;
-      }
-
-      .main h1 {
-        font: bold 2.0rem trebuchet ms;
-      }  
-
-      .main h2 {
-        font: bold 1.6rem arial;
-      }  
-
-      .main h3 {
-        font: bold 1.4rem arial;
-      }  
-
-      .main h4 {
-        font: bold 1.2rem arial;
-      }  
-
-      .main h5 {
-        font: bold 1.0rem arial;
-      }  
-
-      .main h6 {
-        font: bold 0.8rem arial;
-      }  
-
-      .main p {
-      font: 1.2rem trebuchet ms;
-      text-align: left;
-      }
-    </style>
-    <style>
-      .main_text {
-        margin: 20px;
-      }
-    </style>
-    <style>
-      .fancy p {
-        color: #0011ff;
-	      font: 1.2rem georgia;
-      }
-    </style>
-    <link rel="shortcut icon" href="/favicon.ico">
-	  <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
-	  <link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png">
-	  <link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
-	  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
-	  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
-	  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-	  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-	  <link rel="apple-touch-icon" href="/favicon-57.png">
-	  <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
-	  <link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
-	  <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
-	  <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png">
-	  <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
-	  <link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
-	  <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
-	  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-	  <meta name="msapplication-TileColor" content="#FFFFFF">
-	  <meta name="msapplication-TileImage" content="/favicon-144.png">
-	  <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="shortcut icon" href="/favicon.ico"><link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico"><link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png"><link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png"><link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/favicon-57.png"><link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png"><link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png"><link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png"><link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png"><link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png"><link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png"><link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="/favicon-144.png"><meta name="msapplication-config" content="/browserconfig.xml">
     <title>Pringles</title>
   </head>
   <body>
-      <div>
-        <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
+    <iframe height="100" width="100%" srcdoc="<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      .header {
+        top: 0;
+        padding-top: 5px;
+      }
+
+      .header a {
+        text-decoration: none;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 28px;
+        color: #fff;
+        display: block;
+        text-decoration: bold;
+      }
+
+      .header a:hover {
+        text-decoration: underline;
+      }
+
+    </style>
+    <style>
+      .squares {
+        border-radius: 3px;
+        background: #22a5df;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 3px;
+        height: 24px;
+        margin-top: 32px;
+        margin-right: 8px;
+        text-decoration: none;
+        float: left;
+        float: down;
+      }
+      
+      .squares:hover {
+        background: #ffffff;
+        color: #22a5df;
+        text-decoration: none;
+      }
+      
+      .squares a {
+        font: 0.8rem arial;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      
+      .squares:hover a {
+        color: #22a5df;
+      }      
+      
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/index.html" target="_parent">Pringles</a>
+    </div>
+    <div class="squares">
+      <a href="/index.html" target="_parent">Home</a>
+    </div>
+    <div class="squares">
+      <a href="/submit.html" target="_parent">Submit Something</a>
+    </div>
+    <div class="squares">
+      <a href="/problem.html" target="_parent">Report a Problem</a>
+    </div>
+    <div class="squares">
+      <a href="/urls.html" target="_parent">More Site URLS</a>
+    </div>
+    <div class="squares">
+      <a href="/vote.html" target="_parent">Vote for the best game!</a>
+    </div>
+    <div class="squares">
+      <a href="https://classroom.google.com/h" target="_parent">Click in emergency!</a>
+    </div>
+    <div class="squares">
+      <a href="/more.html" target="_parent">More Games</a>
+    </div>
+    <div class="squares">
+      <a href="https://github.com/ellieeet123/ellieeet123.github.io" target="_parent">GitHub (Site Source Code)</a>
+    </div>
+    <div class="squares">
+      <a href="https://instagram.com/pringles_games" target="_parent">Follow us on Instagram</a>
+    </div>
+  </body>
+</html>" frameborder="0"></iframe>
+    <iframe frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" srcdoc="<html>
+  <head>
+    <style>
+      .sidebar {
+        width: 160px;
+        z-index: 1;
+        top: 80;
+        left: 0;
+        background-color: #eeeeff;
+        overflow-x: hidden;
+        padding-top: 0px;}
+      .sidebar a {
+        padding: 6px 8px 6px 12px;
+        text-decoration: none;
+        font: bold 0.9rem trebuchet ms;
+        color: #f00;
+        display: block;}
+      .sidebar a:hover {
+        color: #f00;
+        font: bold 0.9rem trebuchet ms;
+        text-decoration: underline;}
+      .sidebar_subpage {
+        margin-left: 40;
+        padding: 1px 1px 1px 25px;}
+      .sidebar_subpage a {
+        color: #f00;
+        font: 0.9rem trebuchet ms;}
+      .sidebar_subpage a:hover {
+        color: #f00;
+        font: 0.9rem trebuchet ms;
+        text-decoration: underline;}
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="/index.html" target="_parent">Home</a>
+      <div class="sidebar_subpage">
+        <a href="/more.html" target="_parent">More Games</a>
+        <a href="/urls.html" target="_parent">More Site URLS</a>
+        <a href="/submit.html" target="_parent">Submit Something</a>
+        <a href="/problem.html" target="_parent">Report a Problem</a>
+        <a href="/vote.html" target="_parent">Vote for the Best Game</a>
       </div>
-      <div>
-      	<iframe frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this)'></iframe>
+      <a href="/games/asteroids.html" target="_parent">Asteroids</a>
+      <a href="/games/avalanche.html" target="_parent">Avalanche</a>
+      <a href="/games/battle-pong.html" target="_parent">Battle Pong</a>
+      <a href="/games/battleships.html" target="_parent">Battleships</a>
+      <a href="/games/bloxorz.html" target="_parent">Bloxorz</a>
+      <a href="/games/breaking-the-bank.html" target="_parent">Breaking the Bank</a>
+      <a href="/games/breaklock.html" target="_parent">BreakLock</a>
+      <a href="/games/bubble-shooter.html" target="_parent">Bubble Shooter</a>
+      <a href="/games/bubble-tanks-2.html" target="_parent">Bubble Tanks 2</a>
+      <a href="/games/bullet-bill.html" target="_parent">Bullet Bill</a>
+      <a href="/games/castle-wars.html" target="_parent">Castle Wars</a>
+      <a href="/games/choose-your-weapon.html" target="_parent">Choose Your Weapon</a>
+      <a href="/games/choose-your-weapon-2.html" target="_parent">Choose Your Weapon 2</a>
+      <a href="/games/choose-your-weapon-3.html" target="_parent">Choose Your Weapon 3</a>
+      <a href="/games/choose-your-weapon-4.html" target="_parent">Choose Your Weapon 4</a>
+      <a href="/games/color-switch.html" target="_parent">Color Switch</a>
+      <a href="/games/connect-4.html" target="_parent">Connect 4</a>
+      <a href="/games/conquer-antarctica.html" target="_parent">Conquer Antarctica</a>
+      <a href="/games/cubefield.html" target="_parent">Cubefield</a>
+      <a href="/games/cursor-10.html" target="_parent">Cursor x10</a>
+      <a href="/games/friday-night-funkin.html" target="_parent">Friday Night Funkin</a>
+      <a href="/games/gridlock.html" target="_parent">Gridlock</a>
+      <a href="/games/hobo.html" target="_parent">Hobo</a>
+      <a href="/games/hobo-2.html" target="_parent">Hobo 2</a>
+      <a href="/games/hobo-3.html" target="_parent">Hobo 3</a>
+      <a href="/games/hobo-4.html" target="_parent">Hobo 4</a>
+      <a href="/games/hobo-5.html" target="_parent">Hobo 5</a>
+      <a href="/games/hobo-6.html" target="_parent">Hobo 6</a>
+      <a href="/games/hobo-7.html" target="_parent">Hobo 7</a>
+      <a href="/games/papas-pizzeria.html" target="_parent">Papa's Pizzeria</a>
+      <a href="/games/plumber-2.html" target="_parent">Plumber 2</a>
+      <a href="/games/riddle-school.html" target="_parent">Riddle School</a>
+      <a href="/games/riddle-school-2.html" target="_parent">Riddle School 2</a>
+      <a href="/games/riddle-school-3.html" target="_parent">Riddle School 3</a>
+      <a href="/games/riddle-school-4.html" target="_parent">Riddle School 4</a>
+      <a href="/games/riddle-school-5.html" target="_parent">Riddle School 5</a>
+      <a href="/games/skywire.html" target="_parent">Skywire</a>
+      <a href="/games/skywire-2.html" target="_parent">Skywire 2</a>
+      <a href="/games/supermario63.html" target="_parent">Super Mario 63</a>
+      <a href="/games/super-smash-flash.html" target="_parent">Super Smash Flash</a>
+      <a href="/games/tanks.html" target="_parent">Tanks</a>
+      <a href="/games/tank-trouble-emulator.html" target="_parent">Tank Trouble Emulator</a>
+      <a href="/games/TankTrouble2.html" target="_parent">Tank Trouble 2</a>
+      <a href="/games/the-impossible-quiz.html" target="_parent">The Impossible Quiz</a>
+      <a href="/games/the-impossible-quiz-2.html" target="_parent">The Impossible Quiz 2</a>
+      <a href="/games/ultimate-chess.html" target="_parent">Ultimate Chess</a>
+      <a href="/games/worlds-hardest-game" target="_parent">World's Hardest Game</a>
+      <a href="/games/worlds-hardest-game-2" target="_parent">World's Hardest Game 2</a>
+    </div>
+  </body>
+</html>" onload='resizeIframe(this)'></iframe>
+    <div class="main">
+      <div class="main_text">
+        <h3>Asteroids</h3><br>
+        <embed src="/games/asteroids.swf" height="700" width="1000"></embed>
+        <!-- 
+                 To anyone digging in the source code, click the /games/file.swf link to download the .swf :)
+        !-->
       </div>
-      <div class="main">
-        <div class="main_text">
-        
-	        <h3>Asteroids</h3>
-          
-          <br>
-	  <embed src="/games/asteroids.swf" height="800" width="800"></embed>
-	  
-	  <!-- 
-To anyone digging in the source code, click the /games/file.swf link to download the .swf :)
-	  !-->
-          
-	      </div>
-      </div>
+    </div>
   </body>
 </html>
