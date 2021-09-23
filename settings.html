@@ -22,6 +22,36 @@
       }
       return "";
     }
+        function darkDisp() {
+          let dark = getCookie("darkmode");
+          if (dark == 'yes') {
+            document.getElementById("darkDisp").innerHTML = "Dark Mode: ON";
+          }
+        } 
+        function updateDark() {
+          let dark = getCookie("darkmode");
+          if (dark == 'yes') {
+            document.getElementById("main").style.background-color = #222233;
+            document.getElementById("main_p").style.color = #eeeeee;
+            document.getElementById("main_h3").style.color = #ffffff;
+            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #222233;
+          } else {
+            document.getElementById("main").style.background-color = #eeeeff;
+            document.getElementById("main_p").style.color = #000000;
+            document.getElementById("main_h3").style.color = #000000;
+            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #eeeeff;
+          }
+        }
+        function toggleDark() {
+          let dark = getCookie("darkmode");
+          if (dark == 'yes') {
+            setCookie("darkmode", 'no', 1000);
+          } else {
+            setCookie("darkmode", 'yes', 1000);
+          }
+          darkDisp();
+          updateDark();
+        }
     </script>
     <link rel="stylesheet" href="/css/main.css">
     <style>
@@ -62,43 +92,12 @@
     <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
     <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this)'></iframe>
     <div id="main" class="main"><div class="main_text">
-      <h3 id="main_h3">Settimgs</h3><br>
+      <h3 id="main_h3">Settings</h3><br>
       <p id="main_p">This page is a work in progress. If you somehow got here by accident, just go to a different page.</p><br>
       <p id="darkDisp">Dark Mode: OFF</p><br><br><br><br><br><br>
       <div class="squares">
         <a id="darkToggle" href="#" onclick="toggleDark(); return false;">Toggle Dark Mode</a>
       <script>
-        function darkDisp() {
-          let dark = getCookie("darkmode");
-          if (dark == 'yes') {
-            document.getElementById("darkDisp").innerHTML = "Dark Mode: ON";
-          }
-        } 
-        function updateDark() {
-          let dark = getCookie("darkmode");
-          if (dark == 'yes') {
-            document.getElementById("main").style.background-color = #222233;
-            document.getElementById("main_p").style.color = #eeeeee;
-            document.getElementById("main_h3").style.color = #ffffff;
-            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #222233;
-          } else {
-            document.getElementById("main").style.background-color = #eeeeff;
-            document.getElementById("main_p").style.color = #000000;
-            document.getElementById("main_h3").style.color = #000000;
-            document.getElementById("sidebar").contentWindow.document.body.style.background-color = #eeeeff;
-          }
-        }
-        function toggleDark() {
-          let dark = getCookie("darkmode");
-          if (dark == 'yes') {
-            setCookie("darkmode", 'no', 1000);
-          } else {
-            setCookie("darkmode", 'yes', 1000);
-          }
-          darkDisp();
-          updateDark();
-        }
-        document.getElementById("main_p").innerHTML = 'javascript test';
-        toggleDark()
+        document.getElementById("main_p").innerHTML = "javascript test";
       </script>
 </div></div></body></html>
