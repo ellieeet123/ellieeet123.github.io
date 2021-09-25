@@ -4,5 +4,6 @@ function resizeIframe(obj){
 function setTitle(){
   var titleData = document.getElementById('gameName').textContent + ' - Pringles';
   document.title = titleData;
+  alert('hello')
 }
-alert('hello')
+
