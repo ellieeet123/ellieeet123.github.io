@@ -35,12 +35,12 @@
             document.getElementById("main").style.background = '#222233';
             document.getElementById("main_p").style.color = '#eeeeee';
             document.getElementById("main_h3").style.color = '#ffffff';
-            document.getElementById("sidebar").contentWindow.document.body.div.style.background = '#222233';
+            document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("sidebar")[0].style.background = '#222233';
           } else {
             document.getElementById("main").style.background = '#eeeeff';
             document.getElementById("main_p").style.color = '#000000';
             document.getElementById("main_h3").style.color = '#000000';
-            document.getElementById("sidebar").contentWindow.document.body.div.style.background = '#eeeeff';
+            document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("sidebar")[0].style.background = '#eeeeff';
           }
         }
         function toggleDark() {
