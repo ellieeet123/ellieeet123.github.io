@@ -35,14 +35,18 @@
           if (dark == 'yes') {
             document.getElementById("main").style.background = '#222233';
             document.getElementById("main_p").style.color = '#eeeeee';
+            document.getElementById("darkDisp").style.color = '#eeeeee';
             document.getElementById("main_h3").style.color = '#ffffff';
             let x = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("sidebar");
+            alert(x)
             x[0].style.background = '#222233';
           } else {
             document.getElementById("main").style.background = '#eeeeff';
             document.getElementById("main_p").style.color = '#000000';
+            document.getElementById("darkDisp").style.color = '#000000';
             document.getElementById("main_h3").style.color = '#000000';
             let x = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("sidebar");
+            alert(x)
             x[0].style.background = '#eeeeff';
           }
         }
