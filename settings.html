@@ -38,20 +38,24 @@
             document.getElementById("darkDisp").style.color = '#eeeeee';
             document.getElementById("main_h3").style.color = '#ffffff';
             let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
-            let sidebarObjSub = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar_subpage");
+            let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
             sidebarObj[0].style.background = '#222233';
-            sidebarObj[0].style.color = '#33ee98';
-            sidebarObjSub[0].style.color = '#33ee98';
+            let count;
+            for (count = 0; count < sidebarLinks.length; count++) {
+              sidebarLinks[count].style.color = '#33ee98';
+            }
           } else {
             document.getElementById("main").style.background = '#eeeeff';
             document.getElementById("main_p").style.color = '#000000';
             document.getElementById("darkDisp").style.color = '#000000';
             document.getElementById("main_h3").style.color = '#000000';
             let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
-            let sidebarObjSub = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar_subpage");
+            let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
             sidebarObj[0].style.background = '#eeeeff';
-            sidebarObj[0].style.color = '#ff0000';
-            sidebarObjSub[0].style.color = '#ff0000';
+            let count;
+            for (count = 0; count < sidebarLinks.length; count++) {
+              sidebarLinks[count].style.color = '#ff0000';
+            }
           }
         }
         function toggleDark() {
@@ -63,6 +67,10 @@
           }
           darkDisp();
           updateDark();
+        }
+        function updateAndDisplayDark() {
+          updateDark();
+          darkDisp();
         }
     </script>
     <link rel="stylesheet" href="/css/main.css">
@@ -108,7 +116,7 @@
         <div class="squares">
           <a id="darkToggle" href="#" onclick="toggleDark(); return false;">Toggle Dark Mode</a>
         </div>
-        <script>document.getElementById('sidebar').onload = updateDark();</script>
+        <script>document.getElementById('sidebar').onload = updateAndDisplayDark();</script>
       </div>
     </div>
   </body>
