@@ -5,7 +5,7 @@ function resizeIframe(obj){
 
 //automatically sets the title of the page based on the content of the h3 tag at the top of the page.
 function setTitle(){
-  var titleData = document.getElementById('gameName').textContent + ' - Pringles';
+  var titleData = document.getElementById('title').textContent + ' - Pringles';
   document.title = titleData;
 }
 
@@ -38,9 +38,8 @@ function updateDark() {
   let dark = getCookie("darkmode");
   if (dark == 'yes') {
     document.getElementById("main").style.background = '#222233';
-    document.getElementById("main_p").style.color = '#eeeeee';
-    document.getElementById("darkDisp").style.color = '#eeeeee';
-    document.getElementById("main_h3").style.color = '#ffffff';
+    document.getElementById("text").style.color = '#eeeeee';
+    document.getElementById("title").style.color = '#ffffff';
     let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
     let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
     sidebarObj[0].style.background = '#222233';
@@ -51,9 +50,8 @@ function updateDark() {
   } 
   else {
     document.getElementById("main").style.background = '#eeeeff';
-    document.getElementById("main_p").style.color = '#000000';
-    document.getElementById("darkDisp").style.color = '#000000';
-    document.getElementById("main_h3").style.color = '#000000';
+    document.getElementById("text").style.color = '#000000';
+    document.getElementById("title").style.color = '#000000';
     let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
     let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
     sidebarObj[0].style.background = '#eeeeff';
