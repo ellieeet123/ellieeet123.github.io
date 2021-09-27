@@ -107,7 +107,7 @@
   </head>
   <body>
     <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
-    <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this)'></iframe>
+    <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
     <div id="main" class="main">
       <div class="main_text">
         <h3 id="main_h3">Settings</h3><br>
@@ -116,7 +116,7 @@
         <div class="squares">
           <a id="darkToggle" href="#" onclick="toggleDark(); return false;">Toggle Dark Mode</a>
         </div><br><p></p>
-        <script>document.getElementById('sidebar').contentWindow.onload = updateAndDisplayDark();</script>
+        <script>//document.getElementById('sidebar').contentWindow.onload = updateAndDisplayDark();</script>
       </div>
     </div>
   </body>
