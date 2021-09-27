@@ -1,3 +1,4 @@
+
 body {
   background-image: url('/old_pring_bg.png');
 }
@@ -93,3 +94,91 @@ body {
   color: #000000;
   text-decoration: italic;
 }
+
+.sidebar {
+  width: 160px;
+  z-index: 1;
+  top: 80;
+  left: 0;
+  background-color: #eeeeff;
+  overflow-x: hidden;
+  padding-top: 0px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 12px;
+  text-decoration: none;
+  font: bold 0.9rem trebuchet ms;
+  color: #f00;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f00;
+  font: bold 0.9rem trebuchet ms;
+  text-decoration: underline;
+}
+
+.sidebar_subpage {
+  margin-left: 40;
+  padding: 1px 1px 1px 25px;
+}
+
+.sidebar_subpage a {
+  color: #f00;
+  font: 0.9rem trebuchet ms;
+}
+
+.sidebar_subpage a:hover {
+  color: #f00;
+  font: 0.9rem trebuchet ms;
+  text-decoration: underline;
+}
+
+.header {
+  top: 0;
+  padding-top: 5px;
+}
+
+.header a {
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 28px;
+  color: #fff;
+  display: block;
+  text-decoration: bold;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.squares {
+  border-radius: 3px;
+  background: #22a5df;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 3px;
+  height: 24px;
+  margin-top: 32px;
+  margin-right: 8px;
+  text-decoration: none;
+  float: left;
+  float: down;
+}
+
+.squares:hover {
+  background: #ffffff;
+  color: #22a5df;
+  text-decoration: none;
+}
+
+.squares a {
+  font: 0.8rem arial;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.squares:hover a {
+  color: #22a5df;
+}      
