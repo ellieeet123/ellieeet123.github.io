@@ -35,6 +35,7 @@
           if (dark == 'yes') {
             document.getElementById("main").style.background = '#222233';
             document.getElementById("main_p").style.color = '#eeeeee';
+            document.getElementById("lowertext").style.color = '#eeeeee';
             document.getElementById("darkDisp").style.color = '#eeeeee';
             document.getElementById("main_h3").style.color = '#ffffff';
             let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
@@ -47,6 +48,7 @@
           } else {
             document.getElementById("main").style.background = '#eeeeff';
             document.getElementById("main_p").style.color = '#000000';
+            document.getElementById("lowertext").style.color = '#000000';
             document.getElementById("darkDisp").style.color = '#000000';
             document.getElementById("main_h3").style.color = '#000000';
             let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
@@ -111,11 +113,11 @@
     <div id="main" class="main">
       <div class="main_text">
         <h3 id="main_h3">Settings</h3><br>
-        <p id="main_p">This page is a work in progress. If you somehow got here by accident, just go to a different page.</p><br>
-        <p onload='darkDisp' id="darkDisp">Dark Mode: </p><br><br>
+        <p id="main_p">This page was mostly just an experiment and some practice with javascript, but it's kinda cool. Currently it only works on this page, but it should work everywhere soon.</p><br>
+        <p onload='darkDisp' id="darkDisp">Dark Mode: Loading status...</p>
         <div class="squares">
           <a id="darkToggle" href="#" onclick="toggleDark(); return false;">Toggle Dark Mode</a>
-        </div><br><p> </p><br><p>hello</p><br>
+        </div><br><p> </p><br><p id="lowertext">I will probably add more settings sometime soon. </p><br>
       </div>
     </div>
   </body>
