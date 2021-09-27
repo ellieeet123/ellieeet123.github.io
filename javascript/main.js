@@ -1,16 +1,23 @@
+//resizes an iframe based on how tall the content inside of it is. Used for the sidebar.
 function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
 }
+
+//automatically sets the title of the page based on the content of the h3 tag at the top of the page.
 function setTitle(){
   var titleData = document.getElementById('gameName').textContent + ' - Pringles';
   document.title = titleData;
 }
+
+//sets a cookie
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+//loads a cookie
 function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');
@@ -24,4 +31,35 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+//Updates the page to match the color theme set in the "darkmode" cookie. 
+function updateDark() {
+  let dark = getCookie("darkmode");
+  if (dark == 'yes') {
+    document.getElementById("main").style.background = '#222233';
+    document.getElementById("main_p").style.color = '#eeeeee';
+    document.getElementById("darkDisp").style.color = '#eeeeee';
+    document.getElementById("main_h3").style.color = '#ffffff';
+    let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+    let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+    sidebarObj[0].style.background = '#222233';
+    let count;
+    for (count = 0; count < sidebarLinks.length; count++) {
+      sidebarLinks[count].style.color = '#33ee98';
+    }
+  } 
+  else {
+    document.getElementById("main").style.background = '#eeeeff';
+    document.getElementById("main_p").style.color = '#000000';
+    document.getElementById("darkDisp").style.color = '#000000';
+    document.getElementById("main_h3").style.color = '#000000';
+    let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+    let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+    sidebarObj[0].style.background = '#eeeeff';
+    let count;
+    for (count = 0; count < sidebarLinks.length; count++) {
+      sidebarLinks[count].style.color = '#ff0000';
+    }
+  }
 }
