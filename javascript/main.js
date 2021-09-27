@@ -38,26 +38,38 @@ function updateDark() {
   let dark = getCookie("darkmode");
   if (dark == 'yes') {
     document.getElementById("main").style.background = '#222233';
-    document.getElementById("text").style.color = '#eeeeee';
     document.getElementById("title").style.color = '#ffffff';
     let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
     let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+    let pList = document.getElementsByTagName("p");
+    let aList = document.getElementsByTagName("a");
     sidebarObj[0].style.background = '#222233';
-    let count;
-    for (count = 0; count < sidebarLinks.length; count++) {
-      sidebarLinks[count].style.color = '#33ee98';
+    for (let i = 0; i < sidebarLinks.length; i++) {
+      sidebarLinks[i].style.color = '#33ee98';
+    }
+    for (let i = 0; i < pList.length; i++) {
+      pList[i].style.color = '#eeeeee';
+    }
+    for (let i = 0; i < aList.length; i++) {
+      aList[i].style.color = '#00ffff';
     }
   } 
   else {
     document.getElementById("main").style.background = '#eeeeff';
-    document.getElementById("text").style.color = '#000000';
     document.getElementById("title").style.color = '#000000';
     let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
     let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+    let pList = document.getElementsByTagName("p");
+    let aList = document.getElementsByTagName("a");
     sidebarObj[0].style.background = '#eeeeff';
-    let count;
-    for (count = 0; count < sidebarLinks.length; count++) {
-      sidebarLinks[count].style.color = '#ff0000';
+    for (let i = 0; i < sidebarLinks.length; i++) {
+      sidebarLinks[i].style.color = '#ff0000';
+    }
+    for (let i = 0; i < pList.length; i++) {
+      pList[i].style.color = '#000000';
+    }
+    for (let i = 0; i < aList.length; i++) {
+      aList[i].style.color = '#0000ff';
     }
   }
 }
