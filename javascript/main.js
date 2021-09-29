@@ -37,6 +37,7 @@ function getCookie(cname) {
 function updateDark() {
   let dark = getCookie("darkmode");
   let pageTitle = document.getElementById('title').textContent;
+  alert(pageTitle)
   if (pageTitle = 'Home') {
     if (dark == 'yes') {
       document.getElementById("main").style.background = '#222233';
