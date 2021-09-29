@@ -51,7 +51,7 @@ function updateDark() {
       sidebarLinks[i].style.color = '#33ee98';
     }
     for (let i = 0; i < pList.length; i++) {
-      if (pList[i].class != 'noColorChange') {
+      if (pList[i].className != 'noColorChange') {
         pList[i].style.color = '#eeeeee';
       }
     }
@@ -74,7 +74,7 @@ function updateDark() {
       sidebarLinks[i].style.color = '#ff0000';
     }
     for (let i = 0; i < pList.length; i++) {
-      if (pList[i].class != 'noColorChange') {
+      if (pList[i].className != 'noColorChange') {
         pList[i].style.color = '#eeeeee';
       }
     }
