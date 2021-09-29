@@ -36,50 +36,79 @@ function getCookie(cname) {
 //Updates the page to match the color theme set in the "darkmode" cookie. 
 function updateDark() {
   let dark = getCookie("darkmode");
-  if (dark == 'yes') {
-    document.getElementById("main").style.background = '#222233';
-    document.getElementById("title").style.color = '#ffffff';
-    document.getElementById("h1").style.color = '#ffffff';
-    document.getElementById("h2").style.color = '#ffffff';
-    document.getElementById("h5").style.color = '#ffffff';
-    let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
-    let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
-    let pList = document.getElementsByTagName("p");
-    let aList = document.getElementsByTagName("a");
-    sidebarObj[0].style.background = '#222233';
-    for (let i = 0; i < sidebarLinks.length; i++) {
-      sidebarLinks[i].style.color = '#33ee98';
-    }
-    for (let i = 0; i < pList.length; i++) {
-      if (pList[i].className != 'noColorChange') {
-        pList[i].style.color = '#eeeeee';
+  let pageTitle = document.getElementById('title').textContent;
+  if (pageTitle = 'Home') {
+    if (dark == 'yes') {
+      document.getElementById("main").style.background = '#222233';
+      document.getElementById("title").style.color = '#ffffff';
+      document.getElementById("h1").style.color = '#ffffff';
+      document.getElementById("h2").style.color = '#ffffff';
+      document.getElementById("h5").style.color = '#ffffff';
+      let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+      let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+      let pList = document.getElementsByTagName("p");
+      let aList = document.getElementsByTagName("a");
+      sidebarObj[0].style.background = '#222233';
+      for (let i = 0; i < sidebarLinks.length; i++) {
+        sidebarLinks[i].style.color = '#33ee98';
       }
-    }
-    for (let i = 0; i < aList.length; i++) {
-      aList[i].style.color = '#00ffff';
-    }
-  } 
-  else {
-    document.getElementById("main").style.background = '#eeeeff';
-    document.getElementById("title").style.color = '#000000';
-    document.getElementById("h1").style.color = '#000000';
-    document.getElementById("h2").style.color = '#000000';
-    document.getElementById("h5").style.color = '#000000';
-    let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
-    let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
-    let pList = document.getElementsByTagName("p");
-    let aList = document.getElementsByTagName("a");
-    sidebarObj[0].style.background = '#eeeeff';
-    for (let i = 0; i < sidebarLinks.length; i++) {
-      sidebarLinks[i].style.color = '#ff0000';
-    }
-    for (let i = 0; i < pList.length; i++) {
-      if (pList[i].className != 'noColorChange') {
-        pList[i].style.color = '#000000';
+      for (let i = 0; i < pList.length; i++) {
+        if (pList[i].className != 'noColorChange') {
+          pList[i].style.color = '#eeeeee';
+        }
       }
-    }
-    for (let i = 0; i < aList.length; i++) {
-      aList[i].style.color = '#0000ff';
+      for (let i = 0; i < aList.length; i++) {
+        aList[i].style.color = '#00ffff';
+      }
+    } 
+    else {
+      document.getElementById("main").style.background = '#eeeeff';
+      document.getElementById("title").style.color = '#000000';
+      document.getElementById("h1").style.color = '#000000';
+      document.getElementById("h2").style.color = '#000000';
+      document.getElementById("h5").style.color = '#000000';
+      let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+      let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+      let pList = document.getElementsByTagName("p");
+      let aList = document.getElementsByTagName("a");
+      sidebarObj[0].style.background = '#eeeeff';
+      for (let i = 0; i < sidebarLinks.length; i++) {
+        sidebarLinks[i].style.color = '#ff0000';
+      }
+      for (let i = 0; i < pList.length; i++) {
+        if (pList[i].className != 'noColorChange') {
+          pList[i].style.color = '#000000';
+        }
+      }
+      for (let i = 0; i < aList.length; i++) {
+        aList[i].style.color = '#0000ff';
+      }
     }
   }
-}
+  else { 
+    if (dark == 'yes') {
+    document.getElementById("main").style.background = '#222233';
+    document.getElementById("main_p").style.color = '#eeeeee';
+    document.getElementById("lowertext").style.color = '#eeeeee';
+    document.getElementById("darkDisp").style.color = '#eeeeee';
+    document.getElementById("main_h3").style.color = '#ffffff';
+    let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+    let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+    sidebarObj[0].style.background = '#222233';
+    let count;
+    for (count = 0; count < sidebarLinks.length; count++) {
+      sidebarLinks[count].style.color = '#33ee98';
+    }
+  } else {
+    document.getElementById("main").style.background = '#eeeeff';
+    document.getElementById("main_p").style.color = '#000000';
+    document.getElementById("lowertext").style.color = '#000000';
+    document.getElementById("darkDisp").style.color = '#000000';
+    document.getElementById("main_h3").style.color = '#000000';
+    let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+    let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+    sidebarObj[0].style.background = '#eeeeff';
+    let count;
+    for (count = 0; count < sidebarLinks.length; count++) {
+      sidebarLinks[count].style.color = '#ff0000';
+}}}}
