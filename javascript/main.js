@@ -38,7 +38,7 @@ function updateDark() {
   let dark = getCookie("darkmode");
   let pringPageTitle = document.getElementById('title').textContent;
   alert(pringPageTitle)
-  if (pringPageTitle = 'Home') {
+  if (pringPageTitle == 'Home') {
     alert('test')
     if (dark == 'yes') {
       document.getElementById("main").style.background = '#222233';
