@@ -107,15 +107,25 @@ function updateDark() {
         pList[count].style.color = '#eeeeee';
       }
     } else {
-    document.getElementById("main").style.background = '#eeeeff';
-    document.getElementById("main_p").style.color = '#000000';
-    document.getElementById("lowertext").style.color = '#000000';
-    document.getElementById("darkDisp").style.color = '#000000';
-    document.getElementById("main_h3").style.color = '#000000';
-    let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
-    let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
-    sidebarObj[0].style.background = '#eeeeff';
-    let count;
-    for (count = 0; count < sidebarLinks.length; count++) {
-      sidebarLinks[count].style.color = '#ff0000';
-}}}}
+      document.getElementById("main").style.background = '#eeeeff';
+      document.getElementById("title").style.color = '#000000';
+      let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+      let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+      let pList = document.getElementsByTagName("p");
+      let aList = document.getElementsByTagName("a");
+      sidebarObj[0].style.background = '#eeeeff';
+      let count;
+      for (count = 0; count < sidebarLinks.length; count++) {
+        sidebarLinks[count].style.color = '#ff0000';
+      }
+      if (aList.length > 0) {
+        for (count = 0; count < aList.length; count++) {
+          aList[count].style.color = '#0000ff';
+        }
+      }
+      for (count = 0; count < pList.length; count++) {
+        pList[count].style.color = '#000000';
+      }
+    }
+  }
+}
