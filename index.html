@@ -1,38 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
   <head>
-	  <script src="/javascript/main.js"></script>
-	  <script type="application/javascript">function resizeIframe(obj){obj.height = (obj.contentWindow.document.body.scrollHeight + 20);}</script>
-    <script>
-	    function popup(url) {popupWindow = window.open(url,'popUpWindow','height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')}
-    </script>
+    <script src="/javascript/main.js"></script>
 	  <script>
-	    function setCookie(cname, cvalue, exdays) {
-      const d = new Date();
-      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-      let expires = "expires="+d.toUTCString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-      function getCookie(cname) {
-      let name = cname + "=";
-      let ca = document.cookie.split(';');
-      for(let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
+	    function popup(url) {
+        popupWindow = window.open(url,'popUpWindow','height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')
       }
-      return "";
-    }
-    let testpopup = getCookie("testing");
-    if (testpopup == "") {
-      popup('/test-popup.html');
-      setCookie("testing", "hello", 10000)
-    }
+      let testpopup = getCookie("testing");
+      if (testpopup == "") {
+        popup('/test-popup.html');
+        setCookie("testing", "hello", 10000)
+      }
     </script>
     <style>
       body {
@@ -172,7 +151,7 @@
         <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
       </div>
       <div>
-	     <iframe frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
+	      <iframe frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
       </div>
       <div class="main">
         <div class="main_text">
@@ -186,8 +165,8 @@
           <p>[Wednesday Sep. 22] Two new games today! Check them all out <a href="#new">here</a>.</p>
           <br><img src="/pringles.jpeg">
           <br>
-	  <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-	  <a href="https://logwork.com/countdown-qgr8" class="countdown-timer" data-style="columns" data-width="731" data-timezone="America/Chicago" data-date="2022-05-26 15:22">Countdown Until Summer!</a>
+	        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+	        <a href="https://logwork.com/countdown-qgr8" class="countdown-timer" data-style="columns" data-width="731" data-timezone="America/Chicago" data-date="2022-05-26 15:22">Countdown Until Summer!</a>
           <br>
           <p>As you can tell, this is a little bit of a work in progress. At the moment there are fifteen games. This will definently be expanded in the very near future. The site layout is almost done so that's good I guess.</p>
           <br>
