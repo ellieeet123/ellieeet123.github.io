@@ -36,9 +36,9 @@ function getCookie(cname) {
 //Updates the page to match the color theme set in the "darkmode" cookie. 
 function updateDark() {
   let dark = getCookie("darkmode");
-  let pageTitle = document.getElementById('title').textContent;
-  alert(pageTitle)
-  if (pageTitle = 'Home') {
+  let pringPageTitle = document.getElementById('title').textContent;
+  alert(pringPageTitle)
+  if (pringPageTitle = 'Home') {
     if (dark == 'yes') {
       document.getElementById("main").style.background = '#222233';
       document.getElementById("title").style.color = '#ffffff';
