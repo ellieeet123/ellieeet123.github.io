@@ -39,6 +39,7 @@ function updateDark() {
   let pringPageTitle = document.getElementById('title').textContent;
   alert(pringPageTitle)
   if (pringPageTitle = 'Home') {
+    alert('test')
     if (dark == 'yes') {
       document.getElementById("main").style.background = '#222233';
       document.getElementById("title").style.color = '#ffffff';
