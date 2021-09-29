@@ -151,12 +151,12 @@
         <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
       </div>
       <div>
-	      <iframe frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
+        <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
       </div>
-      <div class="main">
+      <div id="main" class="main">
         <div class="main_text">
 	        <!PAGE TITLE>
-	        <h3>Home</h3>
+	        <h3 id="title">Home</h3>
 	        <!MAIN CONTENT>
           <h1>Welcome to Pringles!</h1>
 	        <div class="fancy">
@@ -243,5 +243,6 @@
           <br>
       	</div>
       </div>
+    <script src="/javascript/bodyScript.js"></script>
   </body>
 </html>
