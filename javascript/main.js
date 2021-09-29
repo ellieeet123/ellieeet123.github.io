@@ -75,11 +75,11 @@ function updateDark() {
     }
     for (let i = 0; i < pList.length; i++) {
       if (pList[i].className != 'noColorChange') {
-        pList[i].style.color = '#eeeeee';
+        pList[i].style.color = '#000000';
       }
     }
     for (let i = 0; i < aList.length; i++) {
-      aList[i].style.color = '#00ffff';
+      aList[i].style.color = '#0000ff';
     }
   }
 }
