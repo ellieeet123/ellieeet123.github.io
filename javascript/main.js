@@ -10,7 +10,6 @@ function randomPageLink() {
   for (let x = 0; x < objects.length; x++) {
     links.push(objects[x]);
   }
-  var randGame = links[Math.floor(Math.random()*links.length)];
   var number = Math.floor(Math.random()*links.length);
   document.getElementById('randomGame').href = links[number];
 }
