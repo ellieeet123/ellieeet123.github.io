@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Computer Flashlight</title>
+        <script>
+            function update() {
+                var colorValue = document.getElementById('input').value;
+                alert(colorValue)
+                document.body.style.background = 'rgba('+colorValue+','+colorValue+','+colorValue+',1)';
+            }
+        </script>
+        <style>
+            body {
+                background-color: rgba(255,255,255,1);
+            }
+        </style>
+    </head>
+    <body>
+        <p id="info" onclick="this.innerHTML = ''">This is a small flashlight tool I made because I needed it to do homework on a schoolbus while it was dark outside, and I thought someone else might find it useful, so here it is. I also added a brightness toggle just for fun. You can save this to access it offline by right clicking and choose "save as." If you want to hide this text, just click it.</p>
+        <div style="position:fixed; bottom:0px;right:0px;border-style:solid;border-width:1px;border-color:000000;">
+            <p style="display:inline;">Enter number for brightness: </p>
+            <input type="number" id="input" style="display:inline" placeholder="0 = black, 255 = white"></input>
+            <button onclick="update();">OK</button>
+        </div>
+    </body>
+</html>
