@@ -3,6 +3,18 @@ function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
 }
 
+//makes the random game page link work by grabbing a random link from the sidebar and setting the random link to that.
+function randomPageLink() {
+  const links = [];
+  const objects = document.getElementById('games').getElementsByTagName('a');
+  for (let x = 0; x < objects.length; x++) {
+    links.push(objects[x]);
+  }
+  var randGame = links[Math.floor(Math.random()*links.length)];
+  var number = Math.floor(Math.random()*links.length);
+  document.getElementById('hello').href = links[number];
+}
+
 //automatically sets the title of the page based on the content of the h3 tag at the top of the page.
 function setTitle(){
   var titleData = document.getElementById('title').textContent + ' - Pringles';
