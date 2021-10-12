@@ -12,7 +12,7 @@ function randomPageLink() {
   }
   var randGame = links[Math.floor(Math.random()*links.length)];
   var number = Math.floor(Math.random()*links.length);
-  document.getElementById('hello').href = links[number];
+  document.getElementById('randomGame').href = links[number];
 }
 
 //automatically sets the title of the page based on the content of the h3 tag at the top of the page.
