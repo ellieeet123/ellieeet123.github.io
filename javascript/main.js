@@ -140,3 +140,15 @@ function updateDark() {
     }
   }
 }
+
+//makes the sidebar tick
+function sidebarMain(obj) {  
+  setCookie('data_title', obj.dataset.title, 1);
+  setCookie('data_text', obj.dataset.text, 1);
+  setCookie('data_isFlash', obj.dataset.isflash, 1);
+  setCookie('data_frameSrc', obj.dataset.framesrc, 1);
+  setCookie('data_frameWidth', obj.dataset.framewidth, 1);
+  setCookie('data_frameHeight', obj.dataset.frameheight, 1);
+  setCookie('data_isBigFile', obj.dataset.isbigfile, 1);
+  window.location.href = '/games/';
+}
