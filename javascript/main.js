@@ -151,5 +151,4 @@ function sidebarMain(obj) {
   setCookie('data_frameWidth', obj.dataset.framewidth, 1);
   setCookie('data_frameHeight', obj.dataset.frameheight, 1);
   setCookie('data_isBigFile', obj.dataset.isbigfile, 1);
-  window.location.href = '/games/';
 }
