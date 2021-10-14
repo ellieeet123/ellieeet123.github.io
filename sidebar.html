@@ -111,13 +111,10 @@
   <a href="/games/zombocalypse.html" target="_parent">Zombocalypse</a>
 </div></div><script>
   randomPageLink();
-  alert(1)
   let allATags = document.getElementsByTagName('a');
-  alert(2)
   for (let f = 1; f < allATags.length; f++) {
     let currentItem = allATags[f];
     if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
-      alert(5)
       currentItem.innerHTML = currentItem.dataset.title;
       alert(currentItem.dataset.title);
       currentItem.onclick = function() {
