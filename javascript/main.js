@@ -141,9 +141,8 @@ function updateDark() {
   }
 }
 
-//makes the sidebar tick
+//the inner workings of the sidebar, taking all the data from the link that is clicked on and saving it to cookies. Later, this data is used to build the game page.
 function sidebarMain(obj) {  
-  alert('function starting')
   setCookie('data_title', obj.dataset.title, 1);
   setCookie('data_text', obj.dataset.text, 1);
   setCookie('data_isFlash', obj.dataset.isflash, 1);
@@ -151,4 +150,28 @@ function sidebarMain(obj) {
   setCookie('data_frameWidth', obj.dataset.framewidth, 1);
   setCookie('data_frameHeight', obj.dataset.frameheight, 1);
   setCookie('data_isBigFile', obj.dataset.isbigfile, 1);
+}
+
+//takes the cookies from the previous function and uses them to build the "games" page. 
+function buildGamePage() {
+  let title = getCookie('data_title');
+  let text = getCookie('data_text');
+  let isFlash = getCookie('data_isFlash');
+  let frameSrc = getCookie('data_frameSrc');
+  let frameWidth = getCookie('data_frameWidth');
+  let frameHeight = getCookie('data_frameHeight');
+  let isBigFile = getCookie('data_isBigFile');
+  document.getElementById('title').innerHTML = title;
+  document.getElementById('text').innerHTML = text;
+  if (isBigFile == 1) {
+    document.getElementById('warn').innerHTML = 'Note - this game\'s large file size might cause long loading times. Just wait, and click wait on a popup if necesary. It can take up to 60-100 seconds sometimes.';
+  }
+  if (isFlash == 1) {
+    document.getElementById('frame').src = '/games/' + frameSrc;
+  }
+  else {
+    document.getElementById('frame').src = frameSrc;
+  }
+  document.getElementById('frame').width = frameWidth;
+  document.getElementById('height').width = frameHeight;
 }
