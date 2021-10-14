@@ -122,15 +122,11 @@
   let allATags = document.getElementsByTagName('a');
   for (let f = 1; f < allATags.length; f++) {
     let currentItem = allATags[f];
-    try {
-    //if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
+    if (currentItem.hasAttribute('data-title')) {
       currentItem.innerHTML = currentItem.dataset.title;
       currentItem.onclick = function() {
         sidebarMain(currentItem);
       }
-    }
-    catch {
-      let useless = 0
     }
   }
   
