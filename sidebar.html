@@ -115,9 +115,7 @@
   let allATags = document.getElementsByTagName('a');
   alert(2)
   for (let f = 1; f < allATags.length; f++) {
-    alert(3)
     let currentItem = allATags[f];
-    alert(4)
     if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
       alert(5)
       currentItem.innerHTML = currentItem.dataset.title;
