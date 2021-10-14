@@ -118,7 +118,7 @@
       currentItem.innerHTML = currentItem.dataset.title;
       alert(currentItem.dataset.title);
       currentItem.onclick = function() {
-        sidebarMain(this);
+        sidebarMain(currentItem);
       }
     }
   }
