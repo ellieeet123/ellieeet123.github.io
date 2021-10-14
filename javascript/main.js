@@ -162,9 +162,17 @@ function buildGamePage() {
   let frameHeight = getCookie('data_frameHeight');
   let isBigFile = getCookie('data_isBigFile');
   document.getElementById('title').innerHTML = title;
-  document.getElementById('text').innerHTML = text;
+  if (text != '') {
+    document.getElementById('text').innerHTML = text;
+  }
+  else {
+    document.getElementById('text').remove()
+  }
   if (isBigFile == 1) {
     document.getElementById('warn').innerHTML = 'Note - this game\'s large file size might cause long loading times. Just wait, and click wait on a popup if necesary. It can take up to 60-100 seconds sometimes.';
+  }
+  else {
+    document.getElementById('warn').remove();
   }
   if (isFlash == 1) {
     document.getElementById('frame').src = '/games/' + frameSrc;
