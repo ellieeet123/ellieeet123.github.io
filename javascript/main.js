@@ -143,6 +143,7 @@ function updateDark() {
 
 //the inner workings of the sidebar, taking all the data from the link that is clicked on and saving it to cookies. Later, this data is used to build the game page.
 function sidebarMain(obj) {  
+  alert(obj.dataset.title)
   setCookie('data_title', obj.dataset.title, 1);
   setCookie('data_text', obj.dataset.text, 1);
   setCookie('data_isFlash', obj.dataset.isflash, 1);
