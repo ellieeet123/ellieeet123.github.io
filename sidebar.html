@@ -3,13 +3,13 @@
   <a href="/games/achievement-unlocked.html" target="_parent">Achievement Unlocked</a>
   <a href="/games/animator-vs-animation.html" target="_parent">Animator vs. Animation</a>
   
-  <a id="asteroids" href="/games/" onclick="sidebarMain();" target="_parent" 
+  <a href="/games/" onclick="sidebarMain();" target="_parent" 
     data-title="Asteroids"
-    data-text="pineapple"
+    data-text=""
     data-isflash="1"
     data-framesrc="asteroids.swf"
     data-framewidth="1000"
-    data-frameheight="800"
+    data-frameheight="750"
     data-isbigfile="0"
     ></a>
   
@@ -32,7 +32,17 @@
   <a href="/games/connect-4.html" target="_parent">Connect 4</a>
   <a href="/games/conquer-antarctica.html" target="_parent">Conquer Antarctica</a>
   <a href="/games/cookie-clicker.html" target="_parent">Cookie Clicker</a>
-  <a href="/games/cubefield.html" target="_parent">Cubefield</a>
+  
+  <a href="/games/" onclick="sidebarMain();" target="_parent"
+    data-title="Cubefield"
+    data-text=""
+    data-isflash="1"
+    data-framesrc="cubefield.swf"
+    data-framewidth="1100"
+    data-frameheight="700"
+    data-isbigfile="0"
+    ></a>
+  
   <a href="/games/cursor-invisible.html" target="_parent">Cursor Invisible</a>
   <a href="/games/cursor-10.html" target="_parent">Cursor x10</a>
   <a href="/games/duck-life.html" target="_parent">Duck Life</a>
@@ -101,9 +111,14 @@
   <a href="/games/zombocalypse.html" target="_parent">Zombocalypse</a>
 </div></div><script>
   randomPageLink();
-  let thing = document.getElementById('asteroids');
-  thing.innerHTML = thing.dataset.title;
-  thing.onclick = function() {
-    sidebarMain(this);
+  let allATags = document.getElementsByTagName('a');
+  for (let f = 1; f > allATags.length; f++) {
+    let currentItem = allATags[f];
+    if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
+      currentItem.innerHTML = currentItem.dataset.title;
+      currentItem.onclick = function() {
+        sidebarMain(this);
+      }
+    }
   }
   </script></body></html>
