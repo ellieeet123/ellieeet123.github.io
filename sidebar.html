@@ -116,7 +116,6 @@
     let currentItem = allATags[f];
     if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
       currentItem.innerHTML = currentItem.dataset.title;
-      alert(currentItem.dataset.title);
       currentItem.onclick = function() {
         sidebarMain(currentItem);
       }
