@@ -114,6 +114,7 @@
   let allATags = document.getElementsByTagName('a');
   for (let f = 1; f > allATags.length; f++) {
     let currentItem = allATags[f];
+    console.log(currentItem);
     if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
       currentItem.innerHTML = currentItem.dataset.title;
       alert(currentItem.dataset.title);
