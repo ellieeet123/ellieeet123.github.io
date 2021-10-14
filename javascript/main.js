@@ -143,6 +143,7 @@ function updateDark() {
 
 //makes the sidebar tick
 function sidebarMain(obj) {  
+  alert('function starting')
   setCookie('data_title', obj.dataset.title, 1);
   setCookie('data_text', obj.dataset.text, 1);
   setCookie('data_isFlash', obj.dataset.isflash, 1);
