@@ -1,5 +1,13 @@
 <!doctype html><html><head><script src="/javascript/main.js"></script><link id="styleMain" rel="stylesheet" href="/css/main.css"></head><body><div id="master" class="sidebar"><a href="/index.html" target="_parent">Home</a><div class="sidebar_subpage"><a href="/more.html" target="_parent">More Games</a><a href="/urls.html" target="_parent">More Site URLS</a><a href="/settings.html" target="_parent">Settings</a><a href="/submit.html" target="_parent">Submit Something</a><a href="/problem.html" target="_parent">Report a Problem</a><a href="/vote.html" target="_parent">Vote for the Best Game</a><a href="#" id="randomGame" target="_parent">Random Game</a></div><div id="games">
-  <a href="/games/8-ball.html" target="_parent">8 Ball Pool</a>
+  <a href="/games/" onclick="sidebarMain();" target="_parent" 
+    data-title="8 Ball Pool"
+    data-text=""
+    data-isflash="0"
+    data-framesrc="https://sites.google.com/macros/s/AKfycbyfZplF4j-fYv-H3Pp5xV1y-E48NkQK5FpCAIEzW2QE4xm9w4hf/exec?authuser=0&mid=ACjPJvF1PjpZMOlRWG6Ovd3aJnfb9rugsdEHXNmzXcuMVN5hX1n39gj7iA0dDmWCf04iv2s2Vw6CFVRPUsvPmRXOuxNshKQDanjn47CAz1AB27qCGoD7g0W8l-UQy1I16dOGjVmoqknn3LgbtLjPl68&bc=transparent&f=Helvetica,+Arial,+Verdana,+sans-serif&tc=%23b5b5b5&lc=%23f3f2f2"
+    data-framewidth="815"
+    data-frameheight="750"
+    data-isbigfile="0"
+    ></a>  
   <a href="/games/achievement-unlocked.html" target="_parent">Achievement Unlocked</a>
   <a href="/games/animator-vs-animation.html" target="_parent">Animator vs. Animation</a>
   
@@ -114,11 +122,16 @@
   let allATags = document.getElementsByTagName('a');
   for (let f = 1; f < allATags.length; f++) {
     let currentItem = allATags[f];
-    if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
+    try {
+    //if (currentItem.dataset.title == 'Asteroids' || currentItem.dataset.title == 'Cubefield') {
       currentItem.innerHTML = currentItem.dataset.title;
       currentItem.onclick = function() {
         sidebarMain(currentItem);
       }
     }
+    catch {
+      let useless = 0
+    }
   }
+  
   </script></body></html>
