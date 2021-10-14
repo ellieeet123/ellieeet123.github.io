@@ -101,6 +101,10 @@
   <a href="/games/zombocalypse.html" target="_parent">Zombocalypse</a>
 </div></div><script>
   randomPageLink();
-  document.getElementById('asteroids').innerHTML = document.getElementById('asteroids').dataset.title;
-  document.getElementById('asteroids').onclick = 'sidebarMain(this);return false;';
+  
+  let thing = document.getElementById('asteroids');
+  thing.innerHTML = thing.dataset.title;
+  thing.onclick = function() {
+    sidebarMain(this);
+  }
   </script></body></html>
