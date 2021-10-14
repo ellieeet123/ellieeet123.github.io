@@ -173,5 +173,5 @@ function buildGamePage() {
     document.getElementById('frame').src = frameSrc;
   }
   document.getElementById('frame').width = frameWidth;
-  document.getElementById('height').width = frameHeight;
+  document.getElementById('frame').height = frameHeight;
 }
