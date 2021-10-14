@@ -8,9 +8,16 @@
     data-frameheight="750"
     data-isbigfile="0"
     ></a>  
-  <a href="/games/achievement-unlocked.html" target="_parent">Achievement Unlocked</a>
-  <a href="/games/animator-vs-animation.html" target="_parent">Animator vs. Animation</a>
-  
+  <a href="/games/" onclick="sidebarMain();" target="_parent" 
+    data-title="Achivement Unlocked"
+    data-text=""
+    data-isflash="1"
+    data-framesrc="achivement-unlocked.swf"
+    data-framewidth="1000"
+    data-frameheight="700"
+    data-isbigfile="1"
+    ></a>
+  <a href="/games/html/animator-vs-animation.html" target="_parent">Animator vs. Animation</a>
   <a href="/games/" onclick="sidebarMain();" target="_parent" 
     data-title="Asteroids"
     data-text=""
@@ -20,9 +27,24 @@
     data-frameheight="750"
     data-isbigfile="0"
     ></a>
-  
-  <a href="/games/avalanche.html" target="_parent">Avalanche</a>
-  <a href="/games/battle-pong.html" target="_parent">Battle Pong</a>
+  <a href="/games/" onclick="sidebarMain();" target="_parent" 
+    data-title="Avalanche"
+    data-text=""
+    data-isflash="1"
+    data-framesrc="avalanche.swf"
+    data-framewidth="1100"
+    data-frameheight="700"
+    data-isbigfile="0"
+    ></a>
+  <a href="/games/" onclick="sidebarMain();" target="_parent" 
+    data-title="Battle Pong"
+    data-text=""
+    data-isflash="1"
+    data-framesrc="battle-pong.swf"
+    data-framewidth="1100"
+    data-frameheight="700"
+    data-isbigfile="0"
+    ></a>
   <a href="/games/battleships.html" target="_parent">Battleships</a>
   <a href="/games/bloxorz.html" target="_parent">Bloxorz</a>
   <a href="/games/boxhead-2-play.html" target="_parent">Boxhead 2 Play</a>
@@ -117,17 +139,20 @@
   <a href="/games/worlds-hardest-game" target="_parent">World's Hardest Game</a>
   <a href="/games/worlds-hardest-game-2" target="_parent">World's Hardest Game 2</a>
   <a href="/games/zombocalypse.html" target="_parent">Zombocalypse</a>
-</div></div><script>
-  randomPageLink();
-  let allATags = document.getElementsByTagName('a');
-  for (let f = 1; f < allATags.length; f++) {
-    let currentItem = allATags[f];
-    if (currentItem.hasAttribute('data-title')) {
-      currentItem.innerHTML = currentItem.dataset.title;
-      currentItem.onclick = function() {
-        sidebarMain(currentItem);
+</div>
+</div>
+  <script>
+    randomPageLink();
+    let allATags = document.getElementsByTagName('a');
+    for (let f = 1; f < allATags.length; f++) {
+      let currentItem = allATags[f];
+      if (currentItem.hasAttribute('data-title')) {
+        currentItem.innerHTML = currentItem.dataset.title;
+        currentItem.onclick = function() {
+          sidebarMain(currentItem);
+        }
       }
     }
-  }
-  
-  </script></body></html>
+  </script>
+  </body>
+</html>
