@@ -104,6 +104,7 @@ function updateDark() {
       let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
       let pList = document.getElementsByTagName("p");
       let aList = document.getElementsByTagName("a");
+      let h4List = document.getElementsByTagName("h4");
       sidebarObj[0].style.background = '#222233';
       let count;
       for (count = 0; count < sidebarLinks.length; count++) {
@@ -117,6 +118,9 @@ function updateDark() {
       for (count = 0; count < pList.length; count++) {
         pList[count].style.color = '#eeeeee';
       }
+      for (count = 0; count < h4List.length; count++) {
+        h4List[count].style.color = '#ffffff';
+      }
     } else {
       document.getElementById("main").style.background = '#eeeeff';
       document.getElementById("title").style.color = '#000000';
@@ -124,6 +128,7 @@ function updateDark() {
       let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
       let pList = document.getElementsByTagName("p");
       let aList = document.getElementsByTagName("a");
+      let h4List = document.getElementsByTagName("h4");
       sidebarObj[0].style.background = '#eeeeff';
       let count;
       for (count = 0; count < sidebarLinks.length; count++) {
@@ -136,6 +141,9 @@ function updateDark() {
       }
       for (count = 0; count < pList.length; count++) {
         pList[count].style.color = '#000000';
+      }
+      for (count = 0; count < h4List.length; count++) {
+        h4List[count].style.color = '#000000';
       }
     }
   }
