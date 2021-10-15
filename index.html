@@ -213,7 +213,26 @@
             <p>New Today!</p>
           </div>
           <div id="new">
-		  <a href="/games/green-archer-2.html"><li>Green Archer 2</li></a>
+            <div style="display:block;">
+              <a href="/games/" onclick="sidebarMain();" target="_parent" 
+              data-title="Feed Us"
+              data-text="Slight blood warning"
+              data-isflash="1"
+              data-framesrc="feedus.swf"
+              data-framewidth="1100"
+              data-frameheight="700"
+              data-isbigfile="1"
+              ></a>
+		          <a href="/games/" onclick="sidebarMain();" target="_parent" 
+              data-title="Territory War"
+              data-text=""
+              data-isflash="1"
+              data-framesrc="territorywar.swf"
+              data-framewidth="500"
+              data-frameheight="400"
+              data-isbigfile="0"
+              ></a>
+            </div>
             <p>New game every weekday! Sometimes more because there's not many right now. Check this part of the home page to see what's new</p>
             <br>
           </div>
@@ -239,8 +258,21 @@
             <p>Shoutout to you for actually reading the home page!</p>
           </div>
           <br>
-	  <div class="pageviews">
+	        <div class="pageviews">
             <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=j9QdcyQYnL35sSdx2ExlVBximfOrcV37r2Tyoj-CCCE&cl=ffffff&w=a">
+            </script>
+            <script>
+              randomPageLink();
+              let allATags = document.getElementsByTagName('a');
+              for (let f = 1; f < allATags.length; f++) {
+                let currentItem = allATags[f];
+                if (currentItem.hasAttribute('data-title')) {
+                  currentItem.innerHTML = currentItem.dataset.title;
+                  currentItem.onclick = function() {
+                    sidebarMain(currentItem);
+                  }
+                }
+              }
             </script>
           </div>
           <br>
