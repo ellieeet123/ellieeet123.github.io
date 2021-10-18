@@ -53,8 +53,8 @@
 work in progress -->
 
 
-  <a href="#" id="bookmark" class="yay noColorChange" style="right:70px;"><span class="material-icons md-18" style="margin:auto;top:2px;">bookmark_border</span>Bookmark</a>
-    <a href="#" id="close" class="yay noColorChange">Close</a>
+  <a id="bookmark" class="yay noColorChange" style="right:70px;cursor:pointer;"><span class="material-icons md-18" style="margin:auto;top:2px;">bookmark_border</span>Bookmark</a>
+    <a id="close" class="yay noColorChange" style="cursor:pointer;">Close</a>
     <p class="yay noColorChange" style="bottom:40px;color:#ff0000;background-color:#ffffff00"><b>The content below is a work in progress. Just ignore it for now.</b></p>
     <script>
     $(document).ready(function(){
@@ -67,8 +67,8 @@ work in progress -->
         }
       });
       $('#close').click(function(){
-        $("#close").animate({right: '-100px'});
-        $("#bookmark").animate({right: '-100px'});
+        $("#close").animate({right: '-160px'});
+        $("#bookmark").animate({right: '-160px'});
       });
     });
     </script> 
