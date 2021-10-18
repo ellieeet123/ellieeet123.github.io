@@ -112,11 +112,15 @@ function updateDark() {
       }
       if (aList.length > 0) {
         for (count = 0; count < aList.length; count++) {
-          aList[count].style.color = '#00ffff';
+          if (aList[count].className != 'noColorChange') {
+            aList[count].style.color = '#00ffff';
+          }
         }
       }
       for (count = 0; count < pList.length; count++) {
-        pList[count].style.color = '#eeeeee';
+        if (pList[count].className != 'noColorChange') {
+          pList[count].style.color = '#eeeeee';
+        }
       }
       for (count = 0; count < h4List.length; count++) {
         h4List[count].style.color = '#ffffff';
@@ -136,11 +140,15 @@ function updateDark() {
       }
       if (aList.length > 0) {
         for (count = 0; count < aList.length; count++) {
-          aList[count].style.color = '#0000ff';
+          if (aList[count].className != 'noColorChange') {
+            aList[count].style.color = '#0000ff';
+          }
         }
       }
       for (count = 0; count < pList.length; count++) {
-        pList[count].style.color = '#000000';
+        if (pList[count].className != 'noColorChange') {
+          pList[count].style.color = '#000000';
+        }
       }
       for (count = 0; count < h4List.length; count++) {
         h4List[count].style.color = '#000000';
