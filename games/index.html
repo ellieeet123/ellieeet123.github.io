@@ -58,11 +58,25 @@ work in progress -->
     <p class="yay noColorChange" style="bottom:40px;color:#ff0000;background-color:#ffffff00"><b>The content below is a work in progress. Just ignore it for now.</b></p>
     <script>
     $(document).ready(function(){
+      var savedGamesString = getCookie('savedGames');
+      if (savedGamesString == '') {
+        var savedGames = [];
+      }
+      else {
+        var savedGames = savedGamesString.split(',');
+      }
+      if (savedGames.includes(getCookie('data_title')) {
+        $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark</span>Unbookmark");
+      }
       $('#bookmark').click(function(){
         if ($("#bookmark").html() == '<span class="material-icons md-18" style="margin:auto;top:2px;">bookmark_border</span>Bookmark') {
+          savedGames.push(getCookie('data_title'));
+          setCookie('savedGames', savedGames.toString(), 99999);
           $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark</span>Unbookmark");
         }
         else {
+          savedGames.splice((savedGames.indexOf(getCookie('data_title'))),1);
+          setCookie('savedGames', savedGames.toString(), 99999);
           $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark_border</span>Bookmark");
         }
       });
