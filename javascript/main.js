@@ -112,13 +112,13 @@ function updateDark() {
       }
       if (aList.length > 0) {
         for (count = 0; count < aList.length; count++) {
-          if (aList[count].className != 'noColorChange') {
+          if (aList[count].className != 'yay noColorChange') {
             aList[count].style.color = '#00ffff';
           }
         }
       }
       for (count = 0; count < pList.length; count++) {
-        if (pList[count].className != 'noColorChange') {
+        if (pList[count].className != 'yay noColorChange') {
           pList[count].style.color = '#eeeeee';
         }
       }
@@ -140,13 +140,13 @@ function updateDark() {
       }
       if (aList.length > 0) {
         for (count = 0; count < aList.length; count++) {
-          if (aList[count].className != 'noColorChange') {
+          if (aList[count].className != 'yay noColorChange') {
             aList[count].style.color = '#0000ff';
           }
         }
       }
       for (count = 0; count < pList.length; count++) {
-        if (pList[count].className != 'noColorChange') {
+        if (pList[count].className != 'yay noColorChange') {
           pList[count].style.color = '#000000';
         }
       }
