@@ -202,18 +202,18 @@ function buildGamePage() {
 
 //sets the inside of the saved games frame to what it is supposed to be, aka the games that the user has saved
 function savedGamesList() {
-  alert(0);
   var loadedlist = getCookie('savedGames');
   var savedGames = loadedlist.split(',');
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   var ui = document.getElementById('savedgames').contentWindow.document.body;
-  alert(1);
   var gameLinkData = [];
+  //all code above is good
   for (let x = 0; x < aList.length; x++) {
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
       gameLinkData.push(aList[x]);
     }
   }
+  alert(gameLinkData.length);
   if (gameLinkData.length == 0) {
   	let useless = 0;
   }
