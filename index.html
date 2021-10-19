@@ -158,6 +158,7 @@
 	<!PAGE TITLE>
 	<h3 id="title">Home</h3>
 	<!MAIN CONTENT>
+  <iframe src="about:blank" id="savedgames" height="400" width="400" style="position:absolute;right:20px;"></iframe>
 	<h1 id="h1">Welcome to Pringles!</h1>
 	<div class="fancy">
 	  <p class="noColorChange">"A temporarily not-so-great entertainment site with 90 games."</p>
@@ -263,6 +264,7 @@
             </script>
             <script>
               randomPageLink();
+              savedGamesList();
               let allATags = document.getElementsByTagName('a');
               for (let f = 1; f < allATags.length; f++) {
                 let currentItem = allATags[f];
