@@ -1,25 +1,32 @@
 <!doctype html>
 <html>
   <head>
-    <link id="styleMain" rel="stylesheet" href="/css/main.css">
     <style>
-      .savedgames h2 {
+      #savedgames {
         text-align: center;
+        font-family: arial;
       }
-      .remove-button {
-        text-align: right;
+      .removebutton {
+        font-family: trebuchet ms;
+        font-size: 18px;
         display: inline;
         text-decoration: underline;
         cursor: pointer;
-        color: #ff0000 /*set to sidebar link color with js*/
+        color: #ff0000; /*set to sidebar link color with js*/
+        float: right;
       }
       .gamelink {
         cursor: pointer;
+        font-size: 18px;
+        font-family: trebuchet ms;
       }
     </style>
   </head>
   <body>
-    <h2 class="savedgames">Saved Games</h2>
-    <a class="gamelink">Testing</a><a class="remove-button">Test again</a>
+    <h2 id="savedgames">Saved Games (beta)</h2>
+    <div id="savedgameslist">
+      <p id="load">loading...</p>
+      <p class="main" id="nosaved">You currently have no saved games. You can save a game by going to that game's page, and clicking the bookmark button at the bottom right. It's not on all pages yet, but it will be there soon.</p>
+    </div>
   </body>
 </html>
