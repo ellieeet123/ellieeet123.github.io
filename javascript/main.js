@@ -206,6 +206,7 @@ function savedGamesList() {
   var savedGames = loadedlist.split(',');
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   var ui = document.getElementById('savedgames').contentWindow.document;
+  alert(1);
   var gameLinkData = [];
   for (let x = 0; x < aList.length; x++) {
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
