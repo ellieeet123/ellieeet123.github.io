@@ -205,7 +205,7 @@ function savedGamesList() {
   var loadedlist = getCookie('savedGames');
   var savedGames = loadedlist.split(',');
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
-  var ui = document.getElementById('savedgames').contentWindow.document;
+  var ui = document.getElementById('savedgames').contentWindow.document.body;
   alert(1);
   var gameLinkData = [];
   for (let x = 0; x < aList.length; x++) {
