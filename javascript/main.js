@@ -202,6 +202,7 @@ function buildGamePage() {
 
 //sets the inside of the saved games frame to what it is supposed to be, aka the games that the user has saved
 function savedGamesList() {
+  alert(0);
   var loadedlist = getCookie('savedGames');
   var savedGames = loadedlist.split(',');
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
