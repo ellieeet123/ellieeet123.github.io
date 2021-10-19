@@ -199,3 +199,41 @@ function buildGamePage() {
   document.getElementById('frame').width = frameWidth;
   document.getElementById('frame').height = frameHeight;
 }
+
+//sets the inside of the saved games frame to what it is supposed to be, aka the games that the user has saved
+function savedGamesList() {
+  var loadedlist = getCookie('savedGames');
+  var savedGames = loadedlist.split(',');
+  var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
+  var ui = document.getElementById('savedgames').contentWindow.document;
+  var gameLinkData = [];
+  for (let x = 0; x < aList.length; x++) {
+    if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
+      gameLinkData.push(aList[x]);
+    }
+  }
+  if (gameLinkData.length == 0) {
+  	let useless = 0;
+  }
+  else {
+    for (let x = 0; x < gameLinkData.length; x++) {
+      ui.getElementById('nosaved').innerHTML = ''
+      var div = ui.createElement('div');
+      var a = ui.createElement('a');
+      a.className = 'gamelink';
+      a.innerHTML = gameLinkData[x].dataset.title;
+      a.setAttribute('href','/games/');
+      div.appendChild(a);
+      var divRemove = ui.createElement('div');
+      var aRemove = ui.createElement('a');
+      aRemove.innerHTML = 'Remove';
+      divRemove.appendChild(aRemove);
+      divRemove.className = 'removebutton';
+      div.appendChild(divRemove);
+      var br = ui.createElement('br');
+      div.appendChild(br);
+      ui.getElementById('savedgameslist').appendChild(div);
+    }
+  }
+  ui.getElementById('load').innerHTML = '';
+}
