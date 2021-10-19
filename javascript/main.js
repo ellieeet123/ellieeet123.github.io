@@ -237,5 +237,5 @@ function savedGamesList() {
       ui.getElementById('savedgameslist').appendChild(div);
     }
   }
-  ui.getElementById('load').innerHTML = '';
+  //ui.getElementById('load').innerHTML = '';
 }
