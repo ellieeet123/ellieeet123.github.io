@@ -37,12 +37,10 @@ body {
 .main p {
   font: 1.2rem trebuchet ms;
   color: 000000;
-  text-align: left;
 }
 
 .main a {
   font: 1.2rem trebuchet ms;
-  text-align: left;
   color: #0000ff;
 }
 
