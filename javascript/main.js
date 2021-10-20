@@ -210,7 +210,7 @@ function savedGamesList() {
   var ui = document.getElementById('savedgames').contentWindow.document.body;
   var gameLinkData = [];
   alert(aList);
-  alert(ui);
+  alert(ui.outerHTML);
   //all code above is good
   for (let x = 0; x < aList.length; x++) {
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
