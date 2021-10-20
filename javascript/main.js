@@ -1,3 +1,5 @@
+alert('There might be some weird things appearing on the site today, I am in the process of adding some new things and not everything is going quite smoothly yet. Everything should be back to normal soon.');
+
 //resizes an iframe based on how tall the content inside of it is. Used for the sidebar.
 function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
@@ -207,13 +209,14 @@ function savedGamesList() {
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   var ui = document.getElementById('savedgames').contentWindow.document.body;
   var gameLinkData = [];
+  alert(aList);
+  alert(ui);
   //all code above is good
   for (let x = 0; x < aList.length; x++) {
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
       gameLinkData.push(aList[x]);
     }
   }
-  alert(gameLinkData.length);
   if (gameLinkData.length == 0) {
   	let useless = 0;
   }
