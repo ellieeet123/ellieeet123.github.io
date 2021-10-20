@@ -213,9 +213,9 @@ function savedGamesList() {
   for (let x = 0; x < aList.length; x++) {
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
       gameLinkData.push(aList[x]);
-      alert('added');
     }
   }
+  alert(gameLinkData);
   if (gameLinkData.length == 0) {
   	let useless = 0;
   }
