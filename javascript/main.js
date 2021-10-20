@@ -209,7 +209,7 @@ function savedGamesList() {
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   var ui = document.getElementById('savedgames').contentWindow.document.body;
   var gameLinkData = [];
-  alert(aList);
+  alert(aList.length);
   alert(ui.outerHTML);
   //all code above is good
   for (let x = 0; x < aList.length; x++) {
