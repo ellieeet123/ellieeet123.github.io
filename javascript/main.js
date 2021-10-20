@@ -216,10 +216,12 @@ function savedGamesList() {
     }
   }
   alert(gameLinkData);
+  alert(gameLinkData.length);
   if (gameLinkData.length == 0) {
   	let useless = 0;
   }
   else {
+    alert('starting');
     for (let x = 0; x < gameLinkData.length; x++) {
       ui.getElementById('nosaved').innerHTML = ''
       var div = ui.createElement('div');
