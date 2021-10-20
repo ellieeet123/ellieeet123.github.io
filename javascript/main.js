@@ -215,31 +215,34 @@ function savedGamesList() {
       gameLinkData.push(aList[x]);
     }
   }
-  alert(gameLinkData);
-  alert(gameLinkData.length);
   if (gameLinkData.length == 0) {
   	let useless = 0;
   }
   else {
-    alert('starting');
     for (let x = 0; x < gameLinkData.length; x++) {
+      alert(1);
       ui.getElementById('nosaved').innerHTML = ''
       var div = ui.createElement('div');
       var a = ui.createElement('a');
+      alert(2);
       a.className = 'gamelink';
       a.innerHTML = gameLinkData[x].dataset.title;
       a.setAttribute('href','/games/');
+      alert(3);
       div.appendChild(a);
       var divRemove = ui.createElement('div');
       var aRemove = ui.createElement('a');
+      alert(4);
       aRemove.innerHTML = 'Remove';
       divRemove.appendChild(aRemove);
       divRemove.className = 'removebutton';
+      alert(5);
       div.appendChild(divRemove);
       var br = ui.createElement('br');
       div.appendChild(br);
+      alert(6);
       ui.getElementById('savedgameslist').appendChild(div);
     }
   }
-  //ui.getElementById('load').innerHTML = '';
+  ui.getElementById('load').innerHTML = '';
 }
