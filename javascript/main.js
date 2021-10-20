@@ -206,43 +206,51 @@ function buildGamePage() {
 function savedGamesList() {
   var loadedlist = getCookie('savedGames');
   var savedGames = loadedlist.split(',');
+  console.log('cookies loaded');
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
+  console.log('sidebar links loaded');
   var ui = document.getElementById('savedgames').contentWindow.document.body;
+  console.log('var ui loaded');
   var gameLinkData = [];
   //all code above is good
   for (let x = 0; x < aList.length; x++) {
+    console.log('looping');
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
       gameLinkData.push(aList[x]);
+      console.log('pushed into gameLinkData');
     }
   }
   if (gameLinkData.length == 0) {
   	let useless = 0;
+    console.log('useless');
   }
   else {
+    console.log('else');
     for (let x = 0; x < gameLinkData.length; x++) {
-      alert(1);
+      console.log('looping build loop');
       ui.getElementById('nosaved').innerHTML = ''
       var div = ui.createElement('div');
       var a = ui.createElement('a');
-      alert(2);
+      console.log(0);
       a.className = 'gamelink';
       a.innerHTML = gameLinkData[x].dataset.title;
       a.setAttribute('href','/games/');
-      alert(3);
+      console.log(1);
       div.appendChild(a);
       var divRemove = ui.createElement('div');
       var aRemove = ui.createElement('a');
-      alert(4);
+      console.log(2);
       aRemove.innerHTML = 'Remove';
       divRemove.appendChild(aRemove);
       divRemove.className = 'removebutton';
-      alert(5);
+      console.log(3);
       div.appendChild(divRemove);
       var br = ui.createElement('br');
       div.appendChild(br);
-      alert(6);
+      console.log(4);
       ui.getElementById('savedgameslist').appendChild(div);
     }
   }
   ui.getElementById('load').innerHTML = '';
+  console.log('finished');
 }
