@@ -151,14 +151,14 @@
         <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
       </div>
       <div>
-        <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
+        <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark();sidebarLoaded();'></iframe>
       </div>
       <div id="main" class="main">
         <div class="main_text">
 	<!PAGE TITLE>
 	<h3 id="title">Home</h3>
 	<!MAIN CONTENT>
-  <iframe src="/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;"></iframe>
+  <iframe src="/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;" onload="savedGamesLoaded()"></iframe>
 	<h1 id="h1">Welcome to Pringles!</h1>
 	<div class="fancy">
 	  <p class="noColorChange">"A temporarily not-so-great entertainment site with 90 games."</p>
@@ -263,15 +263,15 @@
             <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=j9QdcyQYnL35sSdx2ExlVBximfOrcV37r2Tyoj-CCCE&cl=ffffff&w=a">
             </script>
             <script>
-		          function sidebarLoaded() {
+	function sidebarLoaded() {
                 var sidebarLoaded = true;
               }
               function savedGamesLoaded() {
                 var savedGamesLoaded = true
               }
-              for (let x = 0; x != 0; let x = 0) {
+              for (let x = 0; x !== 0; x = 0) {
                 if (savedGamesLoaded || sidebarLoaded) {
-	                savedGamesList();
+	          savedGamesList();
                   break;
                 }
               }
