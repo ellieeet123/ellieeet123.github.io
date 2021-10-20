@@ -262,35 +262,36 @@
 	        <div class="pageviews">
             <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=j9QdcyQYnL35sSdx2ExlVBximfOrcV37r2Tyoj-CCCE&cl=ffffff&w=a">
             </script>
-            <script>
-	function sidebarLoaded() {
-                var isSidebarLoaded = true;
-              }
-              function savedGamesLoaded() {
-                var isSavedGamesLoaded = true
-              }
-              for (let x = 0; x !== 0; x = 0) {
-                if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
-	          savedGamesList();
-                  break;
-                }
-              }
-              let allATags = document.getElementsByTagName('a');
-              for (let f = 1; f < allATags.length; f++) {
-                let currentItem = allATags[f];
-                if (currentItem.hasAttribute('data-title')) {
-                  currentItem.innerHTML = currentItem.dataset.title;
-                  currentItem.onclick = function() {
-                    sidebarMain(currentItem);
-                  }
-                }
-              }
-            </script>
+
           </div>
           <br>
       	</div>
       </div>
     <script src="/javascript/bodyScript.js"></script>
+    <script>
+      function sidebarLoaded() {
+	var isSidebarLoaded = true;
+      }
+      function savedGamesLoaded() {
+	var isSavedGamesLoaded = true
+      }
+      for (let x = 0; x !== 0; x = 0) {
+	if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
+	  savedGamesList();
+	  break;
+	}
+      }
+      let allATags = document.getElementsByTagName('a');
+      for (let f = 1; f < allATags.length; f++) {
+	let currentItem = allATags[f];
+	if (currentItem.hasAttribute('data-title')) {
+	  currentItem.innerHTML = currentItem.dataset.title;
+	  currentItem.onclick = function() {
+	    sidebarMain(currentItem);
+	  }
+	}
+      }
+    </script>
   </body>
 </html>
 
