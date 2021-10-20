@@ -209,12 +209,11 @@ function savedGamesList() {
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   var ui = document.getElementById('savedgames').contentWindow.document.body;
   var gameLinkData = [];
-  alert(aList.length);
-  alert(ui.outerHTML);
   //all code above is good
   for (let x = 0; x < aList.length; x++) {
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
       gameLinkData.push(aList[x]);
+      alert('added');
     }
   }
   if (gameLinkData.length == 0) {
