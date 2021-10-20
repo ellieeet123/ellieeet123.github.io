@@ -264,13 +264,13 @@
             </script>
             <script>
 	function sidebarLoaded() {
-                var sidebarLoaded = true;
+                var isSidebarLoaded = true;
               }
               function savedGamesLoaded() {
-                var savedGamesLoaded = true
+                var isSavedGamesLoaded = true
               }
               for (let x = 0; x !== 0; x = 0) {
-                if (savedGamesLoaded || sidebarLoaded) {
+                if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
 	          savedGamesList();
                   break;
                 }
