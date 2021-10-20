@@ -207,6 +207,7 @@ function savedGamesList() {
   var loadedlist = getCookie('savedGames');
   var savedGames = loadedlist.split(',');
   console.log('cookies loaded');
+  console.log(savedGames);
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   console.log('sidebar links loaded');
   console.log('alist len = ' + aList.length);
