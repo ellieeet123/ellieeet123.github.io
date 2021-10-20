@@ -209,8 +209,12 @@ function savedGamesList() {
   console.log('cookies loaded');
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   console.log('sidebar links loaded');
+  console.log('alist len = ' + aList.length);
+  console.log(aList[0]);
   var ui = document.getElementById('savedgames').contentWindow.document.body;
   console.log('var ui loaded');
+  console.log('var ui  = '+ui);
+  console.log('var ui outer html = ' + ui.outerHTML);
   var gameLinkData = [];
   //all code above is good
   for (let x = 0; x < aList.length; x++) {
@@ -220,6 +224,7 @@ function savedGamesList() {
       console.log('pushed into gameLinkData');
     }
   }
+  console.log(gameLinkData);
   if (gameLinkData.length == 0) {
   	let useless = 0;
     console.log('useless');
