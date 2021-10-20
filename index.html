@@ -263,7 +263,18 @@
             <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=j9QdcyQYnL35sSdx2ExlVBximfOrcV37r2Tyoj-CCCE&cl=ffffff&w=a">
             </script>
             <script>
-	      savedGamesList();
+		          function sidebarLoaded() {
+                var sidebarLoaded = true;
+              }
+              function savedGamesLoaded() {
+                var savedGamesLoaded = true
+              }
+              for (let x = 0; x != 0; let x = 0) {
+                if (savedGamesLoaded || sidebarLoaded) {
+	                savedGamesList();
+                  break;
+                }
+              }
               let allATags = document.getElementsByTagName('a');
               for (let f = 1; f < allATags.length; f++) {
                 let currentItem = allATags[f];
