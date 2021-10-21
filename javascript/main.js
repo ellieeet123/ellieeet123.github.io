@@ -239,7 +239,14 @@ function savedGamesList() {
       a.className = 'gamelink';
       a.innerHTML = gameLinkData[x].dataset.title;
       a.setAttribute('href','/games/');
-      a.onclick = sidebarMain(this);;
+      a.setAttribute('data-title','');
+      a.setAttribute('data-text','');
+      a.setAttribute('data-isflash','');
+      a.setAttribute('data-framesrc','');
+      a.setAttribute('data-framewidth','');
+      a.setAttribute('data-frameheight','');
+      a.setAttribute('data-isbigfile','');
+      a.onclick = sidebarMain(this);
       div.appendChild(a);
       var divRemove = ui.createElement('div');
       var aRemove = ui.createElement('a');
