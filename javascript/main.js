@@ -212,7 +212,7 @@ function savedGamesList() {
   console.log('sidebar links loaded');
   console.log('alist len = ' + aList.length);
   console.log(aList[0]);
-  var ui = document.getElementById('savedgames').contentWindow.document.body;
+  var ui = document.getElementById('savedgames').contentWindow.document;
   console.log('var ui loaded');
   console.log('var ui  = '+ui);
   console.log('var ui outer html = ' + ui.outerHTML);
@@ -234,7 +234,7 @@ function savedGamesList() {
     console.log('else');
     for (let x = 0; x < gameLinkData.length; x++) {
       console.log('looping build loop');
-      document.getElementById('savedgames').contentWindow.document.body.getElementById('nosaved').innerHTML = ''
+      ui.getElementsByClassName('main')[0].innerHTML = ''; //no saved games message
       var div = ui.createElement('div');
       var a = ui.createElement('a');
       console.log(0);
