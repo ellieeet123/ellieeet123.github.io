@@ -233,27 +233,30 @@ function savedGamesList() {
   else {
     console.log('else');
     for (let x = 0; x < gameLinkData.length; x++) {
-      console.log('looping build loop');
       ui.getElementsByClassName('main')[0].innerHTML = ''; //no saved games message
       var div = ui.createElement('div');
       var a = ui.createElement('a');
-      console.log(0);
       a.className = 'gamelink';
       a.innerHTML = gameLinkData[x].dataset.title;
       a.setAttribute('href','/games/');
-      console.log(1);
+      a.onclick = sidebarMain(this);;
       div.appendChild(a);
       var divRemove = ui.createElement('div');
       var aRemove = ui.createElement('a');
-      console.log(2);
       aRemove.innerHTML = 'Remove';
       divRemove.appendChild(aRemove);
       divRemove.className = 'removebutton';
-      console.log(3);
+      divRemove.onclick = function() {
+          
+        var gameToRemoveName = this.parentElement.parentElement.getElementsByClassName('gamelink')[0].innerHTML;
+        savedGames.splice((savedGames.indexOf(gameToRemoveName)),1);
+        setCookie('savedGames', savedGames.toString(), 99999);
+        ui.deleteElement(this.parentElement.parentElement);
+        
+      }
       div.appendChild(divRemove);
       var br = ui.createElement('br');
       div.appendChild(br);
-      console.log(4);
       ui.getElementById('savedgameslist').appendChild(div);
     }
   }
