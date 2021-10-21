@@ -12,6 +12,22 @@
         popup('/popup.html');
         setCookie("site_news_1", "seen", 90)
       }
+			
+			
+			var isSavedGamesLoaded = false;
+			var isSidebarLoaded = false;
+			function sidebarLoaded() {
+				var isSidebarLoaded = true;
+				if (isSavedGamesLoaded) {
+					savedGamesList();
+				}
+			}
+      function savedGamesLoaded() {
+	      var isSavedGamesLoaded = true
+        if (isSidebarLoaded) {
+          savedGamesList();
+        }
+      }
     </script>
     <style>
       body {
@@ -269,24 +285,6 @@
       </div>
     <script src="/javascript/bodyScript.js"></script>
     <script>
-	    console.log('starting html script');
-      var isSavedGamesLoaded = false;
-	    var isSidebarLoaded = false;
-      function sidebarLoaded() {
-	      var isSidebarLoaded = true;
-        if (isSavedGamesLoaded) {
-          savedGamesList();
-        }
-      }
-      console.log('sidebar loaded function is set');
-      function savedGamesLoaded() {
-	      var isSavedGamesLoaded = true
-        if (isSidebarLoaded) {
-          savedGamesList();
-        }
-      }
-      console.log('savedgamesfunction set');
-
       //for (let x = 0; x === 0; x = 0) {
         //console.log('looooooop');
 	//if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
