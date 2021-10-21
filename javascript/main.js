@@ -246,21 +246,14 @@ function savedGamesList() {
       a.setAttribute('data-framewidth','');
       a.setAttribute('data-frameheight','');
       a.setAttribute('data-isbigfile','');
-      a.onclick = sidebarMain(this);
+      a.setAttribute('onclick', 'sidebarMain(this)');
       div.appendChild(a);
       var divRemove = ui.createElement('div');
       var aRemove = ui.createElement('a');
       aRemove.innerHTML = 'Remove';
       divRemove.appendChild(aRemove);
       divRemove.className = 'removebutton';
-      divRemove.onclick = function() {
-          
-        var gameToRemoveName = this.parentElement.parentElement.getElementsByClassName('gamelink')[0].innerHTML;
-        savedGames.splice((savedGames.indexOf(gameToRemoveName)),1);
-        setCookie('savedGames', savedGames.toString(), 99999);
-        ui.deleteElement(this.parentElement.parentElement);
-        
-      }
+      divRemove.setAttribute('onclick',"var gameToRemoveName = this.parentElement.parentElement.getElementsByClassName('gamelink')[0].innerHTML;savedGames.splice((savedGames.indexOf(gameToRemoveName)),1);setCookie('savedGames', savedGames.toString(), 99999);ui.deleteElement(this.parentElement.parentElement);")
       div.appendChild(divRemove);
       var br = ui.createElement('br');
       div.appendChild(br);
