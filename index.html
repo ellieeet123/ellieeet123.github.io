@@ -1,310 +1,302 @@
 <!doctype html>
-
 <html>
-  <head>
-    <script src="/javascript/main.js"></script>
-	  <script>
-	    function popup(url) {
-        popupWindow = window.open(url,'popUpWindow','height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')
-      }
-      let testpopup = getCookie("site_news_1");
-      if (testpopup == "") {
-        popup('/popup.html');
-        setCookie("site_news_1", "seen", 90)
-      }
+    <head>
+        <script src="/javascript/main.js"></script>
+        <script>
+            function popup(url) {
+                popupWindow = window.open(url, 'popUpWindow', 'height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')
+            }
+            let testpopup = getCookie("site_news_1");
+            if (testpopup == "") {
+                popup('/popup.html');
+                setCookie("site_news_1", "seen", 90)
+            }
+
+            var isSavedGamesLoaded = false;
+            var isSidebarLoaded = false;
 			
-			
-			var isSavedGamesLoaded = false;
-			var isSidebarLoaded = false;
-			function sidebarLoaded() {
-				var isSidebarLoaded = true;
-				if (isSavedGamesLoaded) {
-					savedGamesList();
-				}
-			}
-      function savedGamesLoaded() {
-	      var isSavedGamesLoaded = true
-        if (isSidebarLoaded) {
-          savedGamesList();
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-image: url('/old_pring_bg.png');
-      }
-    </style>
-    <style>
-      .main {
-        background-color: #eeeeff;
-        margin-left: 170px;
-        margin-top: -14px;
-        left: 15;
-      }
+            function sidebarLoaded() {
+				console.log('sidebar loaded');
+                var isSidebarLoaded = true;
+                if (isSavedGamesLoaded) {
+                    savedGamesList();
+                }
+            }
+            function savedGamesLoaded() {
+				console.log('saved games loaded');
+                var isSavedGamesLoaded = true
+                if (isSidebarLoaded) {
+                    savedGamesList();
+                }
+            }
+        </script>
+        <style>
+            body {
+                background-image: url('/old_pring_bg.png');
+            }
+        </style>
+        <style>
+            .main {
+                background-color: #eeeeff;
+                margin-left: 170px;
+                margin-top: -14px;
+                left: 15;
+            }
 
-      .main h1 {
-        font: bold 2.0rem trebuchet ms;
-      }  
+            .main h1 {
+                font: bold 2.0rem trebuchet ms;
+            }
 
-      .main h2 {
-        font: bold 1.6rem arial;
-      }  
+            .main h2 {
+                font: bold 1.6rem arial;
+            }
 
-      .main h3 {
-        font: bold 1.4rem arial;
-      }  
+            .main h3 {
+                font: bold 1.4rem arial;
+            }
 
-      .main h4 {
-        font: bold 1.2rem arial;
-      }  
+            .main h4 {
+                font: bold 1.2rem arial;
+            }
 
-      .main h5 {
-        font: bold 1.0rem arial;
-      }  
+            .main h5 {
+                font: bold 1.0rem arial;
+            }
 
-      .main h6 {
-        font: bold 0.8rem arial;
-      }  
+            .main h6 {
+                font: bold 0.8rem arial;
+            }
 
-      .main p {
-      font: 1.2rem trebuchet ms;
-      color: 000000;
-      text-align: left;
-      }
-      .main a {
-      font: 1.2rem trebuchet ms;
-      text-align: left;
-      color: #0000ff;
-      }
-    </style>
-    <style>
-      .main_text {
-        margin: 20px;
-      }
-    </style>
-    <style>
-      .fancy p {
-        color: #0011ff;
-	      font: 1.2rem georgia;
-      }
-    </style>
-    <style>
-      .red p {
-        color: #ff0000;
-        font: 1.4rem arial;
-	      margin-left: 20px;
-      }
-    </style>
-    <style>
-      .green p {
-      color: #00ff00;
-      font: 1.4rem arial;
-      margin-left: 20px;
-    }
-    </style>
-    <style>
-      .blue p {
-      color: #0000ff;
-     font: 1.4rem arial;
-     	      margin-left: 20px;
-    }
-    </style>
-    <style>
-      .purple p {
-      color: #c000ff;
-      font: bold 1.4rem arial;
-        	      margin-left: 20px;
-    }
-    </style>
-    <style>
-      .p_big p {
-        color: #000000;
-        font: 1.9rem trebuchet ms;
-      }
-    </style>
-    <style>
-      .p_arial p {
-        font: 1.1rem arial;
-        color: #000000;
-      }
-    </style>
-    <style>
-      .credits p {
-        font: 0.9rem arial;
-        color: #000000;
-        text-decoration: italic;
-      }
-    </style>
-    <style>
-      .pageviews {
-        width: 150px;
-        height: 100px;
-      }
-    </style>
-    <link rel="shortcut icon" href="/favicon.ico">
-	  <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
-	  <link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png">
-	  <link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
-	  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
-	  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
-	  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-	  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-	  <link rel="apple-touch-icon" href="/favicon-57.png">
-	  <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
-	  <link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
-	  <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
-	  <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png">
-	  <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
-	  <link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
-	  <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
-	  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-	  <meta name="msapplication-TileColor" content="#FFFFFF">
-	  <meta name="msapplication-TileImage" content="/favicon-144.png">
-	  <meta name="msapplication-config" content="/browserconfig.xml">
-  </head>
-  <body>
-      <div>
-        <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
-      </div>
-      <div>
-        <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark();sidebarLoaded();'></iframe>
-      </div>
-      <div id="main" class="main">
-        <div class="main_text">
-	<!PAGE TITLE>
-	<h3 id="title">Home</h3>
-	<!MAIN CONTENT>
-  <iframe src="/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;" onload="savedGamesLoaded()"></iframe>
-	<h1 id="h1">Welcome to Pringles!</h1>
-	<div class="fancy">
-	  <p class="noColorChange">"A temporarily not-so-great entertainment site with 90 games."</p>
-	</div>
-          <p>[Friday Oct. 15] 2 new games today! Check them all out <a href="#new">here</a>.</p>
-          <br><img src="/pringles.jpeg">
-          <br>
-	  <script src="https://cdn.logwork.com/widget/countdown.js"></script>
- 	  <a href="https://logwork.com/countdown-qtn9" class="countdown-timer" data-width="730" data-style="columns" data-timezone="America/Chicago" data-textcolor="#a3a3a3" data-date="2022-05-26 15:22" data-background="#000000" data-digitscolor="#ffffff" data-unitscolor="#8a8a8a">Countdown until summer!</a>
-          <br>
-          <p>This site is still a work in progress. Obviously, you can still use it however you want to, but keep in mind that there might be sudden changes or things that don't work at times. </p>
-          <br>
-	  <div class="p_big">
-            <p>Info and stuff:</p>
-          </div>
-          <div class="purple">
-            <p class="noColorChange">This site is made and managed by Elliot L. and Alex N.</p>
-          </div>
-          <div class="green">
-            <p class="noColorChange">ATTENTION!! Due to some of the firewalls installed on the school wifi, most of the .io games won't work at school. You can play them at home if you want to.</p>
-          </div>
-          <div class="red">
-            <p class="noColorChange">Sometimes some of the html5 games will get blocked. Usually they are unblocked after about half an hour. No idea why this happens, but I thought I'd let you know.</p>
-          </div>
-          <div class="blue">
-            <p class="noColorChange">The total number of games on this site is 90! Lots more to come soon.</p>
-          </div>
-          <br>
-          <h2 id="h2">FLASH IS BACK!</h2>
-          <h5 id="h5">well... kinda.</h5>
-          <br>
-          <p>As probably everyone knows, abode discontinued their support for flash player in December 2020, and soon after the extension was removed from most major web browsers.
+            .main p {
+                font: 1.2rem trebuchet ms;
+                color: 000000;
+                text-align: left;
+            }
+
+            .main a {
+                font: 1.2rem trebuchet ms;
+                text-align: left;
+                color: #0000ff;
+            }
+        </style>
+        <style>
+            .main_text {
+                margin: 20px;
+            }
+        </style>
+        <style>
+            .fancy p {
+                color: #0011ff;
+                font: 1.2rem georgia;
+            }
+        </style>
+        <style>
+            .red p {
+                color: #ff0000;
+                font: 1.4rem arial;
+                margin-left: 20px;
+            }
+        </style>
+        <style>
+            .green p {
+                color: #00ff00;
+                font: 1.4rem arial;
+                margin-left: 20px;
+            }
+        </style>
+        <style>
+            .blue p {
+                color: #0000ff;
+                font: 1.4rem arial;
+                margin-left: 20px;
+            }
+        </style>
+        <style>
+            .purple p {
+                color: #c000ff;
+                font: bold 1.4rem arial;
+                margin-left: 20px;
+            }
+        </style>
+        <style>
+            .p_big p {
+                color: #000000;
+                font: 1.9rem trebuchet ms;
+            }
+        </style>
+        <style>
+            .p_arial p {
+                font: 1.1rem arial;
+                color: #000000;
+            }
+        </style>
+        <style>
+            .credits p {
+                font: 0.9rem arial;
+                color: #000000;
+                text-decoration: italic;
+            }
+        </style>
+        <style>
+            .pageviews {
+                width: 150px;
+                height: 100px;
+            }
+        </style>
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+        <link rel="apple-touch-icon" href="/favicon-57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="/favicon-144.png">
+        <meta name="msapplication-config" content="/browserconfig.xml">
+    </head>
+    <body>
+        <div>
+            <iframe height="100" width="100%" src="/header.html" frameborder="0"></iframe>
+        </div>
+        <div>
+            <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='sidebarLoaded();resizeIframe(this);updateDark();'></iframe>
+        </div>
+        <div id="main" class="main">
+            <div class="main_text">
+				<h3 id="title">Home</h3>
+  				<iframe src="/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;" onload="savedGamesLoaded()"></iframe>
+                <h1 id="h1">Welcome to Pringles!</h1>
+                <div class="fancy">
+                    <p class="noColorChange">"A temporarily not-so-great entertainment site with 90 games."</p>
+                </div>
+                <p>
+                    [Friday Oct. 15] 2 new games today! Check them all out <a href="#new">here</a>
+                    .
+                </p>
+                <br>
+                <img src="/pringles.jpeg">
+                <br>
+                <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+                <a href="https://logwork.com/countdown-qtn9" class="countdown-timer" data-width="730" data-style="columns" data-timezone="America/Chicago" data-textcolor="#a3a3a3" data-date="2022-05-26 15:22" data-background="#000000" data-digitscolor="#ffffff" data-unitscolor="#8a8a8a">Countdown until summer!</a>
+                <br>
+                <p>This site is still a work in progress. Obviously, you can still use it however you want to, but keep in mind that there might be sudden changes or things that don't work at times. </p>
+                <br>
+                <div class="p_big">
+                    <p>Info and stuff:</p>
+                </div>
+                <div class="purple">
+                    <p class="noColorChange">This site is made and managed by Elliot L. and Alex N.</p>
+                </div>
+                <div class="green">
+                    <p class="noColorChange">ATTENTION!! Due to some of the firewalls installed on the school wifi, most of the .io games won't work at school. You can play them at home if you want to.</p>
+                </div>
+                <div class="red">
+                    <p class="noColorChange">Sometimes some of the html5 games will get blocked. Usually they are unblocked after about half an hour. No idea why this happens, but I thought I'd let you know.</p>
+                </div>
+                <div class="blue">
+                    <p class="noColorChange">The total number of games on this site is 90! Lots more to come soon.</p>
+                </div>
+                <br>
+                <h2 id="h2">FLASH IS BACK!</h2>
+                <h5 id="h5">well... kinda.</h5>
+                <br>
+                <p>As probably everyone knows, abode discontinued their support for flash player in December 2020, and soon after the extension was removed from most major web browsers.
             However, the other day I stumbled upon a fancy little thing called Ruffle, which is essentially an adobe flash emulator, allowing flash games to be played
             without having to have the official adobe software installed. It is still majorly in development and at this point only supports ActionScript v1.0-2.0, which 
             basically means that it can only run games made in 2007 or earlier, as ActionScript v3.0 (the one that most every other flash game made after that time was made in).
             Ruffle says that they are planning to add support for 3.0 eventually, but it might be a few months until the very first beta release of that. I will keep you
             all updated tho. For now, if anyone knows of any good games to add to the site that work in ActionScript 2.0, please leave them either on the feedback form below!</p>
-          <br>
-          <div class="p_big">
-            <p>Follow Pringles on Instagram!</p>
-          </div>
-          <div class="p_arial">
-            <img width="100" height="100" src="/insta.png">
-            <p>Basically just some random updates and stuff. Follow for free cheese</p>
-            <p>@pringles_games</p>
-      	  </div>
-          <br>
-	        <div class="p_big">
-            <p>Game of the Week</p>
-          </div>
-          <p><a href="/games/gridlock.html">Gridlock</a> - a cool puzzle and logic game. It is a fun challenge, if you're looking for something like that!</p>
-          <div class="p_big">
-            <p>New Today!</p>
-          </div>
-          <div id="new">
-            <div id="games" style="display:block;">
-              <a href="/games/" onclick="sidebarMain();" target="_parent" 
-              data-title="Feed Us"
-              data-text="Slight blood warning"
-              data-isflash="1"
-              data-framesrc="feedus.swf"
-              data-framewidth="1100"
-              data-frameheight="700"
-              data-isbigfile="1"
-              ></a>
-	      <a href="/games/" onclick="sidebarMain();" target="_parent" 
-              data-title="Territory War"
-              data-text=""
-              data-isflash="1"
-              data-framesrc="territorywar.swf"
-              data-framewidth="500"
-              data-frameheight="400"
-              data-isbigfile="0"
-              ></a>
-		  </div>
-            <p>New game every weekday! Sometimes more because there's not many right now. Check this part of the home page to see what's new</p>
-            <br>
-          </div>
-          <div class="p_big"><p>Have a suggestion for something to be edited?</p>
-          </div>
-          <p>Submit it through the form, click <a href="/submit.html">here</a> to access it.</p>
-          <br>
-          <div class="p_big">
-            <p>Credits:</p>
-          </div>
-          <div class="credits">
-            <p>Created by Alex and Elliot</p>
-            <p>Games added by Elliot and Alex</p>
-            <p>Most of the games were found online by alex</p>
-            <p>Geeky computer stuff by elliot</p>
-            <p>none of the games are made by us. all games credit to their respective developers</p>
-            <p>*Enjoy*</p>
-          </div>
-          <p>ps. dont ask why it's called pringles.</p>
-          <a href="https://ellieeet123.github.io" onclick="popup(this.href);return false">Open page as Chrome App</a>
-          <br>
-          <div class="p_big">
-            <p>Shoutout to you for actually reading the home page!</p>
-          </div>
-          <br>
-	        <div class="pageviews">
-            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=j9QdcyQYnL35sSdx2ExlVBximfOrcV37r2Tyoj-CCCE&cl=ffffff&w=a">
-            </script>
-
-          </div>
-          <br>
-      	</div>
-      </div>
-    <script src="/javascript/bodyScript.js"></script>
-    <script>
-      //for (let x = 0; x === 0; x = 0) {
-        //console.log('looooooop');
-	//if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
-   // console.log('true');
-	  //savedGamesList();
-	//  break;
-	//}
-     // }
-      console.log('done!');
-      let allATags = document.getElementsByTagName('a');
-      for (let f = 1; f < allATags.length; f++) {
-	let currentItem = allATags[f];
-	if (currentItem.hasAttribute('data-title')) {
-	  currentItem.innerHTML = currentItem.dataset.title;
-	  currentItem.onclick = function() {
-	    sidebarMain(currentItem);
-	  }
-	}
-      }
-    </script>
-  </body>
+                <br>
+                <div class="p_big">
+                    <p>Follow Pringles on Instagram!</p>
+                </div>
+                <div class="p_arial">
+                    <img width="100" height="100" src="/insta.png">
+                    <p>Basically just some random updates and stuff. Follow for free cheese</p>
+                    <p>@pringles_games</p>
+                </div>
+                <br>
+                <div class="p_big">
+                    <p>Game of the Week</p>
+                </div>
+                <p>
+                    <a href="/games/gridlock.html">Gridlock</a>
+                    - a cool puzzle and logic game. It is a fun challenge, if you're looking for something like that!
+                </p>
+                <div class="p_big">
+                    <p>New Today!</p>
+                </div>
+                <div id="new">
+                    <div id="games" style="display:block;">
+                        <a href="/games/" onclick="sidebarMain();" target="_parent" data-title="Feed Us" data-text="Slight blood warning" data-isflash="1" data-framesrc="feedus.swf" data-framewidth="1100" data-frameheight="700" data-isbigfile="1"></a>
+                        <a href="/games/" onclick="sidebarMain();" target="_parent" data-title="Territory War" data-text="" data-isflash="1" data-framesrc="territorywar.swf" data-framewidth="500" data-frameheight="400" data-isbigfile="0"></a>
+                    </div>
+                    <p>New game every weekday! Sometimes more because there's not many right now. Check this part of the home page to see what's new</p>
+                    <br>
+                </div>
+                <div class="p_big">
+                    <p>Have a suggestion for something to be edited?</p>
+                </div>
+                <p>
+                    Submit it through the form, click <a href="/submit.html">here</a>
+                    to access it.
+                </p>
+                <br>
+                <div class="p_big">
+                    <p>Credits:</p>
+                </div>
+                <div class="credits">
+                    <p>Created by Alex and Elliot</p>
+                    <p>Games added by Elliot and Alex</p>
+                    <p>Most of the games were found online by alex</p>
+                    <p>Geeky computer stuff by elliot</p>
+                    <p>none of the games are made by us. all games credit to their respective developers</p>
+                    <p>*Enjoy*</p>
+                </div>
+                <p>ps. dont ask why it's called pringles.</p>
+                <a href="https://ellieeet123.github.io" onclick="popup(this.href);return false">Open page as Chrome App</a>
+                <br>
+                <div class="p_big">
+                    <p>Shoutout to you for actually reading the home page!</p>
+                </div>
+                <br>
+                <div class="pageviews">
+                    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=j9QdcyQYnL35sSdx2ExlVBximfOrcV37r2Tyoj-CCCE&cl=ffffff&w=a"></script>
+                </div>
+                <br>
+            </div>
+        </div>
+        <script src="/javascript/bodyScript.js"></script>
+        <script>
+            //for (let x = 0; x === 0; x = 0) {
+            //	console.log('looooooop');
+            //	if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
+            // 		console.log('true');
+            //		savedGamesList();
+            //  	break;
+            //	}
+            //}
+            console.log('done!');
+            let allATags = document.getElementsByTagName('a');
+            for (let f = 1; f < allATags.length; f++) {
+                let currentItem = allATags[f];
+                if (currentItem.hasAttribute('data-title')) {
+                    currentItem.innerHTML = currentItem.dataset.title;
+                    currentItem.onclick = function() {
+                        sidebarMain(currentItem);
+                    }
+                }
+            }
+        </script>
+    </body>
 </html>
-
