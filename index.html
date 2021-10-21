@@ -270,24 +270,31 @@
     <script src="/javascript/bodyScript.js"></script>
     <script>
 	    console.log('starting html script');
+      var isSavedGamesLoaded = false;
+	    var isSidebarLoaded = false;
       function sidebarLoaded() {
-	var isSidebarLoaded = true;
+	      var isSidebarLoaded = true;
+        if (isSavedGamesLoaded) {
+          savedGamesList();
+        }
       }
       console.log('sidebar loaded function is set');
       function savedGamesLoaded() {
-	var isSavedGamesLoaded = true
+	      var isSavedGamesLoaded = true
+        if (isSidebarLoaded) {
+          savedGamesList();
+        }
       }
       console.log('savedgamesfunction set');
-	var isSavedGamesLoaded = false;
-	var isSidebarLoaded = false;
+
       //for (let x = 0; x === 0; x = 0) {
         //console.log('looooooop');
 	//if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
    // console.log('true');
 	  //savedGamesList();
 	//  break;
-	}
-      }
+	//}
+     // }
       console.log('done!');
       let allATags = document.getElementsByTagName('a');
       for (let f = 1; f < allATags.length; f++) {
