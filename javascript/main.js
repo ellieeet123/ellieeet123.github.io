@@ -234,7 +234,7 @@ function savedGamesList() {
     console.log('else');
     for (let x = 0; x < gameLinkData.length; x++) {
       console.log('looping build loop');
-      ui.getElementById('nosaved').innerHTML = ''
+      document.getElementById('savedgames').contentWindow.document.body.getElementById('nosaved').innerHTML = ''
       var div = ui.createElement('div');
       var a = ui.createElement('a');
       console.log(0);
