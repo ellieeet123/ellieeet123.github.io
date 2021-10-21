@@ -12,20 +12,22 @@
                 setCookie("site_news_1", "seen", 90)
             }
 
-            var isSavedGamesLoaded = false;
-            var isSidebarLoaded = false;
+            var isSavedGamesLoaded;
+            var isSidebarLoaded;
 			
             function sidebarLoaded() {
-				console.log('sidebar loaded');
-                var isSidebarLoaded = true;
-                if (isSavedGamesLoaded) {
+		console.log('sidebar loaded');
+                isSidebarLoaded = true;
+		alert(isSidebarLoaded);
+                if (isSavedGamesLoaded === true) {
                     savedGamesList();
                 }
             }
             function savedGamesLoaded() {
-				console.log('saved games loaded');
-                var isSavedGamesLoaded = true
-                if (isSidebarLoaded) {
+		console.log('saved games loaded');
+                isSavedGamesLoaded = true;
+		alert(isSavedGamesLoaded);
+                if (isSidebarLoaded === true) {
                     savedGamesList();
                 }
             }
