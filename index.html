@@ -11,26 +11,6 @@
                 popup('/popup.html');
                 setCookie("site_news_1", "seen", 90)
             }
-
-            var isSavedGamesLoaded;
-            var isSidebarLoaded;
-			
-            function sidebarLoaded() {
-		console.log('sidebar loaded');
-                isSidebarLoaded = true;
-		alert(isSidebarLoaded);
-                if (isSavedGamesLoaded === true) {
-                    savedGamesList();
-                }
-            }
-            function savedGamesLoaded() {
-		console.log('saved games loaded');
-                isSavedGamesLoaded = true;
-		alert(isSavedGamesLoaded);
-                if (isSidebarLoaded === true) {
-                    savedGamesList();
-                }
-            }
         </script>
         <style>
             body {
@@ -175,9 +155,9 @@
         </div>
         <div id="main" class="main">
             <div class="main_text">
-				<h3 id="title">Home</h3>
-  				<iframe src="/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;" onload="savedGamesLoaded()"></iframe>
-                <h1 id="h1">Welcome to Pringles!</h1>
+		<h3 id="title">Home</h3>
+		<iframe src="/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;" onload="savedGamesLoaded()" frameborder="0"></iframe>
+		<h1 id="h1">Welcome to Pringles!</h1>
                 <div class="fancy">
                     <p class="noColorChange">"A temporarily not-so-great entertainment site with 90 games."</p>
                 </div>
@@ -280,15 +260,6 @@
         </div>
         <script src="/javascript/bodyScript.js"></script>
         <script>
-            //for (let x = 0; x === 0; x = 0) {
-            //	console.log('looooooop');
-            //	if (isSavedGamesLoaded === true || isSidebarLoaded === true) {
-            // 		console.log('true');
-            //		savedGamesList();
-            //  	break;
-            //	}
-            //}
-            console.log('done!');
             let allATags = document.getElementsByTagName('a');
             for (let f = 1; f < allATags.length; f++) {
                 let currentItem = allATags[f];
