@@ -250,3 +250,21 @@ function savedGamesList() {
   }
   ui.getElementById('load').innerHTML = '';
 }
+
+//used as part of the system to detect once both the sidebar and saved games iframes are fully loaded
+var isSavedGamesLoaded;
+var isSidebarLoaded;
+function sidebarLoaded() {
+  console.log('sidebar loaded');
+  isSidebarLoaded = true;
+  if (isSavedGamesLoaded === true) {
+    savedGamesList();
+  }
+}
+function savedGamesLoaded() {
+  console.log('saved games loaded');
+  isSavedGamesLoaded = true;
+  if (isSidebarLoaded === true) {
+    savedGamesList();
+  }
+}
