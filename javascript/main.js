@@ -253,7 +253,7 @@ function savedGamesList() {
       aRemove.innerHTML = 'Remove';
       divRemove.appendChild(aRemove);
       divRemove.className = 'removebutton';
-      divRemove.setAttribute('onclick',"var gameToRemoveName = this.parentElement.parentElement.getElementsByClassName('gamelink')[0].innerHTML;savedGames.splice((savedGames.indexOf(gameToRemoveName)),1);setCookie('savedGames', savedGames.toString(), 99999);ui.deleteElement(this.parentElement.parentElement);")
+      divRemove.setAttribute('onclick',"var loadedlist = getCookie('savedGames');var savedGames = loadedlist.split(','); var gameToRemoveName = this.parentElement.parentElement.getElementsByClassName('gamelink')[0].innerHTML;savedGames.splice((savedGames.indexOf(gameToRemoveName)),1);setCookie('savedGames', savedGames.toString(), 99999);document.deleteElement(this.parentElement.parentElement);")
       div.appendChild(divRemove);
       var br = ui.createElement('br');
       div.appendChild(br);
