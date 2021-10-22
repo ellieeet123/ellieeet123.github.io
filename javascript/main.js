@@ -58,7 +58,8 @@ function updateDark() {
       let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
       let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
       let savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
-      let savedGamesLinks = savedGamesIframe.getElementsByClassName("removebutton");
+      let savedGamesLinks = savedGamesIframe.getElementsByClassName("gamelink");
+      let removeLinks = savedGamesIframe.getElementsByClassName("removebutton");
       let pList = document.getElementsByTagName("p");
       let aList = document.getElementsByTagName("a");
       sidebarObj[0].style.background = '#222233';
@@ -69,6 +70,9 @@ function updateDark() {
       }
       for (let i = 0; i < savedGamesLinks.length; i++) {
         savedGamesLinks[i].style.color = '#33ee98';
+      }
+      for (let i = 0; i < removeLinks.length; i++) {
+        removeLinks[i].style.color = '#00ffff';
       }
       for (let i = 0; i < pList.length; i++) {
         if (pList[i].className != 'noColorChange') {
@@ -88,7 +92,8 @@ function updateDark() {
       let sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
       let sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
       let savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
-      let savedGamesLinks = savedGamesIframe.getElementsByClassName("removebutton");
+      let savedGamesLinks = savedGamesIframe.getElementsByClassName("gamelink");
+      let removeLinks = savedGamesIframe.getElementsByClassName("removebutton");
       let pList = document.getElementsByTagName("p");
       let aList = document.getElementsByTagName("a");
       sidebarObj[0].style.background = '#eeeeff';
@@ -98,7 +103,10 @@ function updateDark() {
         sidebarLinks[i].style.color = '#ff0000';
       }
       for (let i = 0; i < savedGamesLinks.length; i++) {
-        savedGamesLinks[i].style.color = '#0000ff';
+        savedGamesLinks[i].style.color = '#ff0000';
+      }
+      for (let i = 0; i < removeLinks.length; i++) {
+        removeLinks[i].style.color = '#0000ff';
       }
       for (let i = 0; i < pList.length; i++) {
         if (pList[i].className != 'noColorChange') {
