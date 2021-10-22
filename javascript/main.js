@@ -1,5 +1,3 @@
-alert('There might be some weird things appearing on the site today, I am in the process of adding some new things and not everything is going quite smoothly yet. Everything should be back to normal soon.');
-
 //resizes an iframe based on how tall the content inside of it is. Used for the sidebar.
 function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
@@ -207,31 +205,21 @@ function savedGamesList() {
   var loadedlist = getCookie('savedGames');
   var savedGames = loadedlist.split(',');
   console.log('cookies loaded');
-  console.log(savedGames);
   var aList = document.getElementById('sidebar').contentWindow.document.getElementsByTagName('a');
   console.log('sidebar links loaded');
-  console.log('alist len = ' + aList.length);
-  console.log(aList[0]);
   var ui = document.getElementById('savedgames').contentWindow.document;
-  console.log('var ui loaded');
-  console.log('var ui  = '+ui);
-  console.log('var ui outer html = ' + ui.outerHTML);
   var gameLinkData = [];
   //all code above is good
   for (let x = 0; x < aList.length; x++) {
-    console.log('looping');
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
       gameLinkData.push(aList[x]);
-      console.log('pushed into gameLinkData');
     }
   }
   console.log(gameLinkData);
   if (gameLinkData.length == 0) {
   	let useless = 0;
-    console.log('useless');
   }
   else {
-    console.log('else');
     for (let x = 0; x < gameLinkData.length; x++) {
       ui.getElementsByClassName('main')[0].innerHTML = ''; //no saved games message
       var div = ui.createElement('div');
@@ -261,5 +249,4 @@ function savedGamesList() {
     }
   }
   ui.getElementById('load').innerHTML = '';
-  console.log('finished');
 }
