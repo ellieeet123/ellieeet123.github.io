@@ -134,13 +134,13 @@ function updateDark() {
       }
       if (aList.length > 0) {
         for (count = 0; count < aList.length; count++) {
-          if (aList[count].className != 'yay noColorChange') {
+          if (aList[count].className != 'bookmarkui noColorChange') {
             aList[count].style.color = '#00ffff';
           }
         }
       }
       for (count = 0; count < pList.length; count++) {
-        if (pList[count].className != 'yay noColorChange') {
+        if (pList[count].className != 'bookmarkui noColorChange') {
           pList[count].style.color = '#eeeeee';
         }
       }
@@ -162,13 +162,13 @@ function updateDark() {
       }
       if (aList.length > 0) {
         for (count = 0; count < aList.length; count++) {
-          if (aList[count].className != 'yay noColorChange') {
+          if (aList[count].className != 'bookmarkui noColorChange') {
             aList[count].style.color = '#0000ff';
           }
         }
       }
       for (count = 0; count < pList.length; count++) {
-        if (pList[count].className != 'yay noColorChange') {
+        if (pList[count].className != 'bookmarkui noColorChange') {
           pList[count].style.color = '#000000';
         }
       }
@@ -296,4 +296,36 @@ function savedGamesLoaded() {
     resizeIframe(sidebar);
     updateDark();
   }
+}
+
+//script for the bookmark ui
+function bookmarkUI() {
+  $(document).ready(function(){
+    var savedGamesString = getCookie('savedGames');
+    if (savedGamesString == '') {
+      var savedGames = [];
+    }
+    else {
+      var savedGames = savedGamesString.split(',');
+    }
+    if (savedGames.includes(getCookie('data_title'))) {
+      $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark</span>Unbookmark");
+    }
+    $('#bookmark').click(function(){
+      if ($("#bookmark").html() == '<span class="material-icons md-18" style="margin:auto;top:2px;">bookmark_border</span>Bookmark') {
+        savedGames.push(getCookie('data_title'));
+        setCookie('savedGames', savedGames.toString(), 99999);
+        $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark</span>Unbookmark");
+      }
+      else {
+        savedGames.splice((savedGames.indexOf(getCookie('data_title'))),1);
+        setCookie('savedGames', savedGames.toString(), 99999);
+        $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark_border</span>Bookmark");
+      }
+    });
+    $('#close').click(function(){
+      $("#close").animate({right: '-160px'});
+      $("#bookmark").animate({right: '-160px'});
+    });
+  });
 }
