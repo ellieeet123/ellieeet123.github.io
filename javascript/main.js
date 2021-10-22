@@ -281,13 +281,19 @@ function sidebarLoaded() {
   console.log('sidebar loaded');
   isSidebarLoaded = true;
   if (isSavedGamesLoaded === true) {
+    var sidebar = document.getElementById('sidebar');
     savedGamesList();
+    resizeIframe(sidebar);
+    updateDark();
   }
 }
 function savedGamesLoaded() {
   console.log('saved games loaded');
   isSavedGamesLoaded = true;
   if (isSidebarLoaded === true) {
+    var sidebar = document.getElementById('sidebar');
     savedGamesList();
+    resizeIframe(sidebar);
+    updateDark();
   }
 }
