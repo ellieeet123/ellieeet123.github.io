@@ -10,3 +10,14 @@ Add this in the sidebar.html file. See the tutorial slides if you need help with
     data-isbigfile=""
     ></a>
     
+partially filled in version with most common values
+
+  <a href="/games/" onclick="sidebarMain();" target="_parent" 
+    data-title=""
+    data-text=""
+    data-isflash="1"
+    data-framesrc=".swf"
+    data-framewidth="700"
+    data-frameheight="1100"
+    data-isbigfile="0"
+    ></a>
