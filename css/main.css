@@ -180,3 +180,28 @@ body {
 .squares:hover a {
   color: #22a5df;
 }      
+
+#savedgamestitle {
+  text-align: center;
+  font-family: arial;
+}
+
+#nosaved {
+  font-family: trebuchet ms;
+}
+
+.removebutton {
+  font-family: trebuchet ms;
+  font-size: 18px;
+  display: inline;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #ff0000;
+  float: right;
+}
+
+.gamelink {
+  cursor: pointer;
+  font-size: 18px;
+  font-family: trebuchet ms;
+}
