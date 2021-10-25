@@ -63,7 +63,7 @@ function updateDark() {
       let pList = document.getElementsByTagName("p");
       let aList = document.getElementsByTagName("a");
       sidebarObj[0].style.background = '#222233';
-      savedGamesIframe.getElementById("savedgames").style.color = '#ffffff';
+      savedGamesIframe.getElementById("savedgamestitle").style.color = '#ffffff';
       savedGamesIframe.getElementById("nosaved").style.color = '#eeeeee';
       for (let i = 0; i < sidebarLinks.length; i++) {
         sidebarLinks[i].style.color = '#33ee98';
@@ -97,7 +97,7 @@ function updateDark() {
       let pList = document.getElementsByTagName("p");
       let aList = document.getElementsByTagName("a");
       sidebarObj[0].style.background = '#eeeeff';
-      savedGamesIframe.getElementById("savedgames").style.color = '#000000';
+      savedGamesIframe.getElementById("savedgamestitle").style.color = '#000000';
       savedGamesIframe.getElementById("nosaved").style.color = '#000000';
       for (let i = 0; i < sidebarLinks.length; i++) {
         sidebarLinks[i].style.color = '#ff0000';
