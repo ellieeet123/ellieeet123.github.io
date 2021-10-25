@@ -243,7 +243,7 @@ function savedGamesList() {
   }
   else {
     for (let x = 0; x < gameLinkData.length; x++) {
-      ui.getElementsByClassName('main')[0].innerHTML = ''; //no saved games message
+      ui.getElementsByClassName('nosaved')[0].innerHTML = ''; //no saved games message
       var div = ui.createElement('div');
       var a = ui.createElement('a');
       a.className = 'gamelink';
