@@ -3,17 +3,6 @@ function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
 }
 
-//makes the random game page link work by grabbing a random link from the sidebar and setting the random link to that.
-function randomPageLink() {
-  const links = [];
-  const objects = document.getElementById('games').getElementsByTagName('a');
-  for (let x = 0; x < objects.length; x++) {
-    links.push(objects[x]);
-  }
-  var number = Math.floor(Math.random()*links.length);
-  document.getElementById('randomGame').href = links[number];
-}
-
 //automatically sets the title of the page based on the content of the h3 tag at the top of the page.
 function setTitle(){
   var titleData = document.getElementById('title').textContent + ' - Pringles';
@@ -188,6 +177,26 @@ function sidebarMain(obj) {
   setCookie('data_frameWidth', obj.dataset.framewidth, 1);
   setCookie('data_frameHeight', obj.dataset.frameheight, 1);
   setCookie('data_isBigFile', obj.dataset.isbigfile, 1);
+}
+
+//makes the random game page link work by grabbing a random link from the sidebar and setting the random link to that.
+function randomPageLink() {
+  const links = [];
+  const objects = document.getElementById('games').getElementsByTagName('a');
+  for (let x = 0; x < objects.length; x++) {
+    links.push(objects[x]);
+  }
+  var number = Math.floor(Math.random()*links.length);
+  var object = links[number];
+  var link = document.getElementById('randomGame');
+  link.dataset.title = object.dataset.title;
+  link.dataset.text = object.dataset.text;
+  link.dataset.isflash = object.dataset.isflash;
+  link.dataset.framesrc = object.dataset.framesrc;
+  link.dataset.framewidth = object.dataset.framewidth;
+  link.dataset.frameheight = object.dataset.frameheight;
+  link.dataset.isbigfile = object.dataset.isbigfile;
+  //document.getElementById('randomGame').href = links[number];
 }
 
 //takes the cookies from the previous function and uses them to build the "games" page. 
