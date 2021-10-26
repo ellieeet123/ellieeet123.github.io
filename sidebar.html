@@ -862,7 +862,7 @@
   let allATags = document.getElementsByTagName('a');
   for (let f = 1; f < allATags.length; f++) {
     let currentItem = allATags[f];
-    if (currentItem.hasAttribute('data-title') || currentItem.innerHTML != 'Random Game') {
+    if (currentItem.hasAttribute('data-title') && currentItem.innerHTML != 'Random Game') {
       currentItem.innerHTML = currentItem.dataset.title;
       currentItem.onclick = function() {
         sidebarMain(currentItem);
