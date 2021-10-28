@@ -24,8 +24,7 @@
       var h = screen.height;
       var w = screen.width;
       alert(2);
-      frame.wdith = w;
-      frame.height = h;
+      frame.setAttribute('id','proxyframe');
       alert('frame width, frame height:' + w + ' ' + h);
       frame.style.position = "fixed"
       frame.style.left = "0px";
@@ -33,6 +32,10 @@
       alert(4);
       document.write('');
       document.appendChild(frame);
+      alert(5);
+      document.getElementById('proxyframe').width = w;
+      document.getElementById('proxyframe').height = h;
+      alert(6);
     }
   </script>
 </body></html>
