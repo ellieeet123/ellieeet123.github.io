@@ -12,7 +12,7 @@
     <p>A fancy little proxy service. This can pass any school filter, such as Securly or a firewall.</p><br>
     <p>This requires a password to launch, and the password changes relatively frequently. The reason for this is to prevent the server from becoming overloaded, and to prevent it from being blocked. (If it is blocked, I can make a new one relatively easily but I'd rather not do that.) To obtain a password, either you will have to know someone IRL who can give it to you, or you can add 20 games to the site and get access. (See 'Help Build the site!' for more info)</p><br>
 	  <input type="text" id="pw" style="display:inline" placeholder="Enter Passcode" name="passcode"></input><button onclick="launchProxy();">Go</button>
-    <b id="pwresult" style="color:#17c410"></b><br>
+    <b id="pwresult" style="color:#17c410;font-family:arial;"></b><br>
     <p>This is not made by me. Credit to the actual proxy goes to <a href="https://github.com/titaniumnetwork-dev/Corrosion">Titanium Network</a>, credit for adding heroku support goes to <a href="https://github.com/BinBashBanana/Corrosion-Heroku">BinBashBanana</a>, and credit for the rainbow background goes to <a href="https://github.com/AtScripterBoy/Corrosion-Heroku">AtScripterBoy</a></p>
     <br>
   </div></div>
@@ -21,9 +21,12 @@
     var passcode = 'first test';
     function launchProxy() {
       if (document.getElementById('pw').value == passcode)) {
+	alert(1);
         setTimeout(function() {
+	  alert(2);
           document.getElementById('pwresult').innerHTML = 'Passcode accepted. Launching in 3 seconds.';
         }, 3000);
+	alert(3);
         var frame = document.createElement('embed');
         frame.src = "https://ellieeet123.herokuapp.com/";
         var h = screen.height;
