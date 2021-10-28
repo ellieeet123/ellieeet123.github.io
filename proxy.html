@@ -20,11 +20,18 @@
       alert(0);
       var frame = document.createElement('embed');
       frame.src = "https://ellieeet123.herokuapp.com/";
-      frame.wdith = screen.width;
-      frame.height = screen.height;
+      alert(1);
+      var h = screen.height;
+      var w = screen.width;
+      alert(2);
+      frame.wdith = w;
+      alert(2.5);
+      frame.height = h;
+      alert(3);
       frame.style.position = "fixed"
       frame.style.left = "0px";
       frame.style.top = "0px";
+      alert(4);
       document.appendChild(frame);
     }
   </script>
