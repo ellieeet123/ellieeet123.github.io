@@ -10,20 +10,28 @@
   <div id="main" class="main"><div id="main_text" class="main_text">
     <h3 id="title">Proxy</h3><br>
     <p>A fancy little proxy service. This can pass any school filter, such as Securly or a firewall.</p><br>
-    <a class="squaresNew" style="cursor:pointer" onclick="launchProxy();">Launch Proxy!</a><br>
+    <a class="nocolorchange" style="cursor:pointer" onclick="launchProxy();">Launch Proxy!</a><br>
     <p>This is not made by me. Credit to the actual proxy goes to <a href="https://github.com/titaniumnetwork-dev/Corrosion">Titanium Network</a>, credit for adding heroku support goes to <a href="https://github.com/BinBashBanana/Corrosion-Heroku">BinBashBanana</a>, and credit for the rainbow background goes to <a href="https://github.com/AtScripterBoy/Corrosion-Heroku">AtScripterBoy</a></p>
     <br>
   </div></div>
 <script id="scriptBody" src="/javascript/bodyScript.js"></script>
   <script>
     function launchProxy() {
+      alert(0);
       var frame = document.createElement('embed');
+      alert(1);
       frame.src = "https://ellieeet123.herokuapp.com/";
+      alert(2);
       frame.wdith = "100";
+      alert(3);
       frame.height = "100";
+      alert(4);
       frame.style.position = "fixed"
+      alert(5);
       frame.style.left = "0px";
+      alert(6);
       frame.style.top = "0px";
+      alert(7);
     }
   </script>
 </body></html>
