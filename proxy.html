@@ -1,0 +1,29 @@
+<!doctype html><html lang="en-us"><head>
+  <script id="scriptMain" src="/javascript/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link id="styleMain" rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico"><link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico"><link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png"><link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png"><link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/favicon-57.png"><link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png"><link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png"><link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png"><link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png"><link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png"><link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png"><link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="/favicon-144.png"><meta name="msapplication-config" content="/browserconfig.xml">
+</head><body>
+  <noscript id="noscript"><h1>Javascript has been disabled.</h1><br><p>This page requires javascript in order to load properly. Please enable it via chrome settings.</p></noscript>
+  <iframe id="header" height="100" width="100%" src="/header.html" frameborder="0"></iframe>
+  <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
+  <div id="main" class="main"><div id="main_text" class="main_text">
+    <h3 id="title">Proxy</h3><br>
+    <p>A fancy little proxy service. This can pass any school filter, such as Securly or a firewall.</p><br>
+    <a class="squaresNew" style="cursor:pointer" onclick="launchProxy();">Launch Proxy!</a><br>
+    <p>This is not made by me. Credit to the actual proxy goes to <a href="https://github.com/titaniumnetwork-dev/Corrosion">Titanium Network</a>, credit for adding heroku support goes to <a href="https://github.com/BinBashBanana/Corrosion-Heroku">BinBashBanana</a>, and credit for the rainbow background goes to <a href="https://github.com/AtScripterBoy/Corrosion-Heroku">AtScripterBoy</a></p>
+    <br>
+  </div></div>
+<script id="scriptBody" src="/javascript/bodyScript.js"></script>
+  <script>
+    function launchProxy() {
+      var frame = document.createElement('embed');
+      frame.src = "https://ellieeet123.herokuapp.com/";
+      frame.wdith = "100";
+      frame.height = "100";
+      frame.style.position = "fixed"
+      frame.style.left = "0px";
+      frame.style.top = "0px";
+    }
+  </script>
+</body></html>
