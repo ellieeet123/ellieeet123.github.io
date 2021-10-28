@@ -10,32 +10,37 @@
   <div id="main" class="main"><div id="main_text" class="main_text">
     <h3 id="title">Proxy</h3><br>
     <p>A fancy little proxy service. This can pass any school filter, such as Securly or a firewall.</p><br>
-    <a class="nocolorchange" style="cursor:pointer" onclick="launchProxy();">Launch Proxy!</a><br>
+    <p>This requires a password to launch, and the password changes relatively frequently. The reason for this is to prevent the server from becoming overloaded, and to prevent it from being blocked. (If it is blocked, I can make a new one relatively easily but I'd rather not do that.) To obtain a password, either you will have to know someone IRL who can give it to you, or you can add 20 games to the site and get access. (See 'Help Build the site!' for more info)</p><br>
+	  <input type="text" id="pw" style="display:inline" placeholder="Enter Passcode" name="passcode"></input><button onclick="launchProxy();">Go</button>
+    <b id="pwresult" style="color:#17c410"></b><br>
     <p>This is not made by me. Credit to the actual proxy goes to <a href="https://github.com/titaniumnetwork-dev/Corrosion">Titanium Network</a>, credit for adding heroku support goes to <a href="https://github.com/BinBashBanana/Corrosion-Heroku">BinBashBanana</a>, and credit for the rainbow background goes to <a href="https://github.com/AtScripterBoy/Corrosion-Heroku">AtScripterBoy</a></p>
     <br>
   </div></div>
 <script id="scriptBody" src="/javascript/bodyScript.js"></script>
   <script>
+    var passcode = 'first test';
     function launchProxy() {
-      alert(0);
-      var frame = document.createElement('embed');
-      frame.src = "https://ellieeet123.herokuapp.com/";
-      alert(1);
-      var h = screen.height;
-      var w = screen.width;
-      alert(2);
-      frame.setAttribute('id','proxyframe');
-      alert('frame width, frame height:' + w + ' ' + h);
-      frame.style.position = "fixed"
-      frame.style.left = "0px";
-      frame.style.top = "0px";
-      alert(4);
-      document.write('');
-      document.appendChild(frame);
-      alert(5);
-      document.getElementById('proxyframe').width = w;
-      document.getElementById('proxyframe').height = h;
-      alert(6);
+      if (document.getElementById('pw'.value == passcode)) {
+        setTimeout(function() {
+          document.getElementById('pwresult').innerHTML = 'Passcode accepted. Launching in 3 seconds.';
+        }, 3000);
+        var frame = document.createElement('embed');
+        frame.src = "https://ellieeet123.herokuapp.com/";
+        var h = screen.height;
+        var w = screen.width;
+        frame.setAttribute('id','proxyframe');
+        frame.style.position = "fixed"
+        frame.style.left = "0px";
+        frame.style.top = "0px";
+        document.write('');
+        document.appendChild(frame);
+        document.getElementById('proxyframe').width = w;
+        document.getElementById('proxyframe').height = h;
+      }
+      else {
+        document.getElementById('pwresult').innerHTML = 'Incorrect Password';
+        document.getElementById('pwresult').style.color = '#ff0000';
+      }
     }
   </script>
 </body></html>
