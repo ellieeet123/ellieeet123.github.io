@@ -62,16 +62,20 @@
           if (setTimeout(function() {
               console.log('loop');
               var state = document.getElementById('frame')._readyState;
+              console.log(state);
               if (state != undefined || state != null) {
+                  console.log(1);
                   return true;
               }
               else {
+                  console.log(2);
                   return false;
               }
           },1000)) {
+              console.log(3);
               break;
           }
       }
-      console.log('state');
+      console.log(state);
     </script> 
 </body></html>
