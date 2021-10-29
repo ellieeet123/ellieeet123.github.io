@@ -229,6 +229,11 @@ function buildGamePage() {
   }
   document.getElementById('frame').width = frameWidth;
   document.getElementById('frame').height = frameHeight;
+  var downloadLink = document.getElementById('downloadswf');
+  if (isFlash == 1) {
+    downloadLink.innerHTML = 'Download SWF File';
+    downloadLink.href = '/games/' + frameSrc;
+  }
 }
 
 //sets the inside of the saved games frame to what it is supposed to be, aka the games that the user has saved
