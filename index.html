@@ -6,10 +6,10 @@
             function popup(url) {
                 popupWindow = window.open(url, 'popUpWindow', 'height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')
             }
-            let testpopup = getCookie("site_news_1");
+            let testpopup = getCookie("backup_url_form_notice");
             if (testpopup == "") {
                 popup('/popup.html');
-                setCookie("site_news_1", "seen", 90)
+                setCookie("backup_url_form_notice", "seen", 30)
             }
         </script>
         <style>
