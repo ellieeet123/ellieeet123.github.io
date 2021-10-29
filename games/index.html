@@ -54,5 +54,18 @@
   <script id="scriptRuffle" src="/ruffle/ruffle.js"></script>
   <a id="bookmark" class="bookmarkui noColorChange" style="right:70px;cursor:pointer;"><span class="material-icons md-18" style="margin:auto;top:2px;">bookmark_border</span>Bookmark</a>
   <a id="close" class="bookmarkui noColorChange" style="cursor:pointer;">Close</a>
-  <script>bookmarkUI();console.log(document.getElementById('frame')._readyState);</script> 
+  <script>bookmarkUI();
+      var state = document.getElementById('frame')._readyState;
+      console.log(state);
+      while (true) {
+          setTimeout(function() {
+              console.log('loop');
+              var state = document.getElementById('frame')._readyState;
+              if (state != undefined || state != null) {
+                  break;
+              }
+          },1000)
+      }
+      console.log('state');
+    </script> 
 </body></html>
