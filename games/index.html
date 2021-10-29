@@ -57,14 +57,20 @@
   <script>bookmarkUI();
       var state = document.getElementById('frame')._readyState;
       console.log(state);
+      var done = false;
       while (true) {
-          setTimeout(function() {
+          if (setTimeout(function() {
               console.log('loop');
               var state = document.getElementById('frame')._readyState;
               if (state != undefined || state != null) {
-                  break;
+                  return true;
               }
-          },1000)
+              else {
+                  return false;
+              }
+          },1000)) {
+              break;
+          }
       }
       console.log('state');
     </script> 
