@@ -63,7 +63,13 @@
                 var state = document.getElementById('frame')._readyState;
                 done = true;
                 console.log("done");
+                var width = document.getElementById('frame').metadata.width;
+                document.getElementById('frame').width = width;
+                console.log(width);
                 clearInterval(interval);
+            }
+            else {
+                console.log("not done");
             }
         }, 100);
         console.log(state);
