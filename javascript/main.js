@@ -1,3 +1,8 @@
+//gets config data from the JSON file, probably will be used more in the future but for now just contains one thing
+$.getJSON('https://ellieeet123.github.io/config.json', function(data) {
+  var config = JSON.parse(data);
+});
+
 //resizes an iframe based on how tall the content inside of it is. Used for the sidebar.
 function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
@@ -222,7 +227,7 @@ function buildGamePage() {
     document.getElementById('warn').remove();
   }
   if (isFlash == 1) {
-    document.getElementById('frame').src = '/games/' + frameSrc;
+    document.getElementById('frame').src = config.swfFileLocation + frameSrc;
   }
   else {
     document.getElementById('frame').src = frameSrc;
@@ -232,7 +237,7 @@ function buildGamePage() {
   var downloadLink = document.getElementById('downloadswf');
   if (isFlash == 1) {
     downloadLink.innerHTML = 'Download SWF File';
-    downloadLink.href = '/games/' + frameSrc;
+    downloadLink.href = config.swfFileLocation + frameSrc;
   }
 }
 
