@@ -224,7 +224,6 @@ function buildGamePage() {
   if (isFlash == 1) {
     $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
       document.getElementById('frame').src = data.swfFileLocation + frameSrc;
-      alert(document.getElementById('frame').src);
     });
   }
   else {
