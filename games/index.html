@@ -55,27 +55,17 @@
   <a id="bookmark" class="bookmarkui noColorChange" style="right:70px;cursor:pointer;"><span class="material-icons md-18" style="margin:auto;top:2px;">bookmark_border</span>Bookmark</a>
   <a id="close" class="bookmarkui noColorChange" style="cursor:pointer;">Close</a>
   <script>bookmarkUI();
-      var state = document.getElementById('frame')._readyState;
-      console.log(state);
-      var done = false;
-      while (true) {
-          if (setTimeout(function() {
-              console.log('loop');
-              var state = document.getElementById('frame')._readyState;
-              console.log(state);
-              if (state != undefined || state != null) {
-                  console.log(1);
-                  return true;
-              }
-              else {
-                  console.log(2);
-                  return false;
-              }
-          },1000)) {
-              console.log(3);
-              break;
-          }
-      }
-      console.log(state);
+        var state = document.getElementById('frame')._readyState;
+        console.log(state);
+        var done = false;
+        var interval = setInterval(function() {
+            if (document.getElementById('frame')._readyState == 2) {
+                var state = document.getElementById('frame')._readyState;
+                done = true;
+                console.log("done");
+                clearInterval(interval);
+            }
+        }, 100);
+        console.log(state);
     </script> 
 </body></html>
