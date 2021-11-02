@@ -142,7 +142,7 @@
                 <div class="fancy">
                     <p class="noColorChange">"A temporarily not-so-great entertainment site with 104 games."</p>
                 </div>
-		    <div style="width:800px;">
+		    <div style="width:800px;" id="firstdiv">
                 <p>
                     [Tuesday Nov. 2] No new games for a few days, I have lots of schoolwork piling up. Sorry about that.
                 </p>
@@ -252,6 +252,7 @@
                     }
                 }
             }
+	    document.getElementById('firstdiv').style.width = (document.getElementById('main').offsetwidth - 500)+'px';
         </script>
     </body>
 </html>
