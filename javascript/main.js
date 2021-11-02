@@ -1,6 +1,6 @@
 //gets config data from the JSON file, probably will be used more in the future but for now just contains one thing
 $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
-  var config = JSON.parse(data);
+  var config = data;
 });
 
 //resizes an iframe based on how tall the content inside of it is. Used for the sidebar.
