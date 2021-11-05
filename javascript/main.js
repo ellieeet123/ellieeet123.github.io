@@ -372,17 +372,14 @@ function waitForSwfLoad() {
   var interval = setInterval(function() {
       if (document.getElementById('frame')._readyState == 2) {
           done = true;
-          console.log("done");
+          console.log("Finished!");
           var width = document.getElementById('frame').metadata.width;
           document.getElementById('frame').width = width;
-          console.log(width);
+          resizeGameFrame();
           clearInterval(interval);
       }
       else {
-          console.log("not done");
+          console.log("Still loading...");
       }
   }, 100);
-  resizeGameFrame();
 }
-
-
