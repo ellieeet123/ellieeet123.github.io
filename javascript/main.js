@@ -242,13 +242,16 @@ function buildGamePage() {
     document.getElementById('frame').width = frameWidth;
     document.getElementById('frame').height = frameHeight;
   }
+}
+
+//if the game is flash, set the download swf link to the swf file location
+function setDownloadLink() {
   var downloadLink = document.getElementById('downloadswf');
   if (isFlash == 1) {
     downloadLink.innerHTML = 'Download SWF File';
     downloadLink.href = document.getElementById('frame').src;
   }
 }
-
 //sets the inside of the saved games frame to what it is supposed to be, aka the games that the user has saved
 function savedGamesList() {
   var loadedlist = getCookie('savedGames');
@@ -390,6 +393,7 @@ function waitForSwfLoad() {
         document.getElementById('frame').width = width;
         resizeGameFrame();
         document.getElementById('warn').remove();
+        setDownloadLink();
         clearInterval(interval);
       }
       else {
