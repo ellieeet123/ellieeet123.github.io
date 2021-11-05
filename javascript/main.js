@@ -221,10 +221,10 @@ function buildGamePage() {
     document.getElementById('text').remove()
   }
   if (isBigFile == 1) {
-    document.getElementById('warn').innerHTML = 'Note - this game\'s large file size might cause long loading times. Just wait, and click wait on a popup if necesary. It can take up to 60-100 seconds sometimes.';
+    document.getElementById('warn').innerHTML = 'Loading Game... [this might take a hot second.]<br>If you see a popup saying the page isn\'t responding, click \'wait\' and be patient.]';
   }
   else {
-    document.getElementById('warn').remove();
+    document.getElementById('warn').innerHTML = 'Loading Game...';
   }
   if (isFlash == 1) {
     $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
@@ -235,8 +235,8 @@ function buildGamePage() {
     document.getElementById('frame').src = frameSrc;
   }
   if (isFlash == 1) {
-    document.getElementById('frame').width = 100; //placeholder value until it is auto-sized with the swf data
-    document.getElementById('frame').height = 100;
+    document.getElementById('frame').width = 1; //placeholder value until it is auto-sized with the swf data
+    document.getElementById('frame').height = 1;
   }
   else {
     document.getElementById('frame').width = frameWidth;
@@ -389,11 +389,15 @@ function waitForSwfLoad() {
         var width = document.getElementById('frame').metadata.width;
         document.getElementById('frame').width = width;
         resizeGameFrame();
+        document.getElementById('warn').remove();
         clearInterval(interval);
       }
       else {
         console.log("Still loading...");
       }
     }, 100);
+  }
+  else {
+    document.getElementById('frame').onload = document.getElementById('warn').remove();
   }
 }
