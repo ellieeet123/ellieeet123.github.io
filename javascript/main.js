@@ -368,18 +368,20 @@ function resizeGameFrame() {
 
 //waits until the SWF file has finished loading
 function waitForSwfLoad() {
-  var done = false;
-  var interval = setInterval(function() {
+  if (getCookie('data_isFlash') == 1){
+    var done = false;
+    var interval = setInterval(function() {
       if (document.getElementById('frame')._readyState == 2) {
-          done = true;
-          console.log("Finished!");
-          var width = document.getElementById('frame').metadata.width;
-          document.getElementById('frame').width = width;
-          resizeGameFrame();
-          clearInterval(interval);
+        done = true;
+        console.log("Finished!");
+        var width = document.getElementById('frame').metadata.width;
+        document.getElementById('frame').width = width;
+        resizeGameFrame();
+        clearInterval(interval);
       }
       else {
-          console.log("Still loading...");
+        console.log("Still loading...");
       }
-  }, 100);
+    }, 100);
+  }
 }
