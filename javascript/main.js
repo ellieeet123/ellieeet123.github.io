@@ -346,24 +346,6 @@ function bookmarkUI() {
   });
 }
 
-//waits until the SWF file has finished loading
-function waitForSwfLoad() {
-  var done = false;
-  var interval = setInterval(function() {
-      if (document.getElementById('frame')._readyState == 2) {
-          done = true;
-          console.log("done");
-          var width = document.getElementById('frame').metadata.width;
-          document.getElementById('frame').width = width;
-          console.log(width);
-          clearInterval(interval);
-      }
-      else {
-          console.log("not done");
-      }
-  }, 100);
-}
-
 //resizes the main game frame to fit the screen
 function resizeGameFrame() {
   var w = document.getElementById('main_text').offsetWidth;
@@ -383,3 +365,24 @@ function resizeGameFrame() {
   frame.style.width = newWidth + "px";
   frame.style.height = newHeight + "px";
 }
+
+//waits until the SWF file has finished loading
+function waitForSwfLoad() {
+  var done = false;
+  var interval = setInterval(function() {
+      if (document.getElementById('frame')._readyState == 2) {
+          done = true;
+          console.log("done");
+          var width = document.getElementById('frame').metadata.width;
+          document.getElementById('frame').width = width;
+          console.log(width);
+          clearInterval(interval);
+      }
+      else {
+          console.log("not done");
+      }
+  }, 100);
+  resizeGameFrame();
+}
+
+
