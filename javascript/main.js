@@ -221,7 +221,7 @@ function buildGamePage() {
     document.getElementById('text').remove()
   }
   if (isBigFile == 1) {
-    document.getElementById('warn').innerHTML = 'Loading Game... [this might take a hot second.]<br>If you see a popup saying the page isn\'t responding, click \'wait\' and be patient.]';
+    document.getElementById('warn').innerHTML = 'Loading Game... [this might take a hot second.]<br>If you see a popup saying the page isn\'t responding, click \'wait\' and be patient.';
   }
   else {
     document.getElementById('warn').innerHTML = 'Loading Game...';
