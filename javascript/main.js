@@ -247,7 +247,7 @@ function buildGamePage() {
 //if the game is flash, set the download swf link to the swf file location
 function setDownloadLink() {
   var downloadLink = document.getElementById('downloadswf');
-  if (isFlash == 1) {
+  if (getCookie('data_isFlash') == 1) {
     downloadLink.innerHTML = 'Download SWF File';
     downloadLink.href = document.getElementById('frame').src;
   }
