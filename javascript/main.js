@@ -174,8 +174,10 @@ function sidebarMain(obj) {
   setCookie('data_text', obj.dataset.text, 1);
   setCookie('data_isFlash', obj.dataset.isflash, 1);
   setCookie('data_frameSrc', obj.dataset.framesrc, 1);
-  setCookie('data_frameWidth', obj.dataset.framewidth, 1);
-  setCookie('data_frameHeight', obj.dataset.frameheight, 1);
+  if (obj.dataset.isflash != '1') {
+    setCookie('data_frameWidth', obj.dataset.framewidth, 1);
+    setCookie('data_frameHeight', obj.dataset.frameheight, 1);
+  }
   setCookie('data_isBigFile', obj.dataset.isbigfile, 1);
 }
 
@@ -193,10 +195,11 @@ function randomPageLink() {
   link.dataset.text = object.dataset.text;
   link.dataset.isflash = object.dataset.isflash;
   link.dataset.framesrc = object.dataset.framesrc;
-  link.dataset.framewidth = object.dataset.framewidth;
-  link.dataset.frameheight = object.dataset.frameheight;
+  if (object.dataset.isflash != '1') {
+    link.dataset.framewidth = object.dataset.framewidth;
+    link.dataset.frameheight = object.dataset.frameheight;
+  }
   link.dataset.isbigfile = object.dataset.isbigfile;
-  //document.getElementById('randomGame').href = links[number];
 }
 
 //takes the cookies from the previous function and uses them to build the "games" page. 
@@ -205,8 +208,10 @@ function buildGamePage() {
   let text = getCookie('data_text');
   let isFlash = getCookie('data_isFlash');
   let frameSrc = getCookie('data_frameSrc');
-  let frameWidth = getCookie('data_frameWidth');
-  let frameHeight = getCookie('data_frameHeight');
+  if (isFlash != '1') {
+    var frameWidth = getCookie('data_frameWidth');
+    var frameHeight = getCookie('data_frameHeight');
+  }
   let isBigFile = getCookie('data_isBigFile');
   document.getElementById('title').innerHTML = title;
   if (text != '') {
@@ -229,8 +234,14 @@ function buildGamePage() {
   else {
     document.getElementById('frame').src = frameSrc;
   }
-  document.getElementById('frame').width = frameWidth;
-  document.getElementById('frame').height = frameHeight;
+  if (isFlash == 1) {
+    document.getElementById('frame').width = 100; //placeholder value until it is auto-sized with the swf data
+    document.getElementById('frame').height = 100;
+  }
+  else {
+    document.getElementById('frame').width = frameWidth;
+    document.getElementById('frame').height = frameHeight;
+  }
   var downloadLink = document.getElementById('downloadswf');
   if (isFlash == 1) {
     downloadLink.innerHTML = 'Download SWF File';
@@ -247,7 +258,6 @@ function savedGamesList() {
   console.log('sidebar links loaded');
   var ui = document.getElementById('savedgames').contentWindow.document;
   var gameLinkData = [];
-  //all code above is good
   for (let x = 0; x < aList.length; x++) {
     if (aList[x].hasAttribute('data-title') && savedGames.includes(aList[x].dataset.title)) {
       gameLinkData.push(aList[x]);
@@ -269,8 +279,10 @@ function savedGamesList() {
       a.setAttribute('data-text',gameLinkData[x].dataset.text);
       a.setAttribute('data-isflash',gameLinkData[x].dataset.isflash);
       a.setAttribute('data-framesrc',gameLinkData[x].dataset.framesrc);
-      a.setAttribute('data-framewidth',gameLinkData[x].dataset.framewidth);
-      a.setAttribute('data-frameheight',gameLinkData[x].dataset.frameheight);
+      if (a.hasAttribute('data-isflash') && a.dataset.isflash != '1') {
+        a.setAttribute('data-framewidth',gameLinkData[x].dataset.framewidth);
+        a.setAttribute('data-frameheight',gameLinkData[x].dataset.frameheight);
+      }
       a.setAttribute('data-isbigfile',gameLinkData[x].dataset.isbigfile);
       a.setAttribute('onclick', "function setCookie(e,t,o){const i=new Date;i.setTime(i.getTime()+24*o*60*60*1e3);o='expires='+i.toUTCString();document.cookie=e+'='+t+';'+o+';path=/'}setCookie('data_title', this.dataset.title, 1);setCookie('data_text', this.dataset.text, 1);setCookie('data_isFlash', this.dataset.isflash, 1);setCookie('data_frameSrc', this.dataset.framesrc, 1);setCookie('data_frameWidth', this.dataset.framewidth, 1);setCookie('data_frameHeight', this.dataset.frameheight, 1);setCookie('data_isBigFile', this.dataset.isbigfile, 1);");
       a.setAttribute('target', '_parent');
