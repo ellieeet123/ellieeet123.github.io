@@ -345,3 +345,41 @@ function bookmarkUI() {
     });
   });
 }
+
+//waits until the SWF file has finished loading
+function waitForSwfLoad() {
+  var done = false;
+  var interval = setInterval(function() {
+      if (document.getElementById('frame')._readyState == 2) {
+          done = true;
+          console.log("done");
+          var width = document.getElementById('frame').metadata.width;
+          document.getElementById('frame').width = width;
+          console.log(width);
+          clearInterval(interval);
+      }
+      else {
+          console.log("not done");
+      }
+  }, 100);
+}
+
+//resizes the main game frame to fit the screen
+function resizeGameFrame() {
+  var w = document.getElementById('main_text').offsetWidth;
+  var h = window.innerHeight - 120;
+  var ratio = w / h;
+  var swfWidth = document.getElementById('frame').metadata.width;
+  var swfHeight = document.getElementById('frame').metadata.height;
+  var swfRatio = swfWidth / swfHeight;
+  if (swfRatio > ratio) {
+      var newWidth = w;
+      var newHeight = w / swfRatio;
+  }
+  else {
+      var newWidth = h * swfRatio;
+      var newHeight = h;
+  }
+  frame.style.width = newWidth + "px";
+  frame.style.height = newHeight + "px";
+}
