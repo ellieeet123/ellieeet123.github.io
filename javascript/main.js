@@ -243,7 +243,7 @@ function buildGamePage() {
     document.getElementById('frame').height = frameHeight;
   }
   if (title == 'Cubefield') {
-    document.getElementById('scriptRuffle').src = '/ruffle/old/ruffle.js';
+    window.onload = document.getElementById('scriptRuffle').src = '/ruffle/old/ruffle.js';
   }
 }
 
