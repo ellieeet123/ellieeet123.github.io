@@ -242,9 +242,6 @@ function buildGamePage() {
     document.getElementById('frame').width = frameWidth;
     document.getElementById('frame').height = frameHeight;
   }
-  if (title == 'Cubefield') {
-    window.onload = document.getElementById('scriptRuffle').src = '/ruffle/old/ruffle.js';
-  }
 }
 
 //if the game is flash, set the download swf link to the swf file location
