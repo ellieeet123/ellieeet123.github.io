@@ -422,7 +422,7 @@ function waitForSwfLoad() {
   }
 }
 
-document.onload = function() {
+window.onload = function() {
   console.log(0);
   var sidebarloaded = false;
   var headerloaded = false;
