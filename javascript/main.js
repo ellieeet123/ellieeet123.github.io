@@ -151,7 +151,7 @@ function colorTheme() {
 
 
   var pagetitle = document.getElementById('title').textContent;
-  if (pagetitle = 'Home') {
+  if (pagetitle == 'Home') {
     var savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
     var savedGamesLinks = savedGamesIframe.getElementsByClassName("gamelink");
     var removeLinks = savedGamesIframe.getElementsByClassName("removebutton");
