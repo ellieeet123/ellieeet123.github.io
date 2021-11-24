@@ -422,7 +422,7 @@ function waitForSwfLoad() {
   }
 }
 
-window.onload = function() {
+window.addEventListener('load', function() {
   console.log(0);
   var sidebarloaded = false;
   var headerloaded = false;
@@ -453,4 +453,4 @@ window.onload = function() {
       }
     },100);
   }
-}
+});
