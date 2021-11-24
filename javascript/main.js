@@ -105,6 +105,18 @@ var colorThemes = {
   }
 };
 
+//makes the button invert colors when you hover over it
+function buttonHover(element) {
+  element.onmouseenter = function() {
+    changeStyleForElement(element,'backgroundColor','#ffffff');
+    changeStyleForElement(element,'color','#22a5df');
+  }
+  element.onmouseleave = function() {
+    changeStyleForElement(element,'backgroundColor','#22a5df');
+    changeStyleForElement(element,'color','#ffffff');
+  }
+}
+
 //updates page content to the color theme!
 function colorTheme() {
   var theme = getCookie('colorTheme');
@@ -136,10 +148,11 @@ function colorTheme() {
   changeStyleForElementType('a','color',themeData.link);
   for (let i = 0; i < buttons.length; i++) {
     changeStyleForElement(buttons[i],'backgroundColor',themeData.button);
+    buttonHover(buttons[i]);
   }
 
 
-
+/*
   var css = '.squaresNew:hover {background-color: #ffffff;color: '+ themeData.button +';text-decoration: none}';
   var style = document.createElement('style');
   if (style.styleSheet) {
@@ -148,8 +161,7 @@ function colorTheme() {
       style.appendChild(document.createTextNode(css));
   }
   document.getElementById('header').contentWindow.document.head.appendChild(style);
-
-
+*/
   var pagetitle = document.getElementById('title').textContent;
   if (pagetitle == 'Home') {
     var savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
