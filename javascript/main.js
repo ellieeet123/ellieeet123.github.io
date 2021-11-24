@@ -167,8 +167,10 @@ function colorTheme() {
     var close = document.getElementById('close');
     changeStyleForElement(bookmark,'backgroundColor',themeData.button);
     changeStyleForElement(close,'backgroundColor',themeData.button);
-    buttonHover(bookmark,themeData.button);
-    buttonHover(close,themeData.button);
+    bookmark.addEventListener('mouseenter',function(){this.style.background = '#ffffff';this.style.color = themeData.button;});
+    bookmark.addEventListener('mouseleave',function(){this.style.background = themeData.button;this.style.color = '#ffffff';});
+    close.addEventListener('mouseenter',function(){this.style.background = '#ffffff';this.style.color = themeData.button;});
+    close.addEventListener('mouseleave',function(){this.style.background = themeData.button;this.style.color = '#ffffff';});
   }
 }
 
