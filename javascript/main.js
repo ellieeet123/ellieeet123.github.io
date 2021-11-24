@@ -164,10 +164,14 @@ function colorTheme() {
     if (document.getElementById('bookmark') != null) {
       var bookmark = document.getElementById('bookmark');
       var close = document.getElementById('close');
+      console.log(0);
       changeStyleForElement(bookmark,'backgroundColor',themeData.button);
       changeStyleForElement(close,'backgroundColor',themeData.button);
+      console.log(1);
       buttonHover(bookmark,themeData.button);
-      buttonHover(close,themeData.button);      
+      console.log(2);
+      buttonHover(close,themeData.button);
+      console.log(3);
     }
   }
 }
