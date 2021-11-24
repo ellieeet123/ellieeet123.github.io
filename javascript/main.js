@@ -1,3 +1,14 @@
+/*===========================================================================================================================
+
+MAIN.JS
+
+Copyright (c) 2021 ellieeet123
+Licenced under MIT. For more info, visit https://github.com/ellieeet123/ellieeet123.github.io/LICENCE
+A collection of functions that are for Pringles, a fancy little game site.
+To visit the site, check out https://ellieeet123.github.io/
+
+===========================================================================================================================*/
+
 //resizes an iframe based on how tall the content inside of it is. Used for the sidebar.
 function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
@@ -31,6 +42,125 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+//changes all of a given element type to the style specified when calling the function.
+function changeStyleForElementType(element,style,value) {
+  var elements = document.getElementsByTagName(element);
+  if (elements.length > 0) {
+    for (let x = 0; x < elements.length; x++) {
+      if (!(elements[x].classList.contains('noColorChange'))) {
+        elements[x].style[style] = value;
+      }
+    }
+  }
+}
+
+//same thing but for an id
+function changeStyleForElementWithId(id,style,value) {
+  var element = document.getElementById(id);
+  if (!(element.classList.contains('noColorChange'))) {
+    element.style[style] = value;
+  }
+}
+
+//same thing but with specific specified element
+function changeStyleForElement(element,style,value) {
+  if (!(element.classList.contains('noColorChange'))) {
+    element.style[style] = value;
+  }
+}
+
+//get the brightness of a color (github copilot made this idk how it works lol)
+function getColorBrightness(hex) {
+  hex = hex.replace(/^\s*#|\s*$/g, '');
+  if(hex.length == 3){
+    hex = hex.replace(/(.)/g, '$1$1');
+  }
+  var r = parseInt(hex.substr(0, 2), 16),
+      g = parseInt(hex.substr(2, 2), 16),
+      b = parseInt(hex.substr(4, 2), 16);
+  return ((r*299)+(g*587)+(b*114))/1000;
+}
+
+//JSON with color theme data so that only the name of the color theme has to be stored in a cookie
+var colorThemes = {
+  'default': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/default.png',
+    'textbg': '#eeeeff',
+    'text': '#000000',
+    'link': '#0000ff',
+    'sidebarlink': '#ff0000',
+    'button': '#22a5df'
+  },
+  'dark': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/default.png',
+    'textbg': '#222233',
+    'text': '#ffffff',
+    'link': '#00ffff',
+    'sidebarlink': '#33ee98',
+    'button': '#22a5df'
+  }
+};
+
+function colorTheme() {
+  var theme = getCookie('colorTheme');
+  var sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
+  var sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
+  var buttons = document.getElementById("header").contentWindow.document.body.getElementsByClassName("squaresNew");
+  if (theme == '') {
+    theme = 'default';
+  }
+  var themeData = colorThemes[theme];
+  if (themeData.backgroundtype == 'image') {
+    changeStyleForElementType('body','backgroundImage','url('+themeData.background+')');
+  }
+  else if (themeData.backgroundtype == 'color') {
+    changeStyleForElementType('body','backgroundColor',themeData.background);
+  }
+  changeStyleForElementWithId('main','backgroundColor',themeData.textbg);
+  changeStyleForElement(sidebarObj,'backgroundColor',themeData.textbg);
+  for (let i = 0; i < sidebarLinks.length; i++) {
+    changeStyleForElement(sidebarLinks[i],'color',themeData.sidebarlink);
+  }
+  changeStyleForElementType('h1','color',themeData.text);
+  changeStyleForElementType('h2','color',themeData.text);
+  changeStyleForElementType('h3','color',themeData.text);
+  changeStyleForElementType('h4','color',themeData.text);
+  changeStyleForElementType('h5','color',themeData.text);
+  changeStyleForElementType('h6','color',themeData.text);
+  changeStyleForElementType('p','color',themeData.text);
+  changeStyleForElementType('a','color',themeData.link);
+  for (let i = 0; i < buttons.length; i++) {
+    changeStyleForElement(buttons[i],'color',themeData.button);
+  }
+  if (document.getElementById('title').innerHTML = 'Home') {
+    var savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
+    var savedGamesLinks = savedGamesIframe.getElementsByClassName("gamelink");
+    var removeLinks = savedGamesIframe.getElementsByClassName("removebutton");
+    for (let i = 0; i < savedGamesLinks.length; i++) {
+      changeStyleForElement(savedGamesLinks[i],'color',themeData.sidebarlink);
+    }
+    for (let i = 0; i < removeLinks.length; i++) {
+      changeStyleForElement(removeLinks[i],'color',themeData.link);
+    }
+    if (document.getElementById('bookmark') != null) {
+      var bookmark = document.getElementById('bookmark');
+      var close = document.getElementById('close');
+      changeStyleForElement(bookmark,'backgroundColor',themeData.button);
+      changeStyleForElement(close,'backgroundColor',themeData.button);
+      if (getColorBrightness(themeData.button) > 128) {
+        changeStyleForElement(bookmark,'color','#000000');
+        changeStyleForElement(close,'color','#000000');
+      }
+      else {
+        changeStyleForElement(bookmark,'color','#ffffff');
+        changeStyleForElement(close,'color','#ffffff');
+      }
+    }
+  }
 }
 
 //Updates the page to match the color theme set in the "darkmode" cookie. 
@@ -268,7 +398,7 @@ function savedGamesList() {
   }
   console.log(gameLinkData);
   if (gameLinkData.length == 0) {
-  	let useless = 0;
+    let useless = 0;
   }
   else {
     for (let x = 0; x < gameLinkData.length; x++) {
