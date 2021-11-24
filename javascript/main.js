@@ -106,13 +106,13 @@ var colorThemes = {
 };
 
 //makes the button invert colors when you hover over it
-function buttonHover(element) {
+function buttonHover(element,defaultbg) {
   element.onmouseenter = function() {
     changeStyleForElement(element,'backgroundColor','#ffffff');
-    changeStyleForElement(element,'color','#22a5df');
+    changeStyleForElement(element,'color',defaultbg);
   }
   element.onmouseleave = function() {
-    changeStyleForElement(element,'backgroundColor','#22a5df');
+    changeStyleForElement(element,'backgroundColor',defaultbg);
     changeStyleForElement(element,'color','#ffffff');
   }
 }
@@ -148,20 +148,8 @@ function colorTheme() {
   changeStyleForElementType('a','color',themeData.link);
   for (let i = 0; i < buttons.length; i++) {
     changeStyleForElement(buttons[i],'backgroundColor',themeData.button);
-    buttonHover(buttons[i]);
+    buttonHover(buttons[i],themeData.button);
   }
-
-
-/*
-  var css = '.squaresNew:hover {background-color: #ffffff;color: '+ themeData.button +';text-decoration: none}';
-  var style = document.createElement('style');
-  if (style.styleSheet) {
-      style.styleSheet.cssText = css;
-  } else {
-      style.appendChild(document.createTextNode(css));
-  }
-  document.getElementById('header').contentWindow.document.head.appendChild(style);
-*/
   var pagetitle = document.getElementById('title').textContent;
   if (pagetitle == 'Home') {
     var savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
@@ -178,7 +166,8 @@ function colorTheme() {
       var close = document.getElementById('close');
       changeStyleForElement(bookmark,'backgroundColor',themeData.button);
       changeStyleForElement(close,'backgroundColor',themeData.button);
-      changeStyleForElement(bookmark,'color',themeData.text);
+      buttonHover(bookmark,themeData.button);
+      buttonHover(close,themeData.button);      
     }
   }
 }
