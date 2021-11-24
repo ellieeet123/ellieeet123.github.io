@@ -423,16 +423,21 @@ function waitForSwfLoad() {
 }
 
 document.onload = function() {
+  console.log(0);
   var sidebarloaded = false;
   var headerloaded = false;
   var savedgamesloaded = false;
   var title = document.getElementById('title').textContent;
+  console.log(1);
   document.getElementById('sidebar').onload = sidebarloaded = true;
   document.getElementById('header').onload = headerloaded = true;
   document.getElementById('savedgames').onload = savedgamesloaded = true;
+  console.log(2);
   if (title == 'Home') {
     window.setInterval(function() {
+      console.log(3);
       if (sidebarloaded && headerloaded && savedgamesloaded) {
+        console.log(4);
         colorTheme();
         window.clearInterval(this);
       }
@@ -440,7 +445,9 @@ document.onload = function() {
   }
   else {
     window.setInterval(function() {
+      console.log(5);
       if (sidebarloaded && headerloaded) {
+        console.log(6);
         colorTheme();
         window.clearInterval(this);
       }
