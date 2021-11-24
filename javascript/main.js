@@ -434,6 +434,7 @@ document.onload = function() {
     window.setInterval(function() {
       if (sidebarloaded && headerloaded && savedgamesloaded) {
         colorTheme();
+        window.clearInterval(this);
       }
     },100);
   }
@@ -441,6 +442,7 @@ document.onload = function() {
     window.setInterval(function() {
       if (sidebarloaded && headerloaded) {
         colorTheme();
+        window.clearInterval(this);
       }
     },100);
   }
