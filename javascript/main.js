@@ -121,7 +121,7 @@ function colorTheme() {
     changeStyleForElementType('body','backgroundColor',themeData.background);
   }
   changeStyleForElementWithId('main','backgroundColor',themeData.textbg);
-  changeStyleForElement(sidebarObj,'backgroundColor',themeData.textbg);
+  changeStyleForElement(sidebarObj[0],'backgroundColor',themeData.textbg);
   for (let i = 0; i < sidebarLinks.length; i++) {
     changeStyleForElement(sidebarLinks[i],'color',themeData.sidebarlink);
   }
