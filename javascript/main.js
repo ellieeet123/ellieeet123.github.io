@@ -333,7 +333,7 @@ function sidebarLoaded() {
     var sidebar = document.getElementById('sidebar');
     savedGamesList();
     resizeIframe(sidebar);
-    updateDark();
+    colorTheme();
   }
 }
 function savedGamesLoaded() {
@@ -343,7 +343,7 @@ function savedGamesLoaded() {
     var sidebar = document.getElementById('sidebar');
     savedGamesList();
     resizeIframe(sidebar);
-    updateDark();
+    colorTheme();
   }
 }
 
