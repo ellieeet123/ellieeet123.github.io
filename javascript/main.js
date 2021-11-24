@@ -161,6 +161,7 @@ function colorTheme() {
     for (let i = 0; i < removeLinks.length; i++) {
       changeStyleForElement(removeLinks[i],'color',themeData.link);
     }
+    changeStyleForElement(savedGamesIframe.getElementById('savedgamestitle'),'color',themeData.text);
   }
   if (document.getElementById('bookmark') != null) {
     var bookmark = document.getElementById('bookmark');
