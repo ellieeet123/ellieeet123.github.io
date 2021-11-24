@@ -105,6 +105,7 @@ var colorThemes = {
   }
 };
 
+//updates page content to the color theme!
 function colorTheme() {
   var theme = getCookie('colorTheme');
   var sidebarObj = document.getElementById("sidebar").contentWindow.document.body.getElementsByClassName("sidebar");
@@ -139,7 +140,7 @@ function colorTheme() {
 
 
 
-  var css = '.squaresNew:hover {background: #ffffff;color: '+ themeData.button +';text-decoration: none}';
+  var css = '.squaresNew:hover {background-color: #ffffff;color: '+ themeData.button +';text-decoration: none}';
   var style = document.createElement('style');
   if (style.styleSheet) {
       style.styleSheet.cssText = css;
@@ -149,8 +150,8 @@ function colorTheme() {
   document.getElementById('header').contentWindow.document.head.appendChild(style);
 
 
-
-  if (document.getElementById('title').innerText = 'Home') {
+  var pagetitle = document.getElementById('title').textContent;
+  if (pagetitle = 'Home') {
     var savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
     var savedGamesLinks = savedGamesIframe.getElementsByClassName("gamelink");
     var removeLinks = savedGamesIframe.getElementsByClassName("removebutton");
