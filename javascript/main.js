@@ -333,7 +333,6 @@ function sidebarLoaded() {
     var sidebar = document.getElementById('sidebar');
     savedGamesList();
     resizeIframe(sidebar);
-    colorTheme();
   }
 }
 function savedGamesLoaded() {
@@ -343,7 +342,6 @@ function savedGamesLoaded() {
     var sidebar = document.getElementById('sidebar');
     savedGamesList();
     resizeIframe(sidebar);
-    colorTheme();
   }
 }
 
@@ -424,4 +422,26 @@ function waitForSwfLoad() {
   }
 }
 
-window.onload = colorTheme();
+window.onload = function() {
+  var sidebarloaded = false;
+  var headerloaded = false;
+  var savedgamesloaded = false;
+  var title = document.getElementById('title').textContent;
+  document.getElementById('sidebar').onload = sidebarloaded = true;
+  document.getElementById('header').onload = headerloaded = true;
+  document.getElementById('savedgames').onload = savedgamesloaded = true;
+  if (title == 'Home') {
+    window.setInterval(function() {
+      if (sidebarloaded && headerloaded && savedgamesloaded) {
+        colorTheme();
+      }
+    },100);
+  }
+  else {
+    window.setInterval(function() {
+      if (sidebarloaded && headerloaded) {
+        colorTheme();
+      }
+    },100);
+  }
+}
