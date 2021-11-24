@@ -422,7 +422,7 @@ function waitForSwfLoad() {
   }
 }
 
-window.onload = function() {
+document.onload = function() {
   var sidebarloaded = false;
   var headerloaded = false;
   var savedgamesloaded = false;
