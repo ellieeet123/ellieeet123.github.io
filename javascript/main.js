@@ -134,9 +134,23 @@ function colorTheme() {
   changeStyleForElementType('p','color',themeData.text);
   changeStyleForElementType('a','color',themeData.link);
   for (let i = 0; i < buttons.length; i++) {
-    changeStyleForElement(buttons[i],'color',themeData.button);
+    changeStyleForElement(buttons[i],'backgroundColor',themeData.button);
   }
-  if (document.getElementById('title').innerHTML = 'Home') {
+
+
+
+  var css = '.squaresNew:hover {background: #ffffff;color: '+ themeData.button +';text-decoration: none}';
+  var style = document.createElement('style');
+  if (style.styleSheet) {
+      style.styleSheet.cssText = css;
+  } else {
+      style.appendChild(document.createTextNode(css));
+  }
+  document.getElementById('header').contentWindow.document.head.appendChild(style);
+
+
+
+  if (document.getElementById('title').innerText = 'Home') {
     var savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
     var savedGamesLinks = savedGamesIframe.getElementsByClassName("gamelink");
     var removeLinks = savedGamesIframe.getElementsByClassName("removebutton");
@@ -151,14 +165,7 @@ function colorTheme() {
       var close = document.getElementById('close');
       changeStyleForElement(bookmark,'backgroundColor',themeData.button);
       changeStyleForElement(close,'backgroundColor',themeData.button);
-      if (getColorBrightness(themeData.button) > 128) {
-        changeStyleForElement(bookmark,'color','#000000');
-        changeStyleForElement(close,'color','#000000');
-      }
-      else {
-        changeStyleForElement(bookmark,'color','#ffffff');
-        changeStyleForElement(close,'color','#ffffff');
-      }
+      changeStyleForElement(bookmark,'color',themeData.text);
     }
   }
 }
