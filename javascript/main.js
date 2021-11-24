@@ -83,6 +83,18 @@ function getColorBrightness(hex) {
   return ((r*299)+(g*587)+(b*114))/1000;
 }
 
+//makes the button invert colors when you hover over it
+function buttonHover(element,defaultbg) {
+  element.onmouseenter = function() {
+    changeStyleForElement(element,'backgroundColor','#ffffff');
+    changeStyleForElement(element,'color',defaultbg);
+  }
+  element.onmouseleave = function() {
+    changeStyleForElement(element,'backgroundColor',defaultbg);
+    changeStyleForElement(element,'color','#ffffff');
+  }
+}
+
 //JSON with color theme data so that only the name of the color theme has to be stored in a cookie
 var colorThemes = {
   'default': {
@@ -104,18 +116,6 @@ var colorThemes = {
     'button': '#22a5df'
   }
 };
-
-//makes the button invert colors when you hover over it
-function buttonHover(element,defaultbg) {
-  element.onmouseenter = function() {
-    changeStyleForElement(element,'backgroundColor','#ffffff');
-    changeStyleForElement(element,'color',defaultbg);
-  }
-  element.onmouseleave = function() {
-    changeStyleForElement(element,'backgroundColor',defaultbg);
-    changeStyleForElement(element,'color','#ffffff');
-  }
-}
 
 //updates page content to the color theme!
 function colorTheme() {
@@ -162,6 +162,7 @@ function colorTheme() {
       changeStyleForElement(removeLinks[i],'color',themeData.link);
     }
     changeStyleForElement(savedGamesIframe.getElementById('savedgamestitle'),'color',themeData.text);
+    changeStyleForElement(document.getElementById('splashtext'),'color',themeData.link);
   }
   if (document.getElementById('bookmark') != null) {
     var bookmark = document.getElementById('bookmark');

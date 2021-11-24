@@ -94,6 +94,11 @@ body {
   text-decoration: italic;
 }
 
+.pageviews {
+  width: 150px;
+  height: 100px;
+}
+
 .sidebar {
   width: 160px;
   z-index: 1;
