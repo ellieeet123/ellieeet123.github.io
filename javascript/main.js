@@ -20,7 +20,7 @@ function setTitle(){
   document.title = titleData;
 }
 
-//sets a cookie
+//sets a cookie [script from w3schools.com]
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -28,7 +28,7 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-//loads a cookie
+//loads a cookie [script from w3schools.com]
 function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');
@@ -433,6 +433,9 @@ window.setInterval(function(){
         if (document.getElementById('bottomElement')) {
           resizeIframe(document.getElementById('sidebar'));
           colorTheme();
+          if (document.getElementById('title').textContent = 'Home') {
+            savedGamesList();
+          }
           window.clearInterval();
         }
       },100);
