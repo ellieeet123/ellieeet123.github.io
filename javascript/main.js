@@ -44,6 +44,11 @@ function getCookie(cname) {
   return "";
 }
 
+//builds settings
+function buildSettings() {
+//wip
+}
+
 //clears the old darkmode cookie and sets the new one (temporary script)
 if (getCookie('darkmode') == 'yes') {
   setCookie('colorTheme', 'dark', 1000);
