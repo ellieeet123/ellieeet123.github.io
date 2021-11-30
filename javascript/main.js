@@ -428,14 +428,14 @@ function waitForSwfLoad() {
 
 var runLoadFunctions = window.setInterval(function(){
   if (document.getElementById('sidebar')) {
-    window.clearInterval(this);
+    window.clearInterval(runLoadFunctions);
     document.getElementById('sidebar').onload = function () {
       window.setInterval(function(){
         if (document.getElementById('bottomElement')) {
-          window.clearInterval(this);
+          window.clearInterval(runLoadFunctions);
           resizeIframe(document.getElementById('sidebar'));
           colorTheme();
-          if (document.getElementById('title').textContent = 'Home') {
+          if (document.getElementById('title').textContent == 'Home') {
             savedGamesList();
           }
         }
