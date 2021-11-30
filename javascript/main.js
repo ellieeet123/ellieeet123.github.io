@@ -430,9 +430,9 @@ var runLoadFunctions = window.setInterval(function(){
   if (document.getElementById('sidebar')) {
     window.clearInterval(runLoadFunctions);
     document.getElementById('sidebar').onload = function () {
-      window.setInterval(function(){
+      var runLoadFunctionsInner = window.setInterval(function(){
         if (document.getElementById('bottomElement')) {
-          window.clearInterval(runLoadFunctions);
+          window.clearInterval(runLoadFunctionsInner);
           resizeIframe(document.getElementById('sidebar'));
           colorTheme();
           if (document.getElementById('title').textContent == 'Home') {
