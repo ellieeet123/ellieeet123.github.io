@@ -427,6 +427,7 @@ window.setInterval(function(){
     document.getElementById('sidebar').onload = function () {
       window.setInterval(function(){
         if (document.getElementById('bottomElement')) {
+          resizeIframe(document.getElementById('sidebar'));
           colorTheme();
           window.clearInterval();
         }
