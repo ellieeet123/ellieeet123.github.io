@@ -131,6 +131,15 @@ var colorThemes = {
     'sidebarlink': '#33ee98',
     'button': '#22a5df'
   },
+  'red': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/red.png',
+    'textbg': '#ffffff',
+    'text': '#ff0000',
+    'link': '#ff6666',
+    'sidebarlink': '#ff6f00',
+    'button': '#0936db'
+  },
   'orange': {
     'backgroundtype': 'image',
     'background': '/images/bg/orange.png',
@@ -138,7 +147,16 @@ var colorThemes = {
     'text': '#ff8800',
     'link': '#ffff00',
     'sidebarlink': '#00ffff',
-    'button': '#de7600'
+    'button': '#00ffff'
+  },
+  'yellow': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/yellow.jpg',
+    'textbg': '#101629',
+    'text': '#ffff00',
+    'link': '#00ff00',
+    'sidebarlink': '#e6ff42',
+    'button': '#00c23a'
   }
 };
 
