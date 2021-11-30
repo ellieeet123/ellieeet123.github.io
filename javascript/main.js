@@ -130,6 +130,15 @@ var colorThemes = {
     'link': '#00ffff',
     'sidebarlink': '#33ee98',
     'button': '#22a5df'
+  },
+  'orange': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/orange.png',
+    'textbg': '#404040',
+    'text': '#ff8800',
+    'link': '#ffff00',
+    'sidebarlink': '#00ffff',
+    'button': '#de7600'
   }
 };
 
