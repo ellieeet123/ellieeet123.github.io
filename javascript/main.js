@@ -95,14 +95,20 @@ function getColorBrightness(hex) {
 
 //makes the button invert colors when you hover over it
 function buttonHover(element,defaultbg) {
-  element.onmouseenter = function() {
-    changeStyleForElement(element,'backgroundColor','#ffffff');
-    changeStyleForElement(element,'color',defaultbg);
-  }
-  element.onmouseleave = function() {
-    changeStyleForElement(element,'backgroundColor',defaultbg);
-    changeStyleForElement(element,'color','#ffffff');
-  }
+  element.addEventListener(
+    'mouseenter',
+    function() {
+      this.style.background = '#ffffff';
+      this.style.color = defaultbg;
+    }
+  );
+  element.addEventListener(
+    'mouseleave',
+    function() {
+      this.style.background = defaultbg;
+      this.style.color = '#ffffff';
+    }
+  );
 }
 
 //JSON with color theme data so that only the name of the color theme has to be stored in a cookie
@@ -158,7 +164,7 @@ function colorTheme() {
   changeStyleForElementType('a','color',themeData.link);
   for (let i = 0; i < buttons.length; i++) {
     changeStyleForElement(buttons[i],'backgroundColor',themeData.button);
-    buttonHover(buttons[i],themeData.button);
+    buttonHover(buttons[i],themeData.button)
   }
   var pagetitle = document.getElementById('title').textContent;
   if (pagetitle == 'Home') {
@@ -179,10 +185,8 @@ function colorTheme() {
     var close = document.getElementById('close');
     changeStyleForElement(bookmark,'backgroundColor',themeData.button);
     changeStyleForElement(close,'backgroundColor',themeData.button);
-    bookmark.addEventListener('mouseenter',function(){this.style.background = '#ffffff';this.style.color = themeData.button;});
-    bookmark.addEventListener('mouseleave',function(){this.style.background = themeData.button;this.style.color = '#ffffff';});
-    close.addEventListener('mouseenter',function(){this.style.background = '#ffffff';this.style.color = themeData.button;});
-    close.addEventListener('mouseleave',function(){this.style.background = themeData.button;this.style.color = '#ffffff';});
+    buttonHover(bookmark,themeData.button);
+    buttonHover(close,themeData.button);
   }
 }
 
