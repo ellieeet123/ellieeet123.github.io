@@ -426,20 +426,25 @@ function waitForSwfLoad() {
   }
 }
 
-var runLoadFunctions = window.setInterval(function(){
-  if (document.getElementById('sidebar')) {
-    window.clearInterval(runLoadFunctions);
-    document.getElementById('sidebar').onload = function () {
-      var runLoadFunctionsInner = window.setInterval(function(){
-        if (document.getElementById('bottomElement')) {
-          window.clearInterval(runLoadFunctionsInner);
-          resizeIframe(document.getElementById('sidebar'));
-          colorTheme();
-          if (document.getElementById('title').textContent == 'Home') {
-            savedGamesList();
+//runs the savedgameslist, colortheme, and resizeiframe functions at the appropreate times
+function runFunctions() {
+  var runLoadFunctions = window.setInterval(function(){
+    if (document.getElementById('sidebar')) {
+      window.clearInterval(runLoadFunctions);
+      document.getElementById('sidebar').onload = function () {
+        var runLoadFunctionsInner = window.setInterval(function(){
+          if (document.getElementById('bottomElement')) {
+            window.clearInterval(runLoadFunctionsInner);
+            resizeIframe(document.getElementById('sidebar'));
+            if (document.getElementById('title').textContent == 'Home') {
+              savedGamesList();
+            }
+            colorTheme();
           }
-        }
-      },100);
+        },100);
+      }
     }
-  }
-},100);
+  },100);
+}
+
+runFunctions();
