@@ -422,15 +422,16 @@ function waitForSwfLoad() {
   }
 }
 
-while (true) {
+window.setInterval(function(){
   if (document.getElementById('sidebar')) {
     document.getElementById('sidebar').onload = function () {
-      while (true) {
+      window.setInterval(function(){
         if (document.getElementById('bottomElement')) {
           colorTheme();
+          window.clearInterval();
         }
-      }
+      },100);
     }
-    break;
+    window.clearInterval();
   }
-}
+},100);
