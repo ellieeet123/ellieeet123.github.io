@@ -436,10 +436,10 @@ window.setInterval(function(){
           if (document.getElementById('title').textContent = 'Home') {
             savedGamesList();
           }
-          window.clearInterval();
+          window.clearInterval(this);
         }
       },100);
     }
-    window.clearInterval();
+    window.clearInterval(this);
   }
 },100);
