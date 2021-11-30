@@ -426,20 +426,20 @@ function waitForSwfLoad() {
   }
 }
 
-window.setInterval(function(){
+var runLoadFunctions = window.setInterval(function(){
   if (document.getElementById('sidebar')) {
+    window.clearInterval(this);
     document.getElementById('sidebar').onload = function () {
       window.setInterval(function(){
         if (document.getElementById('bottomElement')) {
+          window.clearInterval(this);
           resizeIframe(document.getElementById('sidebar'));
           colorTheme();
           if (document.getElementById('title').textContent = 'Home') {
             savedGamesList();
           }
-          window.clearInterval(this);
         }
       },100);
     }
-    window.clearInterval(this);
   }
 },100);
