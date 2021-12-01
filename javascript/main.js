@@ -207,7 +207,7 @@ var colorThemes = {
     'text': '#d9f0ff',
     'link': '#57cfff',
     'sidebarlink': '#8f26ff',
-    'button': '#0d85db'
+    'button': '#002f80'
   }
 };
 
