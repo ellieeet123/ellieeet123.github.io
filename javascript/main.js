@@ -244,16 +244,19 @@ function makeSettingsPage() {
       makeSettingsPage();
     };
     //it gets up to at least here
+    alert(0);
     changeStyleForElement(currentButton,'backgroundColor',themeData.button);
+    alert(1);
     buttonHover(currentButton,themeData.button);
+    alert(2);
     document.getElementById('button_div').appendChild(buttonHover);
-    alert(5);
+    alert(3);
     for (var i = 0;i < 3;i++) {
-      document.appendChild(
+      document.getElementById('button_div').appendChild(
         document.createElement('br')
       );
     }
-    buttonHover = null;
+    currentButton = null;
   }
 }
 
