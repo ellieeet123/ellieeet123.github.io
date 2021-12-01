@@ -2,34 +2,6 @@
     <script src="/ruffle/ruffle.js"></script>
     <script src="/javascript/main.js"></script>
     <link rel="stylesheet" href="/css/main.css">
-    <style>
-      .squares {
-        border-radius: 3px;
-        background: #22a5df;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 3px;
-        height: 24px;
-        margin-top: 32px;
-        margin-right: 8px;
-        text-decoration: none;
-        float: left;
-        float: down;
-      }
-      .squares:hover {
-        background: #ffffff;
-        color: #22a5df;
-        text-decoration: none;
-      }
-      .squares a {
-        font: 0.8rem arial;
-        color: #ffffff;
-        text-decoration: none;
-      }
-      .squares:hover a {
-        color: #22a5df;
-      }      
-    </style>
     <link rel="shortcut icon" href="/images/favicon.ico"><link rel="icon" sizes="16x16 32x32 64x64" href="/images/favicon.ico"><link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png"><link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png"><link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="apple-touch-icon" href="/images/favicon-57.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="/images/favicon-144.png"><meta name="msapplication-config" content="/browserconfig.xml">
     <title>Pringles</title>
   </head>
@@ -42,9 +14,9 @@
         <h1>this page is under development it currently does not work so please come back later ok thanks</h1>
         <p id="main_p">This page was mostly just an experiment and some practice with javascript, but it's kinda cool. </p><br>
         <p onload='darkDisp' id="darkDisp">Dark Mode: Loading status...</p>
-        <div class="squares">
-          <a id="darkToggle" href="#" onclick="toggleDark(); return false;">Toggle Dark Mode</a>
-        </div><br><p> </p><br><p id="lowertext">I will probably add more settings sometime soon. </p><br>
+        <div id="button_div">
+        </div>
+        <br><p> </p><br><p id="lowertext">I will probably add more settings sometime soon. </p><br>
       </div>
     </div>
   </body>

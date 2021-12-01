@@ -44,11 +44,6 @@ function getCookie(cname) {
   return "";
 }
 
-//builds settings
-function buildSettings() {
-//wip
-}
-
 //clears the old darkmode cookie and sets the new one (temporary script)
 if (getCookie('darkmode') == 'yes') {
   setCookie('colorTheme', 'dark', 1000);
@@ -118,7 +113,7 @@ function buttonHover(element,defaultbg) {
 
 //JSON with color theme data so that only the name of the color theme has to be stored in a cookie
 var colorThemes = {
-  'default': {
+  'Default': {
     'backgroundtype': 'image',
     'background': '/images/bg/default.png',
     'textbg': '#eeeeff',
@@ -127,7 +122,7 @@ var colorThemes = {
     'sidebarlink': '#ff0000',
     'button': '#22a5df'
   },
-  'dark': {
+  'Dark': {
     'backgroundtype': 'image',
     'background': '/images/bg/default.png',
     'textbg': '#222233',
@@ -136,7 +131,7 @@ var colorThemes = {
     'sidebarlink': '#33ee98',
     'button': '#22a5df'
   },
-  'red': {
+  'Red': {
     'backgroundtype': 'image',
     'background': '/images/bg/red.png',
     'textbg': '#ffffff',
@@ -145,7 +140,7 @@ var colorThemes = {
     'sidebarlink': '#ff6f00',
     'button': '#0936db'
   },
-  'orange': {
+  'Orange': { 
     'backgroundtype': 'image',
     'background': '/images/bg/orange.png',
     'textbg': '#404040',
@@ -154,7 +149,7 @@ var colorThemes = {
     'sidebarlink': '#00ffff',
     'button': '#00ffff'
   },
-  'yellow': {
+  'Yellow': {
     'backgroundtype': 'image',
     'background': '/images/bg/yellow.jpg',
     'textbg': '#101629',
@@ -196,7 +191,7 @@ function colorTheme() {
   changeStyleForElementType('a','color',themeData.link);
   for (let i = 0; i < buttons.length; i++) {
     changeStyleForElement(buttons[i],'backgroundColor',themeData.button);
-    buttonHover(buttons[i],themeData.button)
+    buttonHover(buttons[i],themeData.button);
   }
   var pagetitle = document.getElementById('title').textContent;
   if (pagetitle == 'Home') {
@@ -219,6 +214,38 @@ function colorTheme() {
     changeStyleForElement(close,'backgroundColor',themeData.button);
     buttonHover(bookmark,themeData.button);
     buttonHover(close,themeData.button);
+  }
+}
+
+//automatically puts the theme options in the settings page based on content of colorThemes variable
+function makeSettingsPage() {
+  var keys = Object.keys(colorThemes);
+  var currentButton;
+  var themeData = colorThemes[getCookie('colorTheme')];
+  for (var i = 0; i < keys.length; i++) {
+    currentButton = document.createElement('a');
+    currentButton.className = 'squaresNew';
+    currentButton.style.cursor = 'pointer';
+    if (getCookie('colorTheme') == keys[i]) {
+      currentButton.innerText = keys[i] + ' [SELECTED]';
+    }
+    else {
+      currentButton.innerText = keys[i];
+    }
+    currentButton.onclick = function() {
+      setCookie('colorTheme', this.innerHTML, '1000');
+      colorTheme();
+      makeSettingsPage();
+    };
+    changeStyleForElement(currentButton,'backgroundColor',themeData.button);
+    buttonHover(currentButton,themeData.button);
+    document.getElementById('button_div').appendChild(buttonHover);
+    for (var i = 0;i < 3;i++) {
+      document.appendChild(
+        document.createElement('br')
+      );
+    }
+    buttonHover = null;
   }
 }
 
