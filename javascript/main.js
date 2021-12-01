@@ -225,29 +225,25 @@ function colorTheme() {
 
 //automatically puts the theme options in the settings page based on content of colorThemes variable
 function makeSettingsPage() {
-  alert(0);
   var keys = Object.keys(colorThemes);
   var currentButton;
   var themeData = colorThemes[getCookie('colorTheme')];
-  alert(1);
   for (var i = 0; i < keys.length; i++) {
     currentButton = document.createElement('a');
     currentButton.className = 'squaresNew';
     currentButton.style.cursor = 'pointer';
-    alert(2);
     if (getCookie('colorTheme') == keys[i]) {
       currentButton.innerText = keys[i] + ' [SELECTED]';
     }
     else {
       currentButton.innerText = keys[i];
     }
-    alert(3);
     currentButton.onclick = function() {
       setCookie('colorTheme', this.innerHTML, '1000');
       colorTheme();
       makeSettingsPage();
     };
-    alert(4);
+    //it gets up to at least here
     changeStyleForElement(currentButton,'backgroundColor',themeData.button);
     buttonHover(currentButton,themeData.button);
     document.getElementById('button_div').appendChild(buttonHover);
