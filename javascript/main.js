@@ -46,11 +46,11 @@ function getCookie(cname) {
 
 //clears the old darkmode cookie and sets the new one (temporary script)
 if (getCookie('darkmode') == 'yes') {
-  setCookie('colorTheme', 'dark', 1000);
+  setCookie('colorTheme', 'Dark', 1000);
   setCookie('darkmode', null, -1);
 }
 else if (getCookie('darkmode') == 'no') {
-  setCookie('colorTheme', 'default', 1000);
+  setCookie('colorTheme', 'Default', 1000);
   setCookie('darkmode', null, -1);
 }
 
@@ -167,7 +167,7 @@ function colorTheme() {
   var sidebarLinks = document.getElementById("sidebar").contentWindow.document.body.getElementsByTagName("a");
   var buttons = document.getElementById("header").contentWindow.document.body.getElementsByClassName("squaresNew");
   if (theme == '') {
-    theme = 'default';
+    theme = 'Default';
   }
   var themeData = colorThemes[theme];
   if (themeData.backgroundtype == 'image') {
