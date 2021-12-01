@@ -531,9 +531,6 @@ function waitForSwfLoad() {
         setDownloadLink();
         clearInterval(interval);
       }
-      else {
-        console.log("Still loading...");
-      }
     }, 100);
   }
   else {
