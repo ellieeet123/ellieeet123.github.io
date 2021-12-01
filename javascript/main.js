@@ -53,6 +53,12 @@ else if (getCookie('darkmode') == 'no') {
   setCookie('colorTheme', 'Default', 1000);
   setCookie('darkmode', null, -1);
 }
+if (getCookie('colorTheme') == 'default') {
+  setCookie('colorTheme', 'Default', 1000);
+}
+if (getCookie('colorTheme') == 'dark') {
+  setCookie('colorTheme', 'Dark', 1000);
+}
 
 //changes all of a given element type to the style specified when calling the function.
 function changeStyleForElementType(element,style,value) {
