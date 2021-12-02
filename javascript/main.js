@@ -20,9 +20,13 @@ function setTitle(){
   document.title = titleData;
 }
 
-//waits for the given amount of milliseconds just cus im lazy
+//waits for the given amount of milliseconds (taken from stackoverflow)
 function wait(ms) {
-  window.setTimeout(function() {}, ms);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(ms)
+    }, ms )
+  })
 }
 
 //sets a cookie [script from w3schools.com]
@@ -362,7 +366,7 @@ function buildGamePage() {
         const ruffle = window.RufflePlayer.newest();
         break;
       }
-      wait(100);
+      await wait(100);
     }
     const player = ruffle.createPlayer();
     const container = document.getElementById('gamecontainer');
@@ -421,9 +425,7 @@ function savedGamesList() {
     }
   }
   console.log(gameLinkData);
-  if (gameLinkData.length == 0) {
-    let useless = 0;
-  }
+  if (gameLinkData.length == 0){ }
   else {
     for (let x = 0; x < gameLinkData.length; x++) {
       ui.getElementsByClassName('nosaved')[0].innerHTML = ''; //no saved games message
