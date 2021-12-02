@@ -1,5 +1,4 @@
-window.onload = setTitle()
-var pageTitle = document.getElementById('title');
-//if (pageTitle.textContent == 'Home') {
-//  updateDark();
-//}
+var pageTitle = document.getElementById('title').textContent;
+if (!(window.location.href.endsWith('/games/'))) {
+  document.title = pageTitle;
+}

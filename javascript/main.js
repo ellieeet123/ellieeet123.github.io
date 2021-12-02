@@ -368,6 +368,7 @@ function buildGamePage() {
         });
       }
       document.getElementById('title').innerHTML = title;
+      document.title = title;
       if (text != '') {
         document.getElementById('text').innerHTML = text;
       }
