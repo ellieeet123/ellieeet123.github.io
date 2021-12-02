@@ -368,7 +368,7 @@ function buildGamePage() {
         });
       }
       document.getElementById('title').innerHTML = title;
-      document.title = title;
+      document.title = title + ' - Pringles';
       if (text != '') {
         document.getElementById('text').innerHTML = text;
       }
