@@ -20,15 +20,6 @@ function setTitle(){
   document.title = titleData;
 }
 
-//waits for the given amount of milliseconds (taken from stackoverflow)
-function wait(ms) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(ms)
-    }, ms )
-  })
-}
-
 //sets a cookie [script from w3schools.com]
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
@@ -361,13 +352,12 @@ function buildGamePage() {
   let isBigFile = getCookie('data_isBigFile');
   if (isFlash == '1') {
     //ruffle stuffs
-    while (true) {
+    var waitForRuffleLoad = setInterval(function() {
       if (window.RufflePlayer) {
         const ruffle = window.RufflePlayer.newest();
-        break;
+        clearInterval(waitForRuffleLoad);
       }
-      await wait(100);
-    }
+    },100);
     const player = ruffle.createPlayer();
     const container = document.getElementById('gamecontainer');
     player.style.height = '1px';
