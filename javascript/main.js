@@ -363,6 +363,9 @@ function buildGamePage() {
         player.style.width = '1px';
         player.id = 'frame';
         container.appendChild(player);
+        $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
+          player.load(data.swfFileLocation + frameSrc);
+        });
       }
       document.getElementById('title').innerHTML = title;
       if (text != '') {
@@ -377,12 +380,7 @@ function buildGamePage() {
       else {
         document.getElementById('warn').innerHTML = 'Loading Game...';
       }
-      if (isFlash == 1) {
-        $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
-          player.load(data.swfFileLocation + frameSrc);
-        });
-      }
-      else {
+      if (isFlash != '1') {
         document.getElementById('gamecontainer').appendChild(
           document.createElement('iframe')
         )
