@@ -350,6 +350,16 @@ function buildGamePage() {
     var frameHeight = getCookie('data_frameHeight');
   }
   let isBigFile = getCookie('data_isBigFile');
+  if (isFlash == '1') {
+    //ruffle stuffs
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    const container = document.getElementById('gamecontainer');
+    player.style.height = '1px';
+    player.style.width = '1px';
+    player.id = 'frame';
+    container.appendChild(player);
+  }
   document.getElementById('title').innerHTML = title;
   if (text != '') {
     document.getElementById('text').innerHTML = text;
@@ -371,11 +381,7 @@ function buildGamePage() {
   else {
     document.getElementById('frame').src = frameSrc;
   }
-  if (isFlash == 1) {
-    document.getElementById('frame').width = 1; //placeholder value until it is auto-sized with the swf data
-    document.getElementById('frame').height = 1;
-  }
-  else {
+  if (isFlash != '1') {
     document.getElementById('frame').width = frameWidth;
     document.getElementById('frame').height = frameHeight;
   }
@@ -498,27 +504,23 @@ function bookmarkUI() {
 
 //resizes the main game frame to fit the screen
 function resizeGameFrame() {
+  var frame = document.getElementById('frame');
   var w = document.getElementById('main_text').offsetWidth;
   var h = window.innerHeight - 120;
   var ratio = w / h;
-  var waitForMetadataLoad = setInterval(function(){
-    if (document.getElementById('frame').metadata != undefined) {
-      clearInterval(waitForMetadataLoad);
-      var swfWidth = document.getElementById('frame').metadata.width;
-      var swfHeight = document.getElementById('frame').metadata.height;
-      var swfRatio = swfWidth / swfHeight;
-      if (swfRatio > ratio) {
-        var newWidth = w;
-        var newHeight = w / swfRatio;
-      }
-      else {
-        var newWidth = h * swfRatio;
-        var newHeight = h;
-      }
-      frame.style.width = newWidth + "px";
-      frame.style.height = newHeight + "px";
-    }
-  }, 100);
+  var swfWidth = document.getElementById('frame').metadata.width;
+  var swfHeight = document.getElementById('frame').metadata.height;
+  var swfRatio = swfWidth / swfHeight;
+  if (swfRatio > ratio) {
+    var newWidth = w;
+    var newHeight = w / swfRatio;
+  }
+  else {
+    var newWidth = h * swfRatio;
+    var newHeight = h;
+  }
+  frame.style.width = newWidth + "px";
+  frame.style.height = newHeight + "px";
 }
 
 //waits until the SWF file has finished loading
