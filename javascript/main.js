@@ -354,41 +354,41 @@ function buildGamePage() {
     //ruffle stuffs
     var waitForRuffleLoad = setInterval(function() {
       if (window.RufflePlayer) {
-        const ruffle = window.RufflePlayer.newest();
         clearInterval(waitForRuffleLoad);
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById('gamecontainer');
+        player.style.height = '1px';
+        player.style.width = '1px';
+        player.id = 'frame';
+        container.appendChild(player);
+        document.getElementById('title').innerHTML = title;
+        if (text != '') {
+          document.getElementById('text').innerHTML = text;
+        }
+        else {
+          document.getElementById('text').remove()
+        }
+        if (isBigFile == 1) {
+          document.getElementById('warn').innerHTML = 'Loading Game... [this might take a hot second.]<br>If you see a popup saying the page isn\'t responding, click \'wait\' and be patient.';
+        }
+        else {
+          document.getElementById('warn').innerHTML = 'Loading Game...';
+        }
+        if (isFlash == 1) {
+          $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
+            document.getElementById('frame').src = data.swfFileLocation + frameSrc;
+          });
+        }
+        else {
+          document.getElementById('frame').src = frameSrc;
+        }
+        if (isFlash != '1') {
+          document.getElementById('frame').width = frameWidth;
+          document.getElementById('frame').height = frameHeight;
+        }
       }
     },100);
-    const player = ruffle.createPlayer();
-    const container = document.getElementById('gamecontainer');
-    player.style.height = '1px';
-    player.style.width = '1px';
-    player.id = 'frame';
-    container.appendChild(player);
-  }
-  document.getElementById('title').innerHTML = title;
-  if (text != '') {
-    document.getElementById('text').innerHTML = text;
-  }
-  else {
-    document.getElementById('text').remove()
-  }
-  if (isBigFile == 1) {
-    document.getElementById('warn').innerHTML = 'Loading Game... [this might take a hot second.]<br>If you see a popup saying the page isn\'t responding, click \'wait\' and be patient.';
-  }
-  else {
-    document.getElementById('warn').innerHTML = 'Loading Game...';
-  }
-  if (isFlash == 1) {
-    $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
-      document.getElementById('frame').src = data.swfFileLocation + frameSrc;
-    });
-  }
-  else {
-    document.getElementById('frame').src = frameSrc;
-  }
-  if (isFlash != '1') {
-    document.getElementById('frame').width = frameWidth;
-    document.getElementById('frame').height = frameHeight;
   }
 }
 
