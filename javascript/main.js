@@ -501,19 +501,24 @@ function resizeGameFrame() {
   var w = document.getElementById('main_text').offsetWidth;
   var h = window.innerHeight - 120;
   var ratio = w / h;
-  var swfWidth = document.getElementById('frame').metadata.width;
-  var swfHeight = document.getElementById('frame').metadata.height;
-  var swfRatio = swfWidth / swfHeight;
-  if (swfRatio > ratio) {
-      var newWidth = w;
-      var newHeight = w / swfRatio;
-  }
-  else {
-      var newWidth = h * swfRatio;
-      var newHeight = h;
-  }
-  frame.style.width = newWidth + "px";
-  frame.style.height = newHeight + "px";
+  var waitForMetadataLoad = setInterval(function(){
+    if (document.getElementById('frame').metadata != undefined) {
+      clearInterval(waitForMetadataLoad);
+      var swfWidth = document.getElementById('frame').metadata.width;
+      var swfHeight = document.getElementById('frame').metadata.height;
+      var swfRatio = swfWidth / swfHeight;
+      if (swfRatio > ratio) {
+        var newWidth = w;
+        var newHeight = w / swfRatio;
+      }
+      else {
+        var newWidth = h * swfRatio;
+        var newHeight = h;
+      }
+      frame.style.width = newWidth + "px";
+      frame.style.height = newHeight + "px";
+    }
+  }, 100);
 }
 
 //waits until the SWF file has finished loading
