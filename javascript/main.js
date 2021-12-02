@@ -382,13 +382,12 @@ function buildGamePage() {
         document.getElementById('warn').innerHTML = 'Loading Game...';
       }
       if (isFlash != '1') {
-        document.getElementById('gamecontainer').appendChild(
-          document.createElement('iframe')
-        )
-        document.getElementById('gamecontainer').firstElementChild.id = 'frame';
-        document.getElementById('frame').src = frameSrc;
-        document.getElementById('frame').width = frameWidth;
-        document.getElementById('frame').height = frameHeight;
+        var iframe = document.createElement('iframe');
+        iframe.src = frameSrc;
+        iframe.width = frameWidth;
+        iframe.height = frameHeight;
+        iframe.id = 'frame';
+        document.getElementById('gamecontainer').appendChild(iframe);
       }
     }
   },100);
