@@ -350,13 +350,12 @@ function buildGamePage() {
     var frameHeight = getCookie('data_frameHeight');
   }
   let isBigFile = getCookie('data_isBigFile');
-  if (isFlash == '1') {
-    //ruffle stuffs
-    var waitForRuffleLoad = setInterval(function() {
-      console.log(0);
-      if (window.RufflePlayer != undefined) {
-        console.log(1);
-        clearInterval(waitForRuffleLoad);
+  var waitForRuffleLoad = setInterval(function() {
+    console.log(0);
+    if (window.RufflePlayer != undefined) {
+      console.log(1);
+      clearInterval(waitForRuffleLoad);
+      if (isFlash == '1') {
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         const container = document.getElementById('gamecontainer');
@@ -364,34 +363,36 @@ function buildGamePage() {
         player.style.width = '1px';
         player.id = 'frame';
         container.appendChild(player);
-        document.getElementById('title').innerHTML = title;
-        if (text != '') {
-          document.getElementById('text').innerHTML = text;
-        }
-        else {
-          document.getElementById('text').remove()
-        }
-        if (isBigFile == 1) {
-          document.getElementById('warn').innerHTML = 'Loading Game... [this might take a hot second.]<br>If you see a popup saying the page isn\'t responding, click \'wait\' and be patient.';
-        }
-        else {
-          document.getElementById('warn').innerHTML = 'Loading Game...';
-        }
-        if (isFlash == 1) {
-          $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
-            document.getElementById('frame').src = data.swfFileLocation + frameSrc;
-          });
-        }
-        else {
-          document.getElementById('frame').src = frameSrc;
-        }
-        if (isFlash != '1') {
-          document.getElementById('frame').width = frameWidth;
-          document.getElementById('frame').height = frameHeight;
-        }
       }
-    },100);
-  }
+      document.getElementById('title').innerHTML = title;
+      if (text != '') {
+        document.getElementById('text').innerHTML = text;
+      }
+      else {
+        document.getElementById('text').remove()
+      }
+      if (isBigFile == 1) {
+        document.getElementById('warn').innerHTML = 'Loading Game... [this might take a hot second.]<br>If you see a popup saying the page isn\'t responding, click \'wait\' and be patient.';
+      }
+      else {
+        document.getElementById('warn').innerHTML = 'Loading Game...';
+      }
+      if (isFlash == 1) {
+        $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
+          player.load(data.swfFileLocation + frameSrc);
+        });
+      }
+      else {
+        document.getElementById('gamecontainer').appendChild(
+          document.createElement('iframe')
+        )
+        document.getElementById('gamecontainer').firstElementChild.id = 'frame';
+        document.getElementById('frame').src = frameSrc;
+        document.getElementById('frame').width = frameWidth;
+        document.getElementById('frame').height = frameHeight;
+      }
+    }
+  },100);
 }
 
 //if the game is flash, set the download swf link to the swf file location
