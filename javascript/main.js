@@ -20,6 +20,11 @@ function setTitle(){
   document.title = titleData;
 }
 
+//waits for the given amount of milliseconds just cus im lazy
+function wait(ms) {
+  window.setTimeout(function() {}, ms);
+}
+
 //sets a cookie [script from w3schools.com]
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
@@ -352,7 +357,13 @@ function buildGamePage() {
   let isBigFile = getCookie('data_isBigFile');
   if (isFlash == '1') {
     //ruffle stuffs
-    const ruffle = window.RufflePlayer.newest();
+    while (true) {
+      if (window.RufflePlayer) {
+        const ruffle = window.RufflePlayer.newest();
+        break;
+      }
+      wait(100);
+    }
     const player = ruffle.createPlayer();
     const container = document.getElementById('gamecontainer');
     player.style.height = '1px';
