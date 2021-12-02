@@ -353,7 +353,9 @@ function buildGamePage() {
   if (isFlash == '1') {
     //ruffle stuffs
     var waitForRuffleLoad = setInterval(function() {
-      if (window.RufflePlayer) {
+      console.log(0);
+      if (window.RufflePlayer != undefined) {
+        console.log(1);
         clearInterval(waitForRuffleLoad);
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
