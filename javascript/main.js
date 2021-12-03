@@ -388,6 +388,7 @@ function buildGamePage() {
         iframe.width = frameWidth;
         iframe.height = frameHeight;
         iframe.id = 'frame';
+        iframe.frameBorder = 0;
         document.getElementById('gamecontainer').appendChild(iframe);
       }
       gamePageBuilt = true;
