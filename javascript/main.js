@@ -339,7 +339,8 @@ function randomPageLink() {
   link.dataset.isbigfile = object.dataset.isbigfile;
 }
 
-//takes the cookies from the previous function and uses them to build the "games" page. 
+//takes the cookies from the previous function and uses them to build the "games" page.
+var gamePageBuilt = false;
 function buildGamePage() {
   let title = getCookie('data_title');
   let text = getCookie('data_text');
@@ -389,6 +390,7 @@ function buildGamePage() {
         iframe.id = 'frame';
         document.getElementById('gamecontainer').appendChild(iframe);
       }
+      gamePageBuilt = true;
     }
   },100);
 }

@@ -59,9 +59,14 @@
       if (document.getElementById('bottomElement') != undefined) {
         clearInterval(gamepageinterval);
         buildGamePage();
-        bookmarkUI();
-        waitForSwfLoad();
-        window.onresize=resizeGameFrame;
+        var gamepageinnerinterval = window.setInterval(function() {
+          if (gamePageBuilt == true) {
+            clearInterval(gamepageinnerinterval);
+            bookmarkUI();
+            waitForSwfLoad();
+            window.onresize=resizeGameFrame;
+          }
+        },100);
       }
     }, 100);
   </script>
