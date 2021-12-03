@@ -570,9 +570,8 @@ function runFunctions() {
   var runLoadFunctions = window.setInterval(function(){
     if (document.getElementById('sidebar')) {
       alert(0);
-      window.clearInterval(runLoadFunctions);
-      alert(1);
       document.getElementById('sidebar').onload = sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName();
+      window.clearInterval(runLoadFunctions);
       alert(2);
     }
   },500);
