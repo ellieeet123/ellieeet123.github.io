@@ -571,7 +571,9 @@ function runFunctions() {
     if (document.getElementById('sidebar')) {
       alert(0);
       window.clearInterval(runLoadFunctions);
+      alert(1);
       document.getElementById('sidebar').onload = sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName();
+      alert(2);
     }
   },500);
 }
