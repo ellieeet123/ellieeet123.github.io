@@ -557,9 +557,6 @@ function sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionNa
     if (document.getElementById('bottomElement')) {
       window.clearInterval(runLoadFunctionsInner);
       resizeIframe(document.getElementById('sidebar'));
-      if (document.getElementById('title').textContent == 'Home') {
-        savedGamesList();
-      }
       colorTheme();
     }
   },100);
