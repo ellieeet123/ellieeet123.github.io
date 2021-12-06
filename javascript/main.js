@@ -568,9 +568,9 @@ function sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionNa
 //runs the savedgameslist, colortheme, and resizeiframe functions at the appropreate times
 function runFunctions() {
   var runLoadFunctions = window.setInterval(function(){
-    if (document.getElementById('sidebar')) {
+    if (document.getElementById('sidebar').contentWindow.document.getElementById('bottomElement')) {
       alert(0);
-      document.getElementById('sidebar').onload = sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName();
+      sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName();
       window.clearInterval(runLoadFunctions);
       alert(2);
     }
