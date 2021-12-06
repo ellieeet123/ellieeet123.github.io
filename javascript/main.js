@@ -569,10 +569,8 @@ function sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionNa
 function runFunctions() {
   var runLoadFunctions = window.setInterval(function(){
     if (document.getElementById('sidebar').contentWindow.document.getElementById('bottomElement')) {
-      alert(0);
       sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName();
       window.clearInterval(runLoadFunctions);
-      alert(2);
     }
   },500);
 }

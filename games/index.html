@@ -57,16 +57,16 @@
   <script>
     var gamepageinterval = window.setInterval(function() {
       if (document.getElementById('bottomElement') != undefined) {
-        clearInterval(gamepageinterval);
         buildGamePage();
         var gamepageinnerinterval = window.setInterval(function() {
           if (gamePageBuilt == true) {
-            clearInterval(gamepageinnerinterval);
             bookmarkUI();
             waitForSwfLoad();
             window.onresize=resizeGameFrame;
+            clearInterval(gamepageinnerinterval);
           }
         },100);
+        clearInterval(gamepageinterval);
       }
     }, 100);
   </script>
