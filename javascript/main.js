@@ -487,6 +487,8 @@ function bookmarkUI() {
     else {
       var savedGames = savedGamesString.split(',');
     }
+    document.getElementById('bookmark').style.background = themeData[getCookie('colorTheme')].button;
+    document.getElementById('close').style.background = themeData[getCookie('colorTheme')].button;
     if (savedGames.includes(getCookie('data_title'))) {
       $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark</span>Unbookmark");
     }
