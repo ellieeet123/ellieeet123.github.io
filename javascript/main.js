@@ -237,6 +237,7 @@ function colorTheme() {
   var buttons = document.getElementById("header").contentWindow.document.body.getElementsByClassName("squaresNew");
   if (theme == '') {
     theme = 'Default';
+    setCookie('colorTheme','Default',1000);
   }
   var themeData = colorThemes[theme];
   if (themeData.backgroundtype == 'image') {
