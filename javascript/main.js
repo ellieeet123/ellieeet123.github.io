@@ -289,9 +289,10 @@ function colorTheme() {
 //automatically puts the theme options in the settings page based on content of colorThemes variable
 function makeSettingsPage() {
   var keys = Object.keys(colorThemes);
+  console.log(keys);
   var currentButton;
   var themeData = colorThemes[getCookie('colorTheme')];
-  for (var i = 0; i < keys.length; i++) {
+  for (var i = 0; i < keys.length; i = i+1) {
     currentButton = document.createElement('a');
     currentButton.className = 'squaresNew';
     currentButton.style.cursor = 'pointer';
