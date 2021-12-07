@@ -212,20 +212,20 @@ var colorThemes = {
   'Arcade Room': {
     'backgroundtype': 'image',
     'background': '/images/bg/arcade-room.png',
-    'textbg': '0d032a',
-    'text': 'fafafa',
-    'link': 'a800e5',
-    'sidebarlink': '41ffe9',
-    'button': 'ff3e3e'
+    'textbg': '#0d032a',
+    'text': '#fafafa',
+    'link': '#a800e5',
+    'sidebarlink': '#41ffe9',
+    'button': '#ff3e3e'
   },
   'Dark Hex': {
     'backgroundtype': 'image',
     'background': '/images/bg/dark-hex.png',
-    'textbg': '001e63',
-    'text': 'fdfffc',
-    'link': 'ff8000',
-    'sidebarlink': 'f1d302',
-    'button': 'c1292e'
+    'textbg': '#001e63',
+    'text': '#fdfffc',
+    'link': '#ff8000',
+    'sidebarlink': '#f1d302',
+    'button': '#c1292e'
   }
 };
 
