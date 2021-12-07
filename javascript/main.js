@@ -292,6 +292,9 @@ function colorTheme() {
 
 //automatically puts the theme options in the settings page based on content of colorThemes variable
 function makeSettingsPage() {
+  if (getCookie('colorTheme') == '') {
+    setCookie('colorTheme', 'Default', 1000);
+  }
   var keys = Object.keys(colorThemes);
   var currentButton;
   var themeData = colorThemes[getCookie('colorTheme')];
