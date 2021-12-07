@@ -297,6 +297,7 @@ function makeSettingsPage() {
     currentButton.className = 'squaresNew';
     currentButton.style.cursor = 'pointer';
     currentButton.style.marginTop = '5px';
+    currentButton.style.paddingBottom = '10px';
     if (getCookie('colorTheme') == keys[i]) {
       currentButton.innerText = keys[i] + ' [SELECTED]';
     }
@@ -310,6 +311,7 @@ function makeSettingsPage() {
     };
     //it gets up to at least here
     changeStyleForElement(currentButton,'backgroundColor',themeData.button);
+    changeStyleForElement(currentButton,'color','#ffffff');
     buttonHover(currentButton,themeData.button);
     document.getElementById('button_div').appendChild(currentButton);
     console.log('loop');
