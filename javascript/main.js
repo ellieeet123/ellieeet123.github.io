@@ -314,7 +314,7 @@ function makeSettingsPage() {
       makeSettingsPage();
     };
     changeStyleForElement(currentButton,'backgroundColor',themeData.button);
-    //changeStyleForElement(currentButton,'color','#ffffff');
+    changeStyleForElement(currentButton,'color','#ffffff');
     buttonHover(currentButton,themeData.button);
     document.getElementById('button_div').appendChild(currentButton);
     console.log('loop');
