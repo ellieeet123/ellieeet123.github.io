@@ -208,6 +208,24 @@ var colorThemes = {
     'link': '#57cfff',
     'sidebarlink': '#8f26ff',
     'button': '#002f80'
+  },
+  'Arcade Room': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/arcade-room.png',
+    'textbg': '0d032a',
+    'text': 'fafafa',
+    'link': 'a800e5',
+    'sidebarlink': '41ffe9',
+    'button': 'ff3e3e'
+  },
+  'Dark Hex': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/dark-hex.png',
+    'textbg': '001e63',
+    'text': 'fdfffc',
+    'link': 'ff8000',
+    'sidebarlink': 'f1d302',
+    'button': 'c1292e'
   }
 };
 
@@ -487,8 +505,8 @@ function bookmarkUI() {
     else {
       var savedGames = savedGamesString.split(',');
     }
-    document.getElementById('bookmark').style.background = themeData[getCookie('colorTheme')].button;
-    document.getElementById('close').style.background = themeData[getCookie('colorTheme')].button;
+    document.getElementById('bookmark').style.background = colorThemes[getCookie('colorTheme')].button;
+    document.getElementById('close').style.background = colorThemes[getCookie('colorTheme')].button;
     if (savedGames.includes(getCookie('data_title'))) {
       $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark</span>Unbookmark");
     }
