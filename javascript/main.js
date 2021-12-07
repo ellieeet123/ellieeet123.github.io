@@ -312,7 +312,7 @@ function makeSettingsPage() {
     alert(1);
     buttonHover(currentButton,themeData.button);
     alert(2);
-    document.getElementById('button_div').appendChild(buttonHover);
+    document.getElementById('button_div').appendChild(currentButton);
     alert(3);
     for (var i = 0;i < 3;i++) {
       document.getElementById('button_div').appendChild(
@@ -584,8 +584,11 @@ function sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionNa
 
 //runs the savedgameslist, colortheme, and resizeiframe functions at the appropreate times
 function runFunctions() {
+  var sidebarObj;
   var runLoadFunctions = window.setInterval(function(){
-    if (document.getElementById('sidebar').contentWindow.document.getElementById('bottomElement')) {
+    sidebarObj = null;
+    sidebarObj = document.getElementById('sidebar');
+    if (sidebarObj.contentWindow.document.getElementById('bottomElement')) {
       sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName();
       window.clearInterval(runLoadFunctions);
     }
