@@ -301,7 +301,7 @@ function makeSettingsPage() {
     currentButton.style.cursor = 'pointer';
     currentButton.style.marginTop = '5px';
     currentButton.style.paddingBottom = '10px';
-    currentButton.className = 'colorThemeChangeButtons';
+    currentButton.classList.add('colorThemeChangeButtons');
     if (getCookie('colorTheme') == keys[i]) {
       currentButton.innerText = keys[i] + ' [SELECTED]';
     }
