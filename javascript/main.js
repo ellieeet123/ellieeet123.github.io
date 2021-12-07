@@ -290,9 +290,11 @@ function colorTheme() {
 function makeSettingsPage() {
   var keys = Object.keys(colorThemes);
   console.log(keys);
+  var keyslength = keys.length;
+  console.log(keyslength);
   var currentButton;
   var themeData = colorThemes[getCookie('colorTheme')];
-  for (var i = 0; i < keys.length; i = i+1) {
+  for (var i = 0; i < keyslength; i = i+1) {
     currentButton = document.createElement('a');
     currentButton.className = 'squaresNew';
     currentButton.style.cursor = 'pointer';
