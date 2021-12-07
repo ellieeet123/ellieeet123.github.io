@@ -314,7 +314,7 @@ function makeSettingsPage() {
     buttonHover(currentButton,themeData.button);
     document.getElementById('button_div').appendChild(currentButton);
     console.log('loop');
-    for (var i = 0;i < 3;i++) {
+    for (var j = 0;j < 3;j++) {
       document.getElementById('button_div').appendChild(
         document.createElement('br')
       );
