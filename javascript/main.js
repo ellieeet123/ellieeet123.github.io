@@ -262,6 +262,9 @@ function colorTheme() {
     changeStyleForElement(buttons[i],'backgroundColor',themeData.button);
     buttonHover(buttons[i],themeData.button);
   }
+  for (let i = 0; i < document.getElementsByClassName('colorThemeChangeButtons').length;i++) {
+    document.getElementsByClassName('colorThemeChangeButtons')[i].style.color = '#ffffff';
+  }
   var pagetitle = document.getElementById('title').textContent;
   if (pagetitle == 'Home') {
     var savedGamesIframe = document.getElementById("savedgames").contentWindow.document;
@@ -298,6 +301,7 @@ function makeSettingsPage() {
     currentButton.style.cursor = 'pointer';
     currentButton.style.marginTop = '5px';
     currentButton.style.paddingBottom = '10px';
+    currentButton.className = 'colorThemeChangeButtons';
     if (getCookie('colorTheme') == keys[i]) {
       currentButton.innerText = keys[i] + ' [SELECTED]';
     }
@@ -309,9 +313,8 @@ function makeSettingsPage() {
       colorTheme();
       makeSettingsPage();
     };
-    //it gets up to at least here
     changeStyleForElement(currentButton,'backgroundColor',themeData.button);
-    changeStyleForElement(currentButton,'color','#ffffff');
+    //changeStyleForElement(currentButton,'color','#ffffff');
     buttonHover(currentButton,themeData.button);
     document.getElementById('button_div').appendChild(currentButton);
     console.log('loop');
