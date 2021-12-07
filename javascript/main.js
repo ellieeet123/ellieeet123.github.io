@@ -307,13 +307,10 @@ function makeSettingsPage() {
       makeSettingsPage();
     };
     //it gets up to at least here
-    alert(0);
     changeStyleForElement(currentButton,'backgroundColor',themeData.button);
-    alert(1);
     buttonHover(currentButton,themeData.button);
-    alert(2);
     document.getElementById('button_div').appendChild(currentButton);
-    alert(3);
+    console.log('loop');
     for (var i = 0;i < 3;i++) {
       document.getElementById('button_div').appendChild(
         document.createElement('br')
