@@ -580,11 +580,28 @@ function waitForSwfLoad() {
   }
 }
 
+//sets the splash text on the home page to a random thing from a list of splashes
+function splashText() {
+  var splashes = [
+    'A Great Entertainment Site With <div class="gameCount"></div> Games',
+    'Lowering your grades since 2019',
+    'There is really nothing stopping me from making this as long as I want to except for the fact that I do not want to.',
+    'Pineapple on pizza is delicious. If you disagree then you can leave.',
+    'Fun fact, eating three pizzas per day is healthier for you than being dead!',
+    'There are currently 6 random texts that can appear here unless I added more and forgot to update this. (which is actually quite likely)'
+  ];
+  document.getElementById('splash').innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
+  document.getElementsByClassName('gameCount')[0].innerHTML = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByClassName('a').length;
+}
+
 function sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName() {
   var runLoadFunctionsInner = window.setInterval(function(){
     if (document.getElementById('bottomElement')) {
       window.clearInterval(runLoadFunctionsInner);
       resizeIframe(document.getElementById('sidebar'));
+      if (document.getElementById('title').textContent == 'Home') {
+        splashText()
+      }
       colorTheme();
     }
   },100);
