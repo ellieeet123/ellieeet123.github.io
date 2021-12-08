@@ -234,7 +234,7 @@ var colorThemes = {
     'text': '#a2a2a2',
     'link': '#c0c0c0',
     'sidebarlink': '#c0c0c0',
-    'button': '404040'
+    'button': '#404040'
   },
   'Bright White': {
     'backgroundtype': 'color',
