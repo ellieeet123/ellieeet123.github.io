@@ -25,7 +25,11 @@
       "framewidth": "1090",
       "frameheight": "613"
     },
-    {},
+    {
+      "title": "RAW_LINK",
+      "linktitle": "Animator vs. Animation",
+      "href": "/games/html/animator-vs-animation.html"
+    },
     {
       "title": "Asteroids",
       "text": "",
