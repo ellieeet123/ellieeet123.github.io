@@ -226,6 +226,24 @@ var colorThemes = {
     'link': '#ff8000',
     'sidebarlink': '#f1d302',
     'button': '#c1292e'
+  },
+  'Deep Dark': {
+    'backgroundtype': 'color',
+    'background': '#000000',
+    'textbg': '#000000',
+    'text': '#a2a2a2',
+    'link': '#c0c0c0',
+    'sidebarlink': '#c0c0c0',
+    'button': '404040'
+  },
+  'Bright White': {
+    'backgroundtype': 'color',
+    'background': '#ffffff',
+    'textbg': '#ffffff',
+    'text': '#606060',
+    'link': '#808080',
+    'sidebarlink': '#808080',
+    'button': '#404040'
   }
 };
 
