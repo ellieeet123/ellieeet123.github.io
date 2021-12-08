@@ -597,7 +597,8 @@ function splashText() {
     'The plural of footage is feetage',
     'Whoever first found a hot pepper and ate it probably thought they were going to die for a couple of minutes',
     'If you are in space it\'s possible to have double sided pizza',
-    'Is it just me or do all microwave doors open from the same side'
+    'Is it just me or do all microwave doors open from the same side',
+    'Why are cookies called cookies and bacon called bacon when we cook bacon and bake cookies?'
   ];
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
   if (document.getElementsByClassName('gameCount').length != 0) {
