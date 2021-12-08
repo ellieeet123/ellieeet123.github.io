@@ -260,9 +260,11 @@ function colorTheme() {
   var themeData = colorThemes[theme];
   if (themeData.backgroundtype == 'image') {
     changeStyleForElementType('body','backgroundImage','url('+themeData.background+')');
+    changeStyleForElementType('body','backgroundColor','');
   }
   else if (themeData.backgroundtype == 'color') {
     changeStyleForElementType('body','backgroundColor',themeData.background);
+    changeStyleForElementType('body','backgroundImage','');
   }
   changeStyleForElementWithId('main','backgroundColor',themeData.textbg);
   changeStyleForElement(sidebarObj[0],'backgroundColor',themeData.textbg);
