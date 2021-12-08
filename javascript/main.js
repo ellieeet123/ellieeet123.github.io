@@ -590,7 +590,13 @@ function splashText() {
     'Fun fact, eating three pizzas per day is healthier for you than being dead!',
     'There are currently 6 random texts that can appear here unless I added more and forgot to update this. (which is actually quite likely)',
     'Important political announcement: m̸̼̻̐̆ą̸̙̂́g̷͔͐d̴̨͛ò̸̠̈́n̷̙͂d̶̩̈a̶̙̭̓̃l̵̹̐͌ ̴̝͉̊s̴͙̱̋ ̶̆ͅb̶̘͇̌̈e̷̛͔è̵̥́s̶̛͔̭̀ē̴̬ċ̸̛̹h̷̪̘͊͐u̷̱͐r̶̟͋͜ǵ̸̠̑ȩ̸́̔n̷̫͌ͅ',
-    'Whenever a nuclear bomb goes off there is always somewhere within a certain radius of it where all the steaks in a supermarket are perfectly cooked'
+    'Whenever a nuclear bomb goes off there is always somewhere within a certain radius of it where all the steaks in a supermarket are perfectly cooked',
+    'There are some parts of your floor that you have likely never touched',
+    'The word thesaurus, which is a book that contains synonyms for other words, has no synonyms.',
+    'insert vsauce music for absolutely no reason at all',
+    'The plural of footage is feetage',
+    'Whoever first found a hot pepper and ate it probably thought they were going to die for a couple of minutes',
+    'If you are in space it\'s possible to have double sided pizza'
   ];
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
   if (document.getElementsByClassName('gameCount').length != 0) {
