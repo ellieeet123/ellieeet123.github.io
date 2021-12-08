@@ -588,10 +588,14 @@ function splashText() {
     'There is really nothing stopping me from making this as long as I want to except for the fact that I do not want to.',
     'Pineapple on pizza is delicious. If you disagree then you can leave.',
     'Fun fact, eating three pizzas per day is healthier for you than being dead!',
-    'There are currently 6 random texts that can appear here unless I added more and forgot to update this. (which is actually quite likely)'
+    'There are currently 6 random texts that can appear here unless I added more and forgot to update this. (which is actually quite likely)',
+    'Important political announcement: m̸̼̻̐̆ą̸̙̂́g̷͔͐d̴̨͛ò̸̠̈́n̷̙͂d̶̩̈a̶̙̭̓̃l̵̹̐͌ ̴̝͉̊s̴͙̱̋ ̶̆ͅb̶̘͇̌̈e̷̛͔è̵̥́s̶̛͔̭̀ē̴̬ċ̸̛̹h̷̪̘͊͐u̷̱͐r̶̟͋͜ǵ̸̠̑ȩ̸́̔n̷̫͌ͅ',
+    'Whenever a nuclear bomb goes off there is always somewhere within a certain radius of it where all the steaks in a supermarket are perfectly cooked'
   ];
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
-  document.getElementsByClassName('gameCount')[0].innerHTML = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByClassName('a').length;
+  if (document.getElementsByClassName('gameCount').length != 0) {
+    document.getElementsByClassName('gameCount')[0].innerHTML = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByClassName('a').length;
+  }
 }
 
 function sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName() {
