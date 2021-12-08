@@ -596,7 +596,8 @@ function splashText() {
     'insert vsauce music for absolutely no reason at all',
     'The plural of footage is feetage',
     'Whoever first found a hot pepper and ate it probably thought they were going to die for a couple of minutes',
-    'If you are in space it\'s possible to have double sided pizza'
+    'If you are in space it\'s possible to have double sided pizza',
+    'Is it just me or do all microwave doors open from the same side'
   ];
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
   if (document.getElementsByClassName('gameCount').length != 0) {
