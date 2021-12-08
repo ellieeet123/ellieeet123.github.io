@@ -594,7 +594,7 @@ function splashText() {
   ];
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
   if (document.getElementsByClassName('gameCount').length != 0) {
-    document.getElementsByClassName('gameCount')[0].innerHTML = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByClassName('a').length;
+    document.getElementsByClassName('gameCount')[0].innerHTML = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   }
 }
 
