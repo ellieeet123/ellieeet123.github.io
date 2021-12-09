@@ -627,7 +627,7 @@ function splashText() {
     'Why is it that the word short longer than the word long?',
     'It\'s possible that today is the halfway point in your life and you just don\'t know it yet.',
     'Lightbulbs were such a good idea they became the symbol for a good idea',
-    'How do you knowmore  exactly when a cucumber turns into a pickle?',
+    'How do you know exactly when a cucumber turns into a pickle?',
     'Many people ask why this site is named Pringles. <br><br><br>no, i\'m not going to tell you',
     'Why do all fruit loops taste the same?'
   ];
