@@ -260,11 +260,9 @@ function colorTheme() {
   var themeData = colorThemes[theme];
   if (themeData.backgroundtype == 'image') {
     changeStyleForElementType('body','backgroundImage','url('+themeData.background+')');
-    changeStyleForElementType('body','backgroundColor','');
   }
   else if (themeData.backgroundtype == 'color') {
     changeStyleForElementType('body','backgroundColor',themeData.background);
-    changeStyleForElementType('body','backgroundImage','');
   }
   changeStyleForElementWithId('main','backgroundColor',themeData.textbg);
   changeStyleForElement(sidebarObj[0],'backgroundColor',themeData.textbg);
@@ -618,7 +616,17 @@ function splashText() {
     'Whoever first found a hot pepper and ate it probably thought they were going to die for a couple of minutes',
     'If you are in space it\'s possible to have double sided pizza',
     'Is it just me or do all microwave doors open from the same side',
-    'Why are cookies called cookies and bacon called bacon when we cook bacon and bake cookies?'
+    'Why are cookies called cookies and bacon called bacon when we cook bacon and bake cookies?',
+    'What\'s nine plus ten?',
+    'The egg came first, because the chicken evolved from reptiles which had eggs.',
+    'Why is the alphabet in the order that it is in?',
+    'If you get to be 113 years old then you have technically been a teenager twice.',
+    'In the cars movies, getting car insurance is the same as life insurance',
+    'Why is it that the word short longer than the word long?',
+    'It\'s possible that today is the halfway point in your life and you just don\'t know it yet.',
+    'Lightbulbs were such a good idea they became the symbol for a good idea',
+    'How do you know exactly when a cucumber turns into a pickle?',
+    'Many people ask why this site is named Pringles. <br><br><br>no, i\'m not going to tell you'
   ];
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
   if (document.getElementsByClassName('gameCount').length != 0) {
