@@ -608,7 +608,7 @@ function splashText() {
     'There is really nothing stopping me from making this as long as I want to except for the fact that I do not want to.',
     'Pineapple on pizza is delicious. If you disagree then you can leave.',
     'Fun fact, eating three pizzas per day is healthier for you than being dead!',
-    'There are currently 6 random texts that can appear here unless I added more and forgot to update this. (which is actually quite likely)',
+    'There are currently 32 different random texts that can appear here unless I added more and forgot to update this (which is actually quite likely)',
     'Important political announcement: m̸̼̻̐̆ą̸̙̂́g̷͔͐d̴̨͛ò̸̠̈́n̷̙͂d̶̩̈a̶̙̭̓̃l̵̹̐͌ ̴̝͉̊s̴͙̱̋ ̶̆ͅb̶̘͇̌̈e̷̛͔è̵̥́s̶̛͔̭̀ē̴̬ċ̸̛̹h̷̪̘͊͐u̷̱͐r̶̟͋͜ǵ̸̠̑ȩ̸́̔n̷̫͌ͅ',
     'Whenever a nuclear bomb goes off there is always somewhere within a certain radius of it where all the steaks in a supermarket are perfectly cooked',
     'There are some parts of your floor that you have likely never touched',
@@ -627,13 +627,16 @@ function splashText() {
     'Why is it that the word short longer than the word long?',
     'It\'s possible that today is the halfway point in your life and you just don\'t know it yet.',
     'Lightbulbs were such a good idea they became the symbol for a good idea',
-    'How do you know exactly when a cucumber turns into a pickle?',
-    'Many people ask why this site is named Pringles. <br><br><br>no, i\'m not going to tell you'
+    'How do you knowmore  exactly when a cucumber turns into a pickle?',
+    'Many people ask why this site is named Pringles. <br><br><br>no, i\'m not going to tell you',
+    'Why do all fruit loops taste the same?'
   ];
+  var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
   if (document.getElementsByClassName('gameCount').length != 0) {
-    document.getElementsByClassName('gameCount')[0].innerHTML = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
+    document.getElementsByClassName('gameCount')[0].innerHTML = numGames;
   }
+  document.getElementById('infoSectionGameCount').innerHTML = numGames;
 }
 
 function sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName() {
