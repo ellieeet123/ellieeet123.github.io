@@ -3,11 +3,7 @@
     <head>
         <script src="/javascript/main.js"></script>
         <script>
-            function popup(url) {
-                popupWindow = window.open(url, 'popUpWindow', 'height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')
-            }
-            let testpopup = getCookie("new_themes_notice");
-            if (testpopup == "") {
+            if (getCookie("new_themes_notice") == "") {
                 popup('/other/popup.html');
                 setCookie("new_themes_notice", "seen", 30)
             }
@@ -24,14 +20,14 @@
         </div>
         <div id="main" class="main">
             <div class="main_text">
-		<h3 id="title">Home</h3>
-		<iframe src="/other/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;" onload="savedGamesLoaded()" frameborder="0"></iframe>
-		<h1 id="h1">Welcome to Pringles!</h1>
-		<div style="width:800px;" id="firstdiv">
-            <p id="splash" class="fancy"></p>
-            <p>[Tuesday Dec. 14] 3 new games today! Check them all out <a href="#new">here</a>.</p>
-            <p>[!] Tip! You can customize the look of the site by going to the settings page and choosing a color theme.</p>
-		</div>
+                <h3 id="title">Home</h3>
+                <iframe src="/other/saved-games-ui.html" id="savedgames" height="400" width="400" style="position:absolute;right:20px;" onload="savedGamesLoaded()" frameborder="0"></iframe>
+                <h1 id="h1">Welcome to Pringles!</h1>
+                <div style="width:800px;" id="firstdiv">
+                    <p id="splash" class="fancy"></p>
+                    <p>[Tuesday Dec. 14] 3 new games today! Check them all out <a href="#new">here</a>.</p>
+                    <p>[!] Tip! You can customize the look of the site by going to the settings page and choosing a color theme.</p>
+                </div>
                 <br>
                 <img src="/images/pringles.jpeg">
                 <br>
@@ -160,7 +156,7 @@
                     }
                 }
             }
-	    document.getElementById('firstdiv').style.width = (document.getElementById('main').offsetWidth - 500)+'px';
+	        document.getElementById('firstdiv').style.width = (document.getElementById('main').offsetWidth - 500)+'px';
         </script>
     </body>
 </html>

@@ -14,6 +14,11 @@ function resizeIframe(obj){
   obj.height = (obj.contentWindow.document.body.scrollHeight + 20);
 }
 
+//make a popup window
+function popup(url) {
+  popupWindow = window.open(url, 'popUpWindow', 'height=700,width=1000,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')
+}
+
 //automatically sets the title of the page based on the content of the h3 tag at the top of the page.
 function setTitle(){
   var titleData = document.getElementById('title').textContent + ' - Pringles';
