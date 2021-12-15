@@ -392,6 +392,8 @@ function showMessage (content, closeMessage) {
   gray.id = 'gray';
   message.id = 'message';
   message.innerHTML = content;
+  document.body.appendChild(gray);
+  document.body.appendChild(message);
   document.querySelector("#message h1").style.color = textColor;
   document.querySelector("#message p ").style.color = textColor;
   document.querySelector("#message a ").style.color = linkColor;
@@ -434,8 +436,6 @@ function showMessage (content, closeMessage) {
   };
   close.style.cursor = 'pointer';
   message.appendChild(close);
-  document.body.appendChild(gray);
-  document.body.appendChild(message);
 };
 
 //the inner workings of the sidebar, taking all the data from the link that is clicked on and saving it to cookies. Later, this data is used to build the game page.
