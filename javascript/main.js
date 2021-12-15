@@ -394,13 +394,19 @@ function showMessage (content, closeMessage) {
   message.innerHTML = content;
   document.body.appendChild(gray);
   document.body.appendChild(message);
-  document.querySelector("#message h1").style.color = textColor;
-  document.querySelector("#message p ").style.color = textColor;
-  document.querySelector("#message a ").style.color = linkColor;
-  document.querySelector("#message h1").style.font  = '1.9rem trebuchet ms';
-  document.querySelector("#message p ").style.font  = '1.1rem trebuchet ms';
-  document.querySelector("#message a ").style.font  = '1.1rem trebuchet ms';
-  document.querySelector("#message h1").style.textAlign = 'center';
+  if (document.querySelector('#message h1') != null) {
+    document.querySelector("#message h1").style.color = textColor;
+    document.querySelector("#message h1").style.font  = '1.9rem trebuchet ms';
+    document.querySelector("#message h1").style.textAlign = 'center';
+  }
+  if (document.querySelector('#message p') != null) {
+    document.querySelector("#message p ").style.color = textColor;
+    document.querySelector("#message p ").style.font  = '1.1rem trebuchet ms';
+  }
+  if (document.querySelector('#message a') != null) {
+    document.querySelector("#message a ").style.color = linkColor;
+    document.querySelector("#message a ").style.font  = '1.1rem trebuchet ms';
+  }
   close.style = `
     border-radius: 3px;
     padding-right: 10px;
