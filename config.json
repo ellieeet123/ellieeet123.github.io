@@ -1,3 +1,4 @@
 {
-  "swfFileLocation":"https://raw.githubusercontent.com/ellieeet123/swf/main/swf/"
+  "swfFileLocation":"https://raw.githubusercontent.com/ellieeet123/swf/main/swf/",
+  "proxyBaseURL":"https://ellieeet123.herokuapp.com/c/"
 }

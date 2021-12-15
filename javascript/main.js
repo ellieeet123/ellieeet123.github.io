@@ -524,11 +524,19 @@ function buildGamePage() {
       }
       if (isFlash != '1') {
         var iframe = document.createElement('iframe');
-        iframe.src = frameSrc;
         iframe.width = frameWidth;
         iframe.height = frameHeight;
         iframe.id = 'frame';
         iframe.frameBorder = 0;
+        if (isFlash == 0) {
+          iframe.src = frameSrc;
+        }
+        else if (isFlash == 2) {
+          $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
+            var proxyBaseURL = data.proxyBaseURL;
+          });
+          iframe.src = proxyBaseURL + frameSrc;
+        }
         document.getElementById('gamecontainer').appendChild(iframe);
       }
       gamePageBuilt = true;
