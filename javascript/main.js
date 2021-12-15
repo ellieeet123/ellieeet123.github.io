@@ -358,17 +358,18 @@ function makeSettingsPage() {
 
 //basically just a fancy version of window.alert
 function showMessage (content, closeMessage) {
-  var gray = document.createElement('div');
-  var message = document.createElement('div');
-  var close = document.createElement('a');
-  var body = document.body;
-  var html = document.documentElement;
-  var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-  var width = document.body.clientWidth;
-  var color = '#0070d0';
-  var textColor = '#00f000';
-  var linkColor = '#ff0000';
-  var buttonColor = '#3399ff';
+  var gray        = document.createElement('div');
+  var message     = document.createElement('div');
+  var close       = document.createElement('a');
+  var body        = document.body;
+  var html        = document.documentElement;
+  var height      = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+  var width       = document.body.clientWidth;
+  var colorTheme  = getCookie('colorTheme');
+  var color       = colorThemes[colorTheme].textbg;
+  var textColor   = colorThemes[colorTheme].text;
+  var linkColor   = colorThemes[colorTheme].link;
+  var buttonColor = colorThemes[colorTheme].button;
   gray.style = `
     background: rgba(60,60,60,0.3);
     position: fixed;
