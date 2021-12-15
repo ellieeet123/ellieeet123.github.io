@@ -356,6 +356,88 @@ function makeSettingsPage() {
   }
 }
 
+//basically just a fancy version of window.alert
+function showMessage (content, closeMessage) {
+  var gray = document.createElement('div');
+  var message = document.createElement('div');
+  var close = document.createElement('a');
+  var body = document.body;
+  var html = document.documentElement;
+  var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+  var width = document.body.clientWidth;
+  var color = '#0070d0';
+  var textColor = '#00f000';
+  var linkColor = '#ff0000';
+  var buttonColor = '#3399ff';
+  gray.style = `
+    background: rgba(60,60,60,0.3);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  `;
+  gray.style.width =  (width+100).toString()+'px';
+  gray.style.height = height.toString()+'px';
+  message.style = `
+    width: `+ Math.round(width/3) +`px;
+    height: `+ height-20 +`px;
+    background: `+ color +`;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+  `;
+  message.style.width =  (Math.round(width/3)).toString()+'px';
+  message.style.height = (height-20).toString()+'px';
+  message.style.padding = '10px';
+  message.style.borderRadius = '4px';
+  gray.id = 'gray';
+  message.id = 'message';
+  message.innerHTML = content;
+  document.querySelector("#message h1").style.color = textColor;
+  document.querySelector("#message p ").style.color = textColor;
+  document.querySelector("#message a ").style.color = linkColor;
+  document.querySelector("#message h1").style.font  = '1.9rem trebuchet ms';
+  document.querySelector("#message p ").style.font  = '1.1rem trebuchet ms';
+  document.querySelector("#message a ").style.font  = '1.1rem trebuchet ms';
+  document.querySelector("#message h1").style.textAlign = 'center';
+  close.style = `
+    border-radius: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 32px;
+    margin-right: 8px;
+    text-decoration: none;
+    text-align: center;
+    float: left;
+    font: 1.1rem trebuchet ms;
+  `;
+  close.style.color = '#fff';
+  close.style.background = buttonColor;
+  close.style.width = ((width/3)-20).toString()+'px';
+  close.style.position = 'absolute';
+  close.style.left = '12px';
+  close.style.margin = 'auto';
+  close.style.bottom = '30px';
+  close.innerHTML = closeMessage;
+  close.onclick = function() {
+    message.remove();
+    gray.remove();
+  }
+  close.onmouseenter = function() {
+    this.style.background = '#fff';
+    this.style.color = buttonColor
+  };
+  close.onmouseleave = function() {
+    this.style.background = buttonColor;
+    this.style.color = '#fff'
+  };
+  close.style.cursor = 'pointer';
+  message.appendChild(close);
+  document.body.appendChild(gray);
+  document.body.appendChild(message);
+};
+
 //the inner workings of the sidebar, taking all the data from the link that is clicked on and saving it to cookies. Later, this data is used to build the game page.
 function sidebarMain(obj) {  
   setCookie('data_title', obj.dataset.title, 1);
