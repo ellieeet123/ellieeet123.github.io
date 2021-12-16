@@ -543,8 +543,8 @@ function buildGamePage() {
         else if (isFlash == 2) {
           $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
             var proxyBaseURL = data.proxyBaseURL;
+            iframe.src = proxyBaseURL + frameSrc;
           });
-          iframe.src = proxyBaseURL + frameSrc;
         }
         document.getElementById('gamecontainer').appendChild(iframe);
       }
@@ -768,7 +768,7 @@ function runFunctions() {
   var sidebarObj;
   var runLoadFunctions = window.setInterval(function(){
     sidebarObj = null;
-    sidebarObj = document.getElementById('sidebar');
+    sidebarObj = window.document.getElementById('sidebar');
     if (sidebarObj.contentWindow.document.getElementById('bottomElement')) {
       sidebarOnloadBecauseOfAWeirdBugInWindowsChromeThisIsAVeryLongFunctionName();
       window.clearInterval(runLoadFunctions);
