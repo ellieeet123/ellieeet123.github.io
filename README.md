@@ -3,6 +3,15 @@ The Source code for Pringles, an adobe flash game archive website using Ruffle t
 
 if you want to visit the site then go to https://ellieeet123.github.io
 
+# More URLS
+
+### If for some reason the main url doesn't work for you one of these might:
+https://ellieeet123.github.io (Main URL)
+https://pring-site.github.io (Secondary URL, contains the latest fully stable version of the site)
+https://ellieeet123-github-io.vercel.app/ (random backup)
+https://ellieeet123-github-io-elliotclydon-gmailcom.vercel.app/ (random backup)
+https://ellieeet123-github-io-git-main-elliotclydon-gmailcom.vercel.app/ (random backup)
+
 # Getting your own copy
 The easiest way is to just fork the repo and then rename it to `your_username.github.io` and then the URL for your copy will be the name of your fork. Note that this won't auto-update to any new commits to this repo, so you will have to fetch upstream each time you want to update.
 
