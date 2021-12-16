@@ -232,6 +232,15 @@ var colorThemes = {
     'sidebarlink': '#f1d302',
     'button': '#c1292e'
   },
+  'RGB': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/rgb.jpeg',
+    'textbg': '#0e0e0e',
+    'text': '#eaeaea',
+    'link': '#d90913',
+    'sidebarlink': '#28dd08',
+    'button': '#167eed'
+  },
   'Deep Dark': {
     'backgroundtype': 'color',
     'background': '#000000',
