@@ -404,18 +404,21 @@ function showMessage (content, closeMessage) {
   message.innerHTML = content;
   document.body.appendChild(gray);
   document.body.appendChild(message);
-  if (document.querySelector('#message h1') != null) {
-    document.querySelector("#message h1").style.color = textColor;
-    document.querySelector("#message h1").style.font  = '1.9rem trebuchet ms';
-    document.querySelector("#message h1").style.textAlign = 'center';
+  var h1 = document.getElementById('message').getElementsByTagName('h1');
+  var p = document.getElementById('message').getElementsByTagName('p');
+  var a = document.getElementById('message').getElementsByTagName('a');
+  for (let i = 0; i < h1.length; i++) {
+    changeStyleForElement(h1[i],'color',textColor);
+    changeStyleForElement(h1[i], 'font', '1.9rem trebuchet ms');
+    changeStyleForElement(h1[i], 'textAlign', 'center');
   }
-  if (document.querySelector('#message p') != null) {
-    document.querySelector("#message p ").style.color = textColor;
-    document.querySelector("#message p ").style.font  = '1.1rem trebuchet ms';
+  for (let i = 0; i < p.length; i++) {
+    changeStyleForElement(p[i],'color',textColor);
+    changeStyleForElement(p[i], 'font', '1.1rem trebuchet ms');
   }
-  if (document.querySelector('#message a') != null) {
-    document.querySelector("#message a ").style.color = linkColor;
-    document.querySelector("#message a ").style.font  = '1.1rem trebuchet ms';
+  for (let i = 0; i < a.length; i++) {
+    changeStyleForElement(a[i],'color',linkColor);
+    changeStyleForElement(a[i], 'font', '1.1rem trebuchet ms');
   }
   close.style = `
     border-radius: 3px;
