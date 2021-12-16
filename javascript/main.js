@@ -380,7 +380,7 @@ function showMessage (content, closeMessage) {
   var linkColor   = colorThemes[colorTheme].link;
   var buttonColor = colorThemes[colorTheme].button;
   gray.style = `
-    background: rgba(60,60,60,0.3);
+    background: rgba(60,60,60,0.6);
     position: fixed;
     top: 0px;
     left: 0px;
@@ -434,7 +434,6 @@ function showMessage (content, closeMessage) {
   close.style.background = buttonColor;
   close.style.width = ((width/3)-20).toString()+'px';
   close.style.position = 'fixed';
-  close.style.right = '18px';
   close.style.bottom = '30px';
   close.innerHTML = closeMessage;
   close.onclick = function() {
