@@ -433,9 +433,8 @@ function showMessage (content, closeMessage) {
   close.style.color = '#fff';
   close.style.background = buttonColor;
   close.style.width = ((width/3)-20).toString()+'px';
-  close.style.position = 'absolute';
-  close.style.left = '12px';
-  close.style.margin = 'auto';
+  close.style.position = 'fixed';
+  close.style.right = '18px';
   close.style.bottom = '30px';
   close.innerHTML = closeMessage;
   close.onclick = function() {
