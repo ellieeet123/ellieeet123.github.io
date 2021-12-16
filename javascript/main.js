@@ -375,10 +375,14 @@ function showMessage (content, closeMessage) {
   var height      = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   var width       = document.body.clientWidth;
   var colorTheme  = getCookie('colorTheme');
+  if (colorTheme == '') {
+    colorTheme = 'Default';
+  }
   var color       = colorThemes[colorTheme].textbg;
   var textColor   = colorThemes[colorTheme].text;
   var linkColor   = colorThemes[colorTheme].link;
   var buttonColor = colorThemes[colorTheme].button;
+  close.id = 'close';
   gray.style = `
     background: rgba(60,60,60,0.6);
     position: fixed;
@@ -417,7 +421,9 @@ function showMessage (content, closeMessage) {
     changeStyleForElement(p[i], 'font', '1.1rem trebuchet ms');
   }
   for (let i = 0; i < a.length; i++) {
-    changeStyleForElement(a[i],'color',linkColor);
+    if (a[i].id != 'close') {
+      changeStyleForElement(a[i],'color',linkColor);
+    }
     changeStyleForElement(a[i], 'font', '1.1rem trebuchet ms');
   }
   close.style = `
