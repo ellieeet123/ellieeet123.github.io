@@ -762,7 +762,8 @@ function splashText() {
     'Lightbulbs were such a good idea they became the symbol for a good idea',
     'How do you know exactly when a cucumber turns into a pickle?',
     'Many people ask why this site is named Pringles. <br><br><br>no, i\'m not going to tell you',
-    'Why do all fruit loops taste the same?'
+    'Why do all fruit loops taste the same?',
+    'Fun Fact: if you own the Mona Lisa there is nothing legally stopping you from eating it.'
   ];
   var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = '"' + splashes[Math.floor(Math.random() * splashes.length)] + '"';
