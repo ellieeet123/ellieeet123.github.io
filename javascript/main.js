@@ -273,7 +273,7 @@ function colorTheme() {
   }
   else if (theme == 'Custom') {
     var customColors = getCookie('customColorTheme');
-    colorThemes.custom = {};
+    colorThemes.Custom = {};
     var custom = JSON.parse(customColors);
     colorThemes.Custom.backgroundtype = custom.backgroundtype;
     colorThemes.Custom.background = custom.background;
