@@ -271,6 +271,18 @@ function colorTheme() {
     theme = 'Default';
     setCookie('colorTheme','Default',1000);
   }
+  else if (theme == 'Custom') {
+    var customColors = getCookie('customColorTheme');
+    colorThemes.custom = {};
+    var custom = JSON.parse(customColors);
+    colorThemes.Custom.backgroundtype = custom.backgroundtype;
+    colorThemes.Custom.background = custom.background;
+    colorThemes.Custom.textbg = custom.textbg;
+    colorThemes.Custom.text = custom.text;
+    colorThemes.Custom.link = custom.link;
+    colorThemes.Custom.sidebarlink = custom.sidebarlink;
+    colorThemes.Custom.button = custom.button;
+  }
   var themeData = colorThemes[theme];
   if (themeData.backgroundtype == 'image') {
     changeStyleForElementType('body','backgroundImage','url('+themeData.background+')');
