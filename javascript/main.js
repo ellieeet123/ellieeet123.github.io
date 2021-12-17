@@ -383,6 +383,7 @@ function showMessage (content, closeMessage) {
   var linkColor   = colorThemes[colorTheme].link;
   var buttonColor = colorThemes[colorTheme].button;
   close.id = 'close';
+  close.className = 'noColorTheme';
   gray.style = `
     background: rgba(60,60,60,0.6);
     position: fixed;
