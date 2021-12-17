@@ -375,6 +375,8 @@ function makeSettingsPage() {
     }
     currentButton = null;
   }
+  var save = document.getElementById('savecolortheme');
+  document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
 }
 
 //basically just a fancy version of window.alert

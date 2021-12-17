@@ -252,3 +252,8 @@ body {
   font-size: 0.8rem;
   color: #ffffff;
 }
+
+#customColorLabel {
+  display: inline;
+}
+
