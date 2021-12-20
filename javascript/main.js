@@ -428,18 +428,21 @@ function showMessage (content, closeMessage) {
   var a = document.getElementById('message').getElementsByTagName('a');
   for (let i = 0; i < h1.length; i++) {
     changeStyleForElement(h1[i],'color',textColor);
-    changeStyleForElement(h1[i], 'font', '1.9rem trebuchet ms');
+    changeStyleForElement(h1[i],'fontFamily', 'trebuchetms');
+    changeStyleForElement(h1[i],'fontSize','1.9rem');
     changeStyleForElement(h1[i], 'textAlign', 'center');
   }
   for (let i = 0; i < p.length; i++) {
     changeStyleForElement(p[i],'color',textColor);
-    changeStyleForElement(p[i], 'font', '1.1rem trebuchet ms');
+    changeStyleForElement(h1[i],'fontFamily', 'trebuchetms');
+    changeStyleForElement(h1[i],'fontSize','1.1rem');
   }
   for (let i = 0; i < a.length; i++) {
     if (a[i].id != 'close') {
       changeStyleForElement(a[i],'color',linkColor);
     }
-    changeStyleForElement(a[i], 'font', '1.1rem trebuchet ms');
+    changeStyleForElement(h1[i],'fontFamily', 'trebuchetms');
+    changeStyleForElement(h1[i],'fontSize','1.1rem');
   }
   close.style = `
     border-radius: 3px;
@@ -452,7 +455,8 @@ function showMessage (content, closeMessage) {
     text-decoration: none;
     text-align: center;
     float: left;
-    font: 1.1rem trebuchet ms;
+    font-family: trebuchetms;
+    font-size: 1.1rem;
   `;
   close.style.color = '#fff';
   close.style.background = buttonColor;

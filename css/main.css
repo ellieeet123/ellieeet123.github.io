@@ -4,6 +4,30 @@ body {
 }
 */
 
+@font-face {
+  font-family: "trebuchetms";
+  src: url("css/fonts/Trebuchet-MS.woff") format('woff');
+}
+
+@font-face {
+  font-family: "trebuchetms";
+  src: url("css/fonts/Trebuchet-MS-Bold.woff") format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "trebuchetms";
+  src: url("css/fonts/Trebuchet-MS-Bold-Italic.woff") format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "trebuchetms";
+  src: url("css/fonts/Trebuchet-MS-Italic.woff") format('woff');
+  font-style: italic;
+}
+
 .main {
   background-color: #eeeeff;
   margin-left: 170px;
@@ -36,12 +60,14 @@ body {
 }  
 
 .main p {
-  font: 1.2rem trebuchet ms;
+  font-family: trebuchetms;
+  font-size: 1.2rem;
   color: 000000;
 }
 
 .main a {
-  font: 1.2rem trebuchet ms;
+  font-family: trebuchetms;
+  font-size: 1.2rem;
   color: #0000ff;
 }
 
@@ -112,14 +138,14 @@ body {
 .sidebar a {
   padding: 6px 8px 6px 12px;
   text-decoration: none;
-  font: bold 0.9rem trebuchet ms;
+  font-family: trebuchetms;
+  font-size: 0.9rem;
+  font-weight: bold;
   color: #f00;
   display: block;
 }
 
 .sidebar a:hover {
-  color: #f00;
-  font: bold 0.9rem trebuchet ms;
   text-decoration: underline;
 }
 
@@ -130,12 +156,11 @@ body {
 
 .sidebar_subpage a {
   color: #f00;
-  font: 0.9rem trebuchet ms;
+  font-family: trebuchetms;
+  font-size: 0.9rem;
 }
 
 .sidebar_subpage a:hover {
-  color: #f00;
-  font: 0.9rem trebuchet ms;
   text-decoration: underline;
 }
 
@@ -192,11 +217,11 @@ body {
 }
 
 #nosaved {
-  font-family: trebuchet ms;
+  font-family: trebuchetms;
 }
 
 .removebutton {
-  font-family: trebuchet ms;
+  font-family: trebuchetms;
   font-size: 18px;
   display: inline;
   text-decoration: underline;
@@ -208,7 +233,7 @@ body {
 .gamelink {
   cursor: pointer;
   font-size: 18px;
-  font-family: trebuchet ms;
+  font-family: trebuchetms;
 }
 
 .squaresNew {
