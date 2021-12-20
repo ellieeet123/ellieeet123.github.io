@@ -434,15 +434,15 @@ function showMessage (content, closeMessage) {
   }
   for (let i = 0; i < p.length; i++) {
     changeStyleForElement(p[i],'color',textColor);
-    changeStyleForElement(h1[i],'fontFamily', 'trebuchetms');
-    changeStyleForElement(h1[i],'fontSize','1.1rem');
+    changeStyleForElement(p[i],'fontFamily', 'trebuchetms');
+    changeStyleForElement(p[i],'fontSize','1.1rem');
   }
   for (let i = 0; i < a.length; i++) {
     if (a[i].id != 'close') {
       changeStyleForElement(a[i],'color',linkColor);
     }
-    changeStyleForElement(h1[i],'fontFamily', 'trebuchetms');
-    changeStyleForElement(h1[i],'fontSize','1.1rem');
+    changeStyleForElement(a[i],'fontFamily', 'trebuchetms');
+    changeStyleForElement(a[i],'fontSize','1.1rem');
   }
   close.style = `
     border-radius: 3px;
