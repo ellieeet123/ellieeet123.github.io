@@ -429,20 +429,20 @@ function showMessage (content, closeMessage) {
   for (let i = 0; i < h1.length; i++) {
     changeStyleForElement(h1[i],'color',textColor);
     changeStyleForElement(h1[i],'fontFamily', 'trebuchetms');
-    changeStyleForElement(h1[i],'fontSize','1.9rem');
+    changeStyleForElement(h1[i],'fontSize','1.7rem');
     changeStyleForElement(h1[i], 'textAlign', 'center');
   }
   for (let i = 0; i < p.length; i++) {
     changeStyleForElement(p[i],'color',textColor);
     changeStyleForElement(p[i],'fontFamily', 'trebuchetms');
-    changeStyleForElement(p[i],'fontSize','1.1rem');
+    changeStyleForElement(p[i],'fontSize','1.0rem');
   }
   for (let i = 0; i < a.length; i++) {
     if (a[i].id != 'close') {
       changeStyleForElement(a[i],'color',linkColor);
     }
     changeStyleForElement(a[i],'fontFamily', 'trebuchetms');
-    changeStyleForElement(a[i],'fontSize','1.1rem');
+    changeStyleForElement(a[i],'fontSize','1.0rem');
   }
   close.style = `
     border-radius: 3px;
