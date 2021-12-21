@@ -769,7 +769,7 @@ function splashText() {
     'Why do all fruit loops taste the same?',
     'Fun Fact: if you own the Mona Lisa there is nothing legally stopping you from eating it.',
     '"You miss 100% of the shots you don\'t take - Wayne Gretzky" - Michael Scott',
-    '"It\'s ok to eat fish because they don\' have any feelings" - Kurt Cobain',
+    '"It\'s ok to eat fish because they don\'t have any feelings" - Kurt Cobain',
     '"I sing and play the guitar, and I\'m a walking, talking bacterial infection" - Kurt Cobain',
     '"Back in \'Nam Doritoes came in a can" - Illuminnex',
     'No sh!t sherlock',
