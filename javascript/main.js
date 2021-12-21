@@ -774,7 +774,8 @@ function splashText() {
     '"Back in \'Nam Doritoes came in a can" - Illuminnex',
     'No sh!t sherlock',
     'e̶̡̧̢̨̞̝̦͍̗̭̜̻̦͖͙̱̖͙̰̦̗͈͓̭̱͍̥̫̘͙̗̯͇͔̬͈͚̱͑̎̈́̃̓̔͗̾̂̋̽̾̕͜ͅͅ',
-    'Jesus pronounced backwards sounds like sausage'
+    'Jesus pronounced backwards sounds like sausage',
+    'If the plural of goose is geese then the plural of moose is meese'
   ];
   var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
