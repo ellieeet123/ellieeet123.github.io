@@ -1,16 +1,22 @@
-<!doctype html><html lang="en-us"><head>
+<!doctype html>
+<html lang="en-us">
+  <head>
     <script id="scriptMain" src="/javascript/main.js"></script>
     <link id="styleMain" rel="stylesheet" href="/css/main.css">
-  </head><body>
+  </head>
+  <body>
     <noscript id="noscript"><h1>Javascript has been disabled.</h1><br><p>This page requires javascript in order to load properly. Please enable it via chrome settings.</p></noscript>
-    <iframe id="header" height="100" width="100%" src="/other/header.html" frameborder="0"></iframe>
+    <iframe scrolling="no" id="header" height="100" width="100%" src="/other/header.html" frameborder="0"></iframe>
     <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/other/sidebar.html" onload='resizeIframe(this);updateDark()'></iframe>
-    <div id="main" class="main"><div id="main_text" class="main_text">
-      <h3 id="title">404!</h3><br>
-      <p>Slight Issue. You have tried to access a page that doesn't exist. If you think this should be a page, then please <a href="/stuff/problem/">Report a problem</a>.</p><br>
-      <a href="/">Return to the Homepage</a><br>
-      <br>
-    </div></div>
-  <script id="scriptBody" src="/javascript/bodyScript.js"></script>
-</body></html>
+    <div id="main" class="main">
+      <div id="main_text" class="main_text">
+        <h3 id="title">404!</h3><br>
+        <p>Slight Issue. You have tried to access a page that doesn't exist. If you think this should be a page, then please <a href="/stuff/problem/">Report a problem</a>.</p><br>
+        <a href="/">Return to the Homepage</a><br>
+        <br>
+      </div>
+    </div>
+    <script id="scriptBody" src="/javascript/bodyScript.js"></script>
+  </body>
+</html>
 <div id="bottomElement"></div>
