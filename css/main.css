@@ -36,27 +36,39 @@ body {
 }
 
 .main h1 {
-  font: bold 2.0rem trebuchet ms;
+  font-family: trebuchetms;
+  font-size: 2.0rem;
+  font-weight: bold;
 }  
 
 .main h2 {
-  font: bold 1.8rem arial;
+  font-family: arial;
+  font-size: 1.8rem;
+  font-weight: bold;
 }  
 
 .main h3 {
-  font: bold 1.4rem arial;
+  font-family: arial;
+  font-size: 1.4rem;
+  font-weight: bold;
 }  
 
 .main h4 {
-  font: bold 1.2rem arial;
+  font-family: arial;
+  font-size: 1.2rem;
+  font-weight: bold;
 }  
 
 .main h5 {
-  font: bold 1.0rem arial;
+  font-family: arial;
+  font-size: 1.0rem;
+  font-weight: bold;
 }  
 
 .main h6 {
-  font: bold 0.8rem arial;
+  font-family: arial;
+  font-size: 0.8rem;
+  font-weight: bold;
 }  
 
 .main p {
@@ -106,7 +118,8 @@ body {
 
 .p_big p {
   color: #000000;
-  font: 1.9rem trebuchet ms;
+  font-family: trebuchetms;
+  font-size: 1.9rem;
 }
 
 .p_arial p {
@@ -157,6 +170,7 @@ body {
 .sidebar_subpage a {
   color: #f00;
   font-family: trebuchetms;
+  font-weight: normal;
   font-size: 0.9rem;
 }
 
