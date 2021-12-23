@@ -375,7 +375,28 @@ function makeSettingsPage() {
     }
     currentButton = null;
   }
-  var save = document.getElementById('savecolortheme');
+  var save        = document.getElementById('savecolortheme');
+  var bgtype      = 'COLOR';
+  var bgsrc       = '';
+  var textbg      = '';
+  var text        = '';
+  var link        = '';
+  var sidebarlink = '';
+  var button      = '';
+  document.getElementById('customtheme_bgtype').onclick = function() {
+    if (bgtype == 'IMAGE') {
+      document.getElementById('bgsrc_label').innerHTML = 'Background Color: ';
+      document.getElementById('bgsrc_input').innerHTML = '<input type="color" id="bgsrc_color_input">';
+      bgtype = 'COLOR';
+    }
+    else {
+      document.getElementById('bgsrc_label').innerHTML = 'Background Image (Enter a valid image URL <a style="cursor:pointer" onclick="showMessage(\'<h1>Help</h1><p>To get a valid image URL, the easiest way is to just go to google, find the image you want to use, and then just right click the image and click on Copy Image Address. Then just paste that into the text box here. </p>\',\'Got it!\')">help!</a>): ';
+      document.getElementById('bgsrc_input').innerHTML = '<input type="text" id="bgsrc_url_input">';
+      bgtype = 'IMAGE';
+    }
+  }
+  document.getElementById('colortheme_bgtype').click();
+  
   document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
 }
 
