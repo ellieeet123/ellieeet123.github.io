@@ -856,5 +856,3 @@ function runFunctions() {
     }
   },500);
 }
-
-runFunctions();

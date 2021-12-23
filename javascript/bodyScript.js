@@ -27,3 +27,5 @@ else {
     setCookie('newUrl_12_21_21', 'seen', 31);
   }
 }
+
+runFunctions();
