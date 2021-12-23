@@ -421,6 +421,7 @@ function makeSettingsPage() {
     setCookie('customColorTheme', JSON.stringify(output), 1000);
     setCookie('colorTheme', 'Custom', 1000);
     colorTheme();
+    makeSettingsPage();
   }
   document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
 }
@@ -716,8 +717,15 @@ function bookmarkUI() {
     else {
       var savedGames = savedGamesString.split(',');
     }
-    document.getElementById('bookmark').style.background = colorThemes[getCookie('colorTheme')].button;
-    document.getElementById('close').style.background = colorThemes[getCookie('colorTheme')].button;
+    var themeData;
+    if (getCookie('colorTheme') == 'Custom') {
+      themeData = JSON.parse(getCookie('customColorTheme'));
+    }
+    else {
+      themeData = colorThemes[getCookie('colorTheme')];
+    }
+    document.getElementById('bookmark').style.background = themeData.button;
+    document.getElementById('close').style.background = themeData.button;
     if (savedGames.includes(getCookie('data_title'))) {
       $("#bookmark").html("<span class='material-icons md-18' style='margin:auto;top:2px;'>bookmark</span>Unbookmark");
     }
