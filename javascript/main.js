@@ -343,7 +343,13 @@ function makeSettingsPage() {
   }
   var keys = Object.keys(colorThemes);
   var currentButton;
-  var themeData = colorThemes[getCookie('colorTheme')];
+  var themeData;
+  if (getCookie('colorTheme') == 'Custom') {
+    themeData = JSON.parse(getCookie('customColorTheme'));
+  }
+  else {
+    themeData = colorThemes[getCookie('colorTheme')];
+  }
   document.getElementById('button_div').innerHTML = '';
   for (var i = 0; i < keys.length; i = i+1) {
     currentButton = document.createElement('a');
@@ -367,7 +373,6 @@ function makeSettingsPage() {
     changeStyleForElement(currentButton,'color','#ffffff');
     buttonHover(currentButton,themeData.button);
     document.getElementById('button_div').appendChild(currentButton);
-    console.log('loop');
     for (var j = 0;j < 3;j++) {
       document.getElementById('button_div').appendChild(
         document.createElement('br')
