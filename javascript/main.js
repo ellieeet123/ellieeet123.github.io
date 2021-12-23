@@ -404,22 +404,18 @@ function makeSettingsPage() {
   document.getElementById('customtheme_bgtype').click();
   document.getElementById('savecolortheme').onclick = function() {
     var output = {};
-    alert(0);
     '[IMAGE]' == document.getElementById('bgtype_display').innerHTML
       ? output.backgroundtype = 'image'
       : output.backgroundtype == 'color';
-    alert(1);
     output.background = document.getElementById('bgsrc_input').firstChild.value;
     output.textbg = document.getElementById('textbg_input').value;
     output.text = document.getElementById('text_input').value;
     output.link = document.getElementById('link_input').value;
     output.sidebarlink = document.getElementById('sidebarlink_input').value;
     output.button = document.getElementById('button_input').value;
-    alert(2);
     setCookie('customColorTheme', JSON.stringify(output), 1000);
-    alert(3);
     setCookie('colorTheme', 'Custom', 1000);
-    alert(4);
+    colorTheme();
   }
   //document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
 }
