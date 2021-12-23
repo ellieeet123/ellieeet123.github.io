@@ -52,10 +52,10 @@ function getCookie(cname) {
 //gets a json with current color theme data
 function getThemeData() {
   if (getCookie('colorTheme') == 'Custom') {
-    themeData = JSON.parse(getCookie('customColorTheme'));
+    return JSON.parse(getCookie('customColorTheme'));
   }
   else {
-    themeData = colorThemes[getCookie('colorTheme')];
+    return colorThemes[getCookie('colorTheme')];
   }
 }
 
