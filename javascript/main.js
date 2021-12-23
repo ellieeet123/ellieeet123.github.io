@@ -417,7 +417,7 @@ function makeSettingsPage() {
     setCookie('colorTheme', 'Custom', 1000);
     colorTheme();
   }
-  //document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
+  document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
 }
 
 //basically just a fancy version of window.alert
