@@ -387,16 +387,35 @@ function makeSettingsPage() {
     if (bgtype == 'IMAGE') {
       document.getElementById('bgsrc_label').innerHTML = 'Background Color: ';
       document.getElementById('bgsrc_input').innerHTML = '<input type="color" id="bgsrc_color_input">';
+      document.getElementById('bgtype_display').innerHTML = '[COLOR]';
       bgtype = 'COLOR';
     }
     else {
-      document.getElementById('bgsrc_label').innerHTML = 'Background Image (Enter a valid image URL <a style="cursor:pointer" onclick="showMessage(\'<h1>Help</h1><p>To get a valid image URL, the easiest way is to just go to google, find the image you want to use, and then just right click the image and click on Copy Image Address. Then just paste that into the text box here. </p>\',\'Got it!\')">help!</a>): ';
+      document.getElementById('bgsrc_label').innerHTML = 'Background Image (Enter a valid image URL <a id="helplink" onclick="showMessage(\'<h1>Help</h1><p>To get a valid image URL, the easiest way is to just go to google, find the image you want to use, and then just right click the image and click on Copy Image Address. Then just paste that into the text box here. </p>\',\'Got it!\')">help!</a>): ';
       document.getElementById('bgsrc_input').innerHTML = '<input type="text" id="bgsrc_url_input">';
+      document.getElementById('bgtype_display').innerHTML = '[IMAGE]';
+      var help = document.getElementById('helplink');
+      help.style.cursor = 'pointer';
+      help.style.textDecoration = 'underline';
+      help.style.color = colorThemes[getCookie('colorTheme')].link;
       bgtype = 'IMAGE';
     }
   }
   document.getElementById('colortheme_bgtype').click();
-  
+  document.getElementById('savecolortheme').onclick = function() {
+    var output = {};
+    '[IMAGE]' == document.getElementById('bgtype_display').innerHTML
+      ? output.backgroundtype = 'image'
+      : output.backgroundtype == 'color';
+    output.background = document.getElementById('bgsrc_input').firstChild.value;
+    output.textbg = document.getElementById('textbg_input').value;
+    output.text = document.getElementById('text_input').value;
+    output.link = document.getElementById('link_input').value;
+    output.sidebarlink = document.getElementById('sidebarlink_input').value;
+    output.button = document.getElementById('button_input').value;
+    setCookie('customColorTheme', JSON.stringify(output), 1000);
+    setCookie('colorTheme', 'Custom', 1000);
+  }
   document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
 }
 
