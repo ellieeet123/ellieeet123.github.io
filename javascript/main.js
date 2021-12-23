@@ -401,7 +401,7 @@ function makeSettingsPage() {
       bgtype = 'IMAGE';
     }
   }
-  document.getElementById('colortheme_bgtype').click();
+  document.getElementById('customtheme_bgtype').click();
   document.getElementById('savecolortheme').onclick = function() {
     var output = {};
     alert(0);
