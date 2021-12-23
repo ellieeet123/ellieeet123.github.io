@@ -7,7 +7,7 @@ if (getCookie('cookieConsent') == '') {
     <h1>👋 Hello there!</h1>
     <p>You seem to be new here! Welcome to this fancy little site of mine.</p>
     <br>
-    <p>Just wanted to let you know that we use cookies. Not to track you or anything like that, just to store little pieces of info to make the site work.</p>
+    <p>Just wanted to let you know that we use cookies. Because I'm apparantly supposed to tell you that or something. Not to track you or anything like that, just to store little pieces of info to make the site work.</p>
     <p>If you don't believe me, then you can check out <a href="https://github.com/ellieeet123/ellieeet123.github.io/">the source code</a> to see for yourself :)</p>
   `, 'Close');
   setCookie('cookieConsent', 'seen', 99999);
