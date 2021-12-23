@@ -49,6 +49,16 @@ function getCookie(cname) {
   return "";
 }
 
+//gets a json with current color theme data
+function getThemeData() {
+  if (getCookie('colorTheme') == 'Custom') {
+    themeData = JSON.parse(getCookie('customColorTheme'));
+  }
+  else {
+    themeData = colorThemes[getCookie('colorTheme')];
+  }
+}
+
 //clears the old darkmode cookie and sets the new one (temporary script)
 if (getCookie('darkmode') == 'yes') {
   setCookie('colorTheme', 'Dark', 1000);
@@ -343,13 +353,7 @@ function makeSettingsPage() {
   }
   var keys = Object.keys(colorThemes);
   var currentButton;
-  var themeData;
-  if (getCookie('colorTheme') == 'Custom') {
-    themeData = JSON.parse(getCookie('customColorTheme'));
-  }
-  else {
-    themeData = colorThemes[getCookie('colorTheme')];
-  }
+  var themeData = getThemeData();
   document.getElementById('button_div').innerHTML = '';
   for (var i = 0; i < keys.length; i = i+1) {
     currentButton = document.createElement('a');
@@ -402,7 +406,7 @@ function makeSettingsPage() {
       var help = document.getElementById('helplink');
       help.style.cursor = 'pointer';
       help.style.textDecoration = 'underline';
-      help.style.color = colorThemes[getCookie('colorTheme')].link;
+      help.style.color = themeData.link;
       bgtype = 'IMAGE';
     }
   }
@@ -421,7 +425,13 @@ function makeSettingsPage() {
     setCookie('customColorTheme', JSON.stringify(output), 1000);
     setCookie('colorTheme', 'Custom', 1000);
     colorTheme();
-    makeSettingsPage();
+    var colorThemeChangeButtons = document.getElementsByClassName('colorThemeChangeButtons');
+    var newThemeData = getThemeData();
+    for (var i = 0; i < colorThemeChangeButtons.length; i++) {
+      changeStyleForElement(colorThemeChangeButtons[i],'backgroundColor',newThemeData.button);
+      changeStyleForElement(colorThemeChangeButtons[i],'color','#ffffff');
+      buttonHover(colorThemeChangeButtons[i],newThemeData.button);
+    }
   }
   document.getElementById('savecolortheme').style = document.getElementsByClassName('colorThemeChangeButtons')[0].style;
 }
@@ -717,13 +727,7 @@ function bookmarkUI() {
     else {
       var savedGames = savedGamesString.split(',');
     }
-    var themeData;
-    if (getCookie('colorTheme') == 'Custom') {
-      themeData = JSON.parse(getCookie('customColorTheme'));
-    }
-    else {
-      themeData = colorThemes[getCookie('colorTheme')];
-    }
+    var themeData = getThemeData();
     document.getElementById('bookmark').style.background = themeData.button;
     document.getElementById('close').style.background = themeData.button;
     if (savedGames.includes(getCookie('data_title'))) {
