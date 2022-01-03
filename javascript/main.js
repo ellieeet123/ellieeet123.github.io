@@ -334,6 +334,7 @@ function colorTheme() {
       changeStyleForElement(removeLinks[i],'color',themeData.link);
     }
     changeStyleForElement(savedGamesIframe.getElementById('savedgamestitle'),'color',themeData.text);
+    changeStyleForElement(savedGamesIframe.getElementById('nosaved'), 'color', themeData.text);
     changeStyleForElement(document.getElementById('splash'),'color',themeData.link);
   }
   if (document.getElementById('bookmark') != null) {
