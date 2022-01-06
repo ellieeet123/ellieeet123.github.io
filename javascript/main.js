@@ -833,7 +833,27 @@ function splashText() {
     'No sh!t sherlock',
     'e̶̡̧̢̨̞̝̦͍̗̭̜̻̦͖͙̱̖͙̰̦̗͈͓̭̱͍̥̫̘͙̗̯͇͔̬͈͚̱͑̎̈́̃̓̔͗̾̂̋̽̾̕͜ͅͅ',
     'Jesus pronounced backwards sounds like sausage',
-    'If the plural of goose is geese then the plural of moose is meese'
+    'If the plural of goose is geese then the plural of moose is meese',
+    'Github copilot says hi',
+    'Never gonna give you up, never gonna let you down, never gonna run around and desert you, never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you',
+    'Zero studies have shown that this site causes brain damage. Mostly becasue zero studies have been done on this site in the first place.',
+    'Can I join your Minecraft server?',
+    'I have a bad feeling about this...',
+    'RIP adobe flash, 1996 - 2020',
+    'You got games on yo phone???',
+    'Buttah dawg, dog wit da buttah on him',
+    'If you know the year a tree was planted, you can easily determine it\'s age',
+    'Tutorial to get free reddit karma: simply post "fortnot bad minecraf good"',
+    '69420. Now laugh.',
+    'The \'e\' in JavaScript stands for easy',
+    'Help I am running out of ideas',
+    // Congrats, you found the secret message!
+    'Free robux no scam 2022 giveaway is here! All you have to do is click this fancy little link: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">https://roblox.com/FREEROBUX</a>',
+    'Now with extra cringy text!',
+    'Hey, did you hear that Joe got diagnosed with ligma? They had to do surgery on his updog.',
+    '...',
+    'Now with more than 2 lines of code!',
+    ''
   ];
   var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
