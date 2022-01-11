@@ -13,14 +13,14 @@ if (getCookie('cookieConsent') == '') {
   setCookie('cookieConsent', 'seen', 99999);
 }
 else {
-  if (getCookie('newUrl_12_21_21') == '') {
+  if (getCookie('msg1') == '') {
     showMessage(`
       <h1>Quick thing</h1>
       <p>A couple of people have complained that the games in the Hobo series take way too long to load.</p>
       <p>If you encounter this issue, there is nothing I can do about it, but I recommend closing all tabs on your computer, and then if that still does not work then restart it.</p>
       <p>The reason it takes so long is because the game files for that series are extremely large, and it takes quite a long time for them to be downloaded and processed.</p>
     `, 'lol ok thanks');
-    setCookie('newUrl_12_21_21', 'seen', 31);
+    setCookie('msg1', 'seen', 31);
   }
 }
 
