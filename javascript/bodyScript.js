@@ -13,14 +13,13 @@ if (getCookie('cookieConsent') == '') {
   setCookie('cookieConsent', 'seen', 99999);
 }
 else {
-  if (getCookie('msg1') == '') {
+  if (getCookie('msg2') == '') {
     showMessage(`
-      <h1>Quick thing</h1>
-      <p>A couple of people have complained that the games in the Hobo series take way too long to load.</p>
-      <p>If you encounter this issue, there is nothing I can do about it, but I recommend closing all tabs on your computer, and then if that still does not work then restart it.</p>
-      <p>The reason it takes so long is because the game files for that series are extremely large, and it takes quite a long time for them to be downloaded and processed.</p>
-    `, 'lol ok thanks');
-    setCookie('msg1', 'seen', 31);
+      <h1>Hi everyone</h1>
+      <p>Sorry for not adding content to this site in like over a month. I've been busy with school, and other projects. </p>
+      <p>But I'm gonna try to add more content soon. For now, click the 'Submission Log' link in the sidebar to see a list of everything that's been submitted in the last month or so, and you can check back on that to see if it's been added</p>
+    `, 'Cool');
+    setCookie('msg2', 'seen', 31);
   }
 }
 

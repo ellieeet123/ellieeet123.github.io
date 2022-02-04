@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <script id="scriptMain" src="/javascript/main.js"></script>
+    <link id="styleMain" rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" href="/images/favicon.ico"><link rel="icon" sizes="16x16 32x32 64x64" href="/images/favicon.ico"><link rel="icon" type="image/png" sizes="196x196" href="/images/favicon-192.png"><link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png"><link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="apple-touch-icon" href="/images/favicon-57.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/favicon-114.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/favicon-72.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/favicon-60.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/favicon-120.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/favicon-76.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/favicon-152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="/images/favicon-144.png"><meta name="msapplication-config" content="/browserconfig.xml">
+  </head>
+  <body>
+    <noscript id="noscript"><h1>Javascript has been disabled.</h1><br><p>This page requires javascript in order to load properly. Please enable it via chrome settings.</p></noscript>
+    <iframe id="header" scrolling="no" height="100" width="100%" src="/other/header.html" frameborder="0"></iframe>
+    <iframe id="sidebar" frameborder="0" style="float: left;margin-top: 350;top: 350;margin-left: -10px;" scrolling="no" width="170" src="/other/sidebar.html" onload='resizeIframe(this)'></iframe>
+    <div id="main" class="main">
+      <div id="main_text" class="main_text">
+        <h3 id="title">Requests Log</h3>
+        <br>
+        <p>A fancy little log that I use to provide feedback on site requests. To submit your own request, go <a href="/stuff/submit">here</a>.</p>
+        <p>There are currently quite a few requests because i've been active for a while, hopefully most of these will be added soon.</p>
+        <br>
+        <h3>Failure code meanings:</h3>
+        <p>01: Unsupported by flash emulator. This means that the emulator (Ruffle) currently does not have the capability to run the game that has been submitted.</p>
+        <p>02: (for html5 games) I was unable to find an unblocked website that hosts that game, meaning I could still add it, but it would be blocked at most or all schools.</p>
+        <p>03: Unable to find game. This means I wasn't able to find that game anywhere on the internet.</p>
+        <br>
+        <table style="width:100%">
+            <tr>
+                <th><p><strong>Date (DD/MM/YY)</strong></p></th>
+                <th><p><strong>Content</strong></p></th>
+                <th><p><strong>Status</strong></p></th>
+            </tr>
+            <tr>
+                <td><p>20/12/21</p></td>
+                <td><p>Smash karts</p></td>
+                <td><p>Pending</p></td>
+            </tr>
+            <tr>
+                <td><p>24/01/22</p></td>
+                <td><p>Drunken Tug of War</p></td>
+                <td><p>Pending</p></td>
+            </tr>
+            <tr>
+                <td><p>25/01/22</p></td>
+                <td><p>Tiny Fishing</p></td>
+                <td><p>Pending</p></td>
+            </tr>
+            <tr>
+                <td><p>26/01/22</p></td>
+                <td><p>Dad n Me</p></td>
+                <td><p>Pending</p></td>
+            </tr>
+            <tr>
+                <td><p>27/01/22</p></td>
+                <td><p>Shellshockers/smash karts</p></td>
+                <td><p>Pending</p></td>
+            </tr>
+            <tr>
+                <td><p>28/01/22</p></td>
+                <td><p>Super Mario Flash Series</p></td>
+                <td><p>Pending</p></td>
+            </tr>
+            <tr>
+                <td><p>31/01/22</p></td>
+                <td><p>Run 3</p></td>
+                <td><p>Failure (code 01)</p></td>
+            </tr>
+            <tr>
+                <td><p>01/02/22</p></td>
+                <td><p>Strike Force Heroes</p></td>
+                <td><p>Failure (code 01)</p></td>
+            </tr>
+            <tr>
+                <td><p>02/02/22</p></td>
+                <td><p>Whack your boss + tiktok & movies</p></td>
+                <td><p>Note #1</p></td>
+            </tr>
+            <tr>
+                <td><p>02/02/22</p></td>
+                <td><p>Strike Force Heroes</p></td>
+                <td><p>Failure (code 01)</p></td>
+            </tr>
+        </table>
+        <br>
+        <p>Notes: (some info about certain requests that I didn't have room for in the table)</p>
+        <p>#1: Whack your boss is pending, Tiktok can't be added because the only way to access that is via tiktok.com or your phone. Movies can't be added because that's just straight up pirating, which is not what this site is for.</p>
+      </div>
+    </div>
+    <script id="scriptBody" src="/javascript/bodyScript.js"></script>
+  </body>
+</html>
+<div id="bottomElement"></div>
