@@ -196,6 +196,12 @@ body {
   text-decoration: underline;
 }
 
+#searchcontainer {
+  position: fixed;
+  top: 10px;
+  right: 20px
+}
+
 .squares {
   border-radius: 3px;
   background: #22a5df;
