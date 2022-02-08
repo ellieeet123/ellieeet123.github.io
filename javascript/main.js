@@ -630,7 +630,7 @@ function buildGamePage() {
             iframe.src = proxyBaseURL + frameSrc;
             let fullscreenlinks = document.getElementsByClassName('fullscreenlink');
             for (let i = 0; i < fullscreenlinks.length; i++) {
-              fullscreenlinks[i].href = '//' + proxyBaseURL + fullscreenlinks[i].dataset.encodedhref;
+              fullscreenlinks[i].href = proxyBaseURL + fullscreenlinks[i].dataset.encodedhref;
             }
           });
         }
