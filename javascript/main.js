@@ -628,6 +628,10 @@ function buildGamePage() {
           $.getJSON('https://ellieeet123.github.io/config.json', function(data) {
             var proxyBaseURL = data.proxyBaseURL;
             iframe.src = proxyBaseURL + frameSrc;
+            let fullscreenlinks = document.getElementsByClassName('fullscreenlink');
+            for (let i = 0; i < fullscreenlinks.length; i++) {
+              fullscreenlinks[i].href = 'https://' + proxyBaseURL + fullscreenlinks[i].href;
+            }
           });
         }
         document.getElementById('gamecontainer').appendChild(iframe);
@@ -854,7 +858,8 @@ function splashText() {
     'Hey, did you hear that Joe got diagnosed with ligma? They had to do surgery on his updog.',
     '...',
     'Now with more than 2 lines of code!',
-    ''
+    '',
+    '01101110 01100101 01110110 01100101 01110010 00100000 01100111 01101111 01101110 01101110 01100001 00100000 01100111 01101001 01110110 01100101 00100000 01111001 01101111 01110101 00100000 01110101 01110000'
   ];
   var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
