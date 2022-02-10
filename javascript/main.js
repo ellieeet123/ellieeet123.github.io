@@ -21,7 +21,7 @@ function popup(url) {
 
 //automatically sets the title of the page based on the content of the h3 tag at the top of the page.
 function setTitle(){
-  var titleData = document.getElementById('title').textContent + ' - Pringles';
+  var titleData = document.getElementById('title').textContent + ' - NovasGreat';
   document.title = titleData;
 }
 
