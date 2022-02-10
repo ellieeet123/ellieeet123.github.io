@@ -859,7 +859,8 @@ function splashText() {
     '...',
     'Now with more than 2 lines of code!',
     '',
-    '01101110 01100101 01110110 01100101 01110010 00100000 01100111 01101111 01101110 01101110 01100001 00100000 01100111 01101001 01110110 01100101 00100000 01111001 01101111 01110101 00100000 01110101 01110000'
+    '01101110 01100101 01110110 01100101 01110010 00100000 01100111 01101111 01101110 01101110 01100001 00100000 01100111 01101001 01110110 01100101 00100000 01111001 01101111 01110101 00100000 01110101 01110000',
+    'They should add subtitles to audio books so deaf people can read them.'
   ];
   var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
