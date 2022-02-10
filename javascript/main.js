@@ -602,7 +602,7 @@ function buildGamePage() {
         });
       }
       document.getElementById('title').innerHTML = title;
-      document.title = title + ' - Pringles';
+      document.title = title + ' - NovasGreat';
       if (text != '') {
         document.getElementById('text').innerHTML = text;
       }
