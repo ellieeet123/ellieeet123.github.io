@@ -365,7 +365,7 @@ function makeSettingsPage() {
   document.getElementById('button_div').innerHTML = '';
   for (var i = 0; i < keys.length; i = i+1) {
     currentButton = document.createElement('a');
-    currentButton.className = 'squaresNew';
+    currentButton.className = 'themeSelectors';
     currentButton.style.cursor = 'pointer';
     currentButton.style.marginTop = '5px';
     currentButton.style.paddingBottom = '10px';
