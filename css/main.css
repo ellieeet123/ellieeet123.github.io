@@ -269,7 +269,8 @@ body {
   text-decoration: none;
   text-align: center;
   float: left;
-  font: 0.8rem arial;
+  font-family: arial !important;
+  font-size: 0.8rem !important;
   color: #ffffff;
 }
 
@@ -302,3 +303,14 @@ body {
   display: inline;
 }
 
+#gameoptions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#optionscontainer {
+  display: none;
+}

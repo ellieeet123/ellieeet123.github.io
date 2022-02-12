@@ -345,6 +345,13 @@ function colorTheme() {
     buttonHover(bookmark,themeData.button);
     buttonHover(close,themeData.button);
   }
+  let squares = document.getElementsByClassName('squaresNew')
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.color = '#ffffff';
+    squares[i].style.background = themeData.button;
+    squares[i].style.cursor = 'pointer';
+    buttonHover(squares[i], themeData.button);
+  }
 }
 
 //automatically puts the theme options in the settings page based on content of colorThemes variable
@@ -585,9 +592,7 @@ function buildGamePage() {
   }
   let isBigFile = getCookie('data_isBigFile');
   var waitForRuffleLoad = setInterval(function() {
-    console.log(0);
     if (window.RufflePlayer != undefined) {
-      console.log(1);
       clearInterval(waitForRuffleLoad);
       if (isFlash == '1') {
         const ruffle = window.RufflePlayer.newest();
@@ -642,13 +647,78 @@ function buildGamePage() {
 }
 
 //if the game is flash, set the download swf link to the swf file location
-function setDownloadLink() {
-  var downloadLink = document.getElementById('downloadswf');
+function prepareGameOptions() {
   if (getCookie('data_isFlash') == 1) {
-    downloadLink.innerHTML = 'Download SWF File';
+    var downloadLink = document.getElementById('downloadswf');
     downloadLink.href = document.getElementById('frame').src;
+    document.getElementById('pause').onclick = () => {
+      document.getElementById('frame').pause();
+    }
+    document.getElementById('resume').onclick = () => {
+      document.getElementById('frame').play();
+    }
+    document.getElementById('rufflefullscreen').onclick = () => {
+      document.getElementById('frame').enterFullscreen();
+    }
+    document.getElementById('advanced').onclick = () => {
+      if (document.getElementById('advanced').innerText === 'Show advanced options') {
+        document.getElementById('advanced').innerText = 'Hide advanced options';
+        showAdvancedOptions();
+        colorTheme();
+      }
+      else {
+        document.getElementById('advancedoptionscontainer').innerHTML = '';
+        document.getElementById('advanced').innerText = 'Show advanced options';
+      }
+    }
+    document.getElementById('html5gameoptions').remove()
+  }
+  else {
+    document.getElementById('flashgameoptions').remove()
+    document.getElementById('fullscreen').href = document.getElementById('frame').src;
+    document.getElementById('fullscreen').target = '_blank';
+  }
+  document.getElementById('optionscontainer').style.display = 'inline';
+}
+
+function showAdvancedOptions() {
+  var div = document.getElementById('advancedoptionscontainer');
+  div.innerHTML = 
+`<h3>Advanced Ruffle Config Options</h3>
+<p>For help, see the <a target="_blank" href="https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api">Ruffle wiki</a></p>
+<span>
+<p style="display:inline">CSS editor for Ruffle Object (<code>#frame</code>): </p>
+<input placeholder="width: 100px;" style="display:inline" id="rufflecss">
+<button style="display:inline" id="rufflecsssubmit">set</button>
+</span>
+<br>
+<span>
+<p style="display:inline">Set <code>ruffle-player.config</code> properties: </p>
+<input placeholder="name (ex. quality)" style="display:inline" id="rufflepropertyname">
+<input placeholder="value (ex. high)" style="display:inline" id="rufflepropertyvalue">
+<button style="display:inline" id="rufflepropertysubmit">set</button>
+</span>
+<br>
+<span>
+<p style="display:inline">Run a function for the ruffle player: </p>
+<input placeholder="enterFullscreen()" style="display:inline" id="rufflefunc">
+<button style="display:inline" id="rufflefuncsubmit">run</button>
+`
+  document.getElementById('rufflecsssubmit').onclick = () => {
+    cssToJs(document.getElementById('rufflecss').value, document.getElementById('frame'));
+    document.getElementById('rufflecss').value = '';
+  }
+  document.getElementById('rufflepropertysubmit').onclick = () => {
+    document.getElementById('frame').config[document.getElementById('rufflepropertyname').value] = document.getElementById('rufflepropertyvalue').value;
+    document.getElementById('rufflepropertyname').value = '';
+    document.getElementById('rufflepropertyvalue').value = '';
+  }
+  document.getElementById('rufflefuncsubmit').onclick = () => {
+    window.eval('document.getElementById("frame").' + document.getElementById('rufflefunc').value);
+    document.getElementById('rufflefunc').value = '';
   }
 }
+
 //sets the inside of the saved games frame to what it is supposed to be, aka the games that the user has saved
 function savedGamesList() {
   var loadedlist = getCookie('savedGames');
@@ -781,22 +851,23 @@ function resizeGameFrame() {
 //waits until the SWF file has finished loading
 function waitForSwfLoad() {
   if (getCookie('data_isFlash') == 1){
-    var done = false;
     var interval = setInterval(function() {
       if (document.getElementById('frame')._readyState == 2) {
-        done = true;
         console.log("Finished!");
         var width = document.getElementById('frame').metadata.width;
         document.getElementById('frame').width = width;
         resizeGameFrame();
+        prepareGameOptions();
         document.getElementById('warn').remove();
-        setDownloadLink();
         clearInterval(interval);
       }
     }, 100);
   }
   else {
-    document.getElementById('frame').onload = document.getElementById('warn').remove();
+    document.getElementById('frame').onload = () => {
+      document.getElementById('warn').remove();
+      prepareGameOptions();
+    }
   }
 }
 
@@ -860,7 +931,9 @@ function splashText() {
     'Now with more than 2 lines of code!',
     '',
     '01101110 01100101 01110110 01100101 01110010 00100000 01100111 01101111 01101110 01101110 01100001 00100000 01100111 01101001 01110110 01100101 00100000 01111001 01101111 01110101 00100000 01110101 01110000',
-    'They should add subtitles to audio books so deaf people can read them.'
+    'They should add subtitles to audio books so deaf people can read them.',
+    'The most common word in the english language is the',
+    'Fun fact: In <i>Avengers: Endgame</i> (2019), Thanos says "I am inevitable". This is a mistake from the filmmakers because he is actually Thanos.'
   ];
   var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
