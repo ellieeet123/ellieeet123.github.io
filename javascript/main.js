@@ -268,6 +268,15 @@ var colorThemes = {
     'link': '#808080',
     'sidebarlink': '#808080',
     'button': '#404040'
+  },
+  'Neon': {
+    'backgroundtype': 'image',
+    'background': '/images/bg/neon.jpg',
+    'textbg': '#000000',
+    'text': '#ffffff',
+    'link': '#fffa00',
+    'sidebarlink': '#00ccf5',
+    'button': '#dc00f0'
   }
 };
 
@@ -385,11 +394,6 @@ function makeSettingsPage() {
     changeStyleForElement(currentButton,'color','#ffffff');
     buttonHover(currentButton,themeData.button);
     document.getElementById('button_div').appendChild(currentButton);
-    for (var j = 0;j < 3;j++) {
-      document.getElementById('button_div').appendChild(
-        document.createElement('br')
-      );
-    }
     currentButton = null;
   }
   var save        = document.getElementById('savecolortheme');
@@ -421,15 +425,19 @@ function makeSettingsPage() {
   document.getElementById('customtheme_bgtype').click();
   document.getElementById('savecolortheme').onclick = function() {
     var output = {};
-    '[IMAGE]' == document.getElementById('bgtype_display').innerHTML
-      ? output.backgroundtype = 'image'
-      : output.backgroundtype == 'color';
+    if (document.getElementById('bgtype_display').innerHTML === '[IMAGE]') {
+      output.backgroundtype = 'image'
+    }
+    else {
+      output.backgroundtype = 'color';
+    }
     output.background = document.getElementById('bgsrc_input').firstChild.value;
     output.textbg = document.getElementById('textbg_input').value;
     output.text = document.getElementById('text_input').value;
     output.link = document.getElementById('link_input').value;
     output.sidebarlink = document.getElementById('sidebarlink_input').value;
     output.button = document.getElementById('button_input').value;
+    console.log(JSON.stringify(output));
     setCookie('customColorTheme', JSON.stringify(output), 1000);
     setCookie('colorTheme', 'Custom', 1000);
     colorTheme();
@@ -464,7 +472,7 @@ function showMessage (content, closeMessage) {
   close.id = 'close';
   close.className = 'noColorChange';
   gray.style = `
-    background: rgba(60,60,60,0.6);
+    background: rgba(0,0,0,0.7);
     position: fixed;
     top: 0px;
     left: 0px;

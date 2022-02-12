@@ -319,7 +319,7 @@ body {
   display: inline;
 }
 
-#gameoptions {
+#gameoptions, .themeSelectors {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
