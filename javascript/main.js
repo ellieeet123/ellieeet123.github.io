@@ -2,7 +2,7 @@
 
 MAIN.JS
 
-Copyright (c) 2021 ellieeet123
+Copyright (c) 2022 ellieeet123
 Licenced under MIT. For more info, visit https://github.com/ellieeet123/ellieeet123.github.io/LICENCE
 A collection of functions that are for Pringles, a fancy little game site.
 To visit the site, check out https://ellieeet123.github.io/
@@ -459,7 +459,14 @@ function showMessage (content, closeMessage) {
   var close       = document.createElement('a');
   var body        = document.body;
   var html        = document.documentElement;
-  var height      = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+  var height      = 
+    Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.clientHeight,
+      html.scrollHeight,
+      html.offsetHeight
+    );
   var width       = document.body.clientWidth;
   var colorTheme  = getCookie('colorTheme');
   if (colorTheme == '') {
@@ -533,7 +540,14 @@ function showMessage (content, closeMessage) {
   `;
   close.style.color = '#fff';
   close.style.background = buttonColor;
-  close.style.width = ((width/3)-20).toString()+'px';
+  if (width / height > 0.8) {
+    // desktop
+    close.style.width = ((width / 2.5) - 20).toString() + 'px';
+  }
+  else {
+    // mobile
+    close.style.width = (width - 20).toString() + 'px';
+  }
   close.style.position = 'fixed';
   close.style.bottom = '30px';
   close.innerHTML = closeMessage;
@@ -941,7 +955,11 @@ function splashText() {
     '01101110 01100101 01110110 01100101 01110010 00100000 01100111 01101111 01101110 01101110 01100001 00100000 01100111 01101001 01110110 01100101 00100000 01111001 01101111 01110101 00100000 01110101 01110000',
     'They should add subtitles to audio books so deaf people can read them.',
     'The most common word in the english language is the',
-    'Fun fact: In <i>Avengers: Endgame</i> (2019), Thanos says "I am inevitable". This is a mistake from the filmmakers because he is actually Thanos.'
+    'Fun fact: In <i>Avengers: Endgame</i> (2019), Thanos says "I am inevitable". This is a mistake from the filmmakers because he is actually Thanos.',
+    'That happened to my buddy Eric once',
+    '<p class=&quot;noColorChange&quot; style=&quot;font-size:40px;&quot;>hehe lois I am big text</p>',
+    'Always remember to lock up your steaks incase of a steak robbery',
+    'Your honor, it wasn\'t a "hate crime", it was a gamer moment'
   ];
   var numGames = document.getElementById('sidebar').contentWindow.document.getElementById('games').getElementsByTagName('a').length;
   document.getElementById('splash').innerHTML = splashes[Math.floor(Math.random() * splashes.length)];
