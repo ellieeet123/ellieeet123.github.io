@@ -345,6 +345,12 @@ function colorTheme() {
     changeStyleForElement(savedGamesIframe.getElementById('savedgamestitle'),'color',themeData.text);
     changeStyleForElement(savedGamesIframe.getElementById('nosaved'), 'color', themeData.text);
     changeStyleForElement(document.getElementById('splash'),'color',themeData.link);
+
+    // also take care of some resizing stuff here cus idk where else to put it
+    document.getElementById('firstdiv').style.width = (document.getElementById('main').offsetWidth - 500) + 'px';
+    window.addEventListener('resize', function() {
+      document.getElementById('firstdiv').style.width = (document.getElementById('main').offsetWidth - 500) + 'px';
+    });
   }
   if (document.getElementById('bookmark') != null) {
     var bookmark = document.getElementById('bookmark');
@@ -459,15 +465,8 @@ function showMessage (content, closeMessage) {
   var close       = document.createElement('a');
   var body        = document.body;
   var html        = document.documentElement;
-  var height      = 
-    Math.max(
-      body.scrollHeight,
-      body.offsetHeight,
-      html.clientHeight,
-      html.scrollHeight,
-      html.offsetHeight
-    );
-  var width       = document.body.clientWidth;
+  var height      = innerHeight;
+  var width       = innerWidth;
   var colorTheme  = getCookie('colorTheme');
   if (colorTheme == '') {
     colorTheme = 'Default';
@@ -487,15 +486,20 @@ function showMessage (content, closeMessage) {
   gray.style.width =  (width+100).toString()+'px';
   gray.style.height = height.toString()+'px';
   message.style = `
-    width: `+ Math.round(width/3) +`px;
-    height: `+ height-20 +`px;
     background: `+ color +`;
     position: fixed;
     right: 10px;
     top: 10px;
   `;
-  message.style.width =  (Math.round(width/3)).toString()+'px';
-  message.style.height = (height-20).toString()+'px';
+  if (width / height > 0.8) {
+    // desktop
+    message.style.width = ((width / 3) - 20).toString() + 'px';
+  }
+  else {
+    // mobile
+    message.style.width = (width - 60).toString() + 'px';
+  }
+  message.style.height = (height - 40).toString()+'px';
   message.style.padding = '10px';
   message.style.borderRadius = '4px';
   gray.id = 'gray';
@@ -542,11 +546,11 @@ function showMessage (content, closeMessage) {
   close.style.background = buttonColor;
   if (width / height > 0.8) {
     // desktop
-    close.style.width = ((width / 2.5) - 20).toString() + 'px';
+    close.style.width = ((width / 3) - 40).toString() + 'px';
   }
   else {
     // mobile
-    close.style.width = (width - 20).toString() + 'px';
+    close.style.width = (width - 80).toString() + 'px';
   }
   close.style.position = 'fixed';
   close.style.bottom = '30px';
@@ -565,6 +569,34 @@ function showMessage (content, closeMessage) {
   };
   close.style.cursor = 'pointer';
   message.appendChild(close);
+  window.addEventListener('resize', function() {
+    if (this.document.getElementById('message')) {
+      var height = innerHeight;
+      var width = innerWidth;
+      var message = this.document.getElementById('message');
+      var gray = this.document.getElementById('gray');
+      var close = this.document.getElementById('close');
+      if (width / height > 0.8) {
+        // desktop
+        message.style.width = ((width / 3) - 20).toString() + 'px';
+      }
+      else {
+        // mobile
+        message.style.width = (width - 60).toString() + 'px';
+      }
+      message.style.height = (height - 40).toString()+'px';
+      gray.style.width =  (width+100).toString()+'px';
+      gray.style.height = height.toString()+'px';
+      if (width / height > 0.8) {
+        // desktop
+        close.style.width = ((width / 3) - 40).toString() + 'px';
+      }
+      else {
+        // mobile
+        close.style.width = (width - 80).toString() + 'px';
+      }
+    }
+  });
 };
 
 //the inner workings of the sidebar, taking all the data from the link that is clicked on and saving it to cookies. Later, this data is used to build the game page.
@@ -672,7 +704,7 @@ function buildGamePage() {
 function prepareGameOptions() {
   if (getCookie('data_isFlash') == 1) {
     var downloadLink = document.getElementById('downloadswf');
-    downloadLink.href = document.getElementById('frame').src;
+    downloadLink.href = document.getElementById('frame').swfUrl;
     document.getElementById('pause').onclick = () => {
       document.getElementById('frame').pause();
     }
@@ -926,7 +958,6 @@ function splashText() {
     'Fun Fact: if you own the Mona Lisa there is nothing legally stopping you from eating it.',
     '"You miss 100% of the shots you don\'t take - Wayne Gretzky" - Michael Scott',
     '"It\'s ok to eat fish because they don\'t have any feelings" - Kurt Cobain',
-    '"I sing and play the guitar, and I\'m a walking, talking bacterial infection" - Kurt Cobain',
     '"Back in \'Nam Doritoes came in a can" - Illuminnex',
     'No sh!t sherlock',
     'e̶̡̧̢̨̞̝̦͍̗̭̜̻̦͖͙̱̖͙̰̦̗͈͓̭̱͍̥̫̘͙̗̯͇͔̬͈͚̱͑̎̈́̃̓̔͗̾̂̋̽̾̕͜ͅͅ',
