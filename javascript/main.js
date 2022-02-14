@@ -988,7 +988,7 @@ function splashText() {
     'The most common word in the english language is the',
     'Fun fact: In <i>Avengers: Endgame</i> (2019), Thanos says "I am inevitable". This is a mistake from the filmmakers because he is actually Thanos.',
     'That happened to my buddy Eric once',
-    '<p class=&quot;noColorChange&quot; style=&quot;font-size:40px;&quot;>hehe lois I am big text</p>',
+    '<span style=font-size:80px>hehe lois I am big text</span>',
     'Always remember to lock up your steaks incase of a steak robbery',
     'Your honor, it wasn\'t a "hate crime", it was a gamer moment'
   ];

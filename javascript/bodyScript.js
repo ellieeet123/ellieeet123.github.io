@@ -25,13 +25,19 @@ else {
     setCookie('cookieConsent', 'seen', 99999);
   }
   else {
-    if (getCookie('msg2') == '') {
+    if (getCookie('msg3') == '') {
       showMessage(`
-        <h1>Hi everyone</h1>
-        <p>Sorry for not adding content to this site in like over a month. I've been busy with school, and other projects. </p>
-        <p>But I'm gonna try to add more content soon. For now, click the 'Submission Log' link in the sidebar to see a list of everything that's been submitted in the last month or so, and you can check back on that to see if it's been added</p>
-      `, 'Cool');
-      setCookie('msg2', 'seen', 31);
+        <h1>New Stuff!!!</h1>
+        <p>Some awesome new features that have just been added to the site:</p>
+        <p>
+          <ul>
+            <li><p>Much more control over the Ruffle emulator: Easy access to controls such as pausing, fullscreen, etc. There is also an advanced mode, letting you easily interact with the Ruffle API.</p></li>
+            <li><p>Custom Color Themes! Don't like how the site looks? Not a problem. Head over to the <a href="/stuff/settings">settings</a> page, and have some fun with it.</p></li>
+            <li><p>General bug fixes/ui improvements.</p></li>
+          </ul>
+        </p>
+      `, 'Awesome');
+      setCookie('msg3', 'seen', 31);
     }
   }
 }
