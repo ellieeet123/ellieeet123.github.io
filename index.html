@@ -19,7 +19,7 @@
                 <h1 id="h1">Welcome to Pringles!</h1>
                 <div style="width:800px;" id="firstdiv">
                     <p id="splash" class="fancy"></p>
-                    <p>[Thursday Feb. 10] 2 new games today! Check them out <a href="#new">here</a></p>
+                    <p>[Wednesday Feb. 16] 1 new game today! Check it out <a href="#new">here</a></p>
                     <p>[!] Tip! Check out the More Site URLS page to see backup URLS for thie site, just incase something happens to the main one.</p>
                 </div>
                 <br>
@@ -71,19 +71,13 @@
                 <div id="new">
                     <div id="games" style="display:block;">
                         <a href="/games/" onclick="sidebarMain();" target="_parent" 
-                        data-title="Super Mario Flash"
-                        data-text=""
-                        data-isflash="1"
-                        data-framesrc="super-mario-flash.swf"
-                        data-isbigfile="1"
-                        ></a>
-                        <br>
-                        <a href="/games/" onclick="sidebarMain();" target="_parent" 
-                        data-title="Super Mario Flash 2"
-                        data-text=""
-                        data-isflash="1"
-                        data-framesrc="super-mario-flash-2.swf"
-                        data-isbigfile="1"
+                        data-title="Super Mario 64"
+                        data-text="Controls: <p><ul><li>Movement: Arrow Keys</li><li>A: X</li><li>B: C</li><li>L: Q</li><li>Z: Space</li><li>Start: Enter</li><li>C-stick: WASD</li></ul></p>"
+                        data-isflash="0"
+                        data-framesrc="https://blaizerbrumo.github.io/School-Heaven/public/games/mario64/index.html"
+                        data-frameheight="700"
+                        data-framewidth="1100"
+                        data-isbigfile="0"
                         ></a>
                     </div>
                     <p>New game every weekday! Sometimes more because there's not many right now. Check this part of the home page to see what's new</p>
@@ -133,6 +127,7 @@
                     }
                 }
             }
+	        document.getElementById('firstdiv').style.width = (document.getElementById('main').offsetWidth - 500)+'px';
         </script>
     </body>
 </html>
