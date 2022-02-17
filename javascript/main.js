@@ -597,7 +597,7 @@ function showMessage (content, closeMessage) {
       }
     }
   });
-};
+}
 
 //the inner workings of the sidebar, taking all the data from the link that is clicked on and saving it to cookies. Later, this data is used to build the game page.
 function sidebarMain(obj) {  
@@ -788,8 +788,7 @@ function savedGamesList() {
     }
   }
   console.log(gameLinkData);
-  if (gameLinkData.length == 0){ }
-  else {
+  if (!(gameLinkData.length === 0)){
     for (let x = 0; x < gameLinkData.length; x++) {
       ui.getElementsByClassName('nosaved')[0].innerHTML = ''; //no saved games message
       var div = ui.createElement('div');
