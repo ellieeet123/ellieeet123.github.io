@@ -468,8 +468,11 @@ function showMessage (content, closeMessage) {
   var height      = innerHeight;
   var width       = innerWidth;
   var colorTheme  = getCookie('colorTheme');
-  if (colorTheme == '') {
+  if (colorTheme === '') {
     colorTheme = 'Default';
+  }
+  if (colorTheme === 'Custom') {
+    colorThemes.Custom = getCookie('customColorTheme');
   }
   var color       = colorThemes[colorTheme].textbg;
   var textColor   = colorThemes[colorTheme].text;
