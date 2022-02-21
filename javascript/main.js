@@ -472,7 +472,7 @@ function showMessage (content, closeMessage) {
     colorTheme = 'Default';
   }
   if (colorTheme === 'Custom') {
-    colorThemes.Custom = getCookie('customColorTheme');
+    colorThemes.Custom = JSON.parse(getCookie('customColorTheme'));
   }
   var color       = colorThemes[colorTheme].textbg;
   var textColor   = colorThemes[colorTheme].text;
