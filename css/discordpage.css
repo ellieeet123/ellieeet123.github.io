@@ -1,0 +1,49 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: "Segoe UI", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    align-content: center;
+}
+
+h1 {
+    font-size: 40px;
+    padding-top: 50px;
+}
+
+div {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+a {
+    color: #fff;
+    transition: 200ms linear;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    background: linear-gradient(45deg, rgb(71, 11, 238), rgb(12, 93, 243));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+}
+
+a:hover {
+    background: linear-gradient(45deg, rgb(12, 93, 243),rgb(9, 112, 197));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+p {
+    font-size: 7px;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+}

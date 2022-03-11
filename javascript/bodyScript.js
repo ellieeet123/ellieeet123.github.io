@@ -25,19 +25,14 @@ else {
     setCookie('cookieConsent', 'seen', 99999);
   }
   else {
-    if (getCookie('msg3') == '') {
+    if (getCookie('msg4') == '') {
       showMessage(`
-        <h1>New Stuff!!!</h1>
-        <p>Some awesome new features that have just been added to the site:</p>
-        <p>
-          <ul>
-            <li><p>Much more control over the Ruffle emulator: Easy access to controls such as pausing, fullscreen, etc. There is also an advanced mode, letting you easily interact with the Ruffle API.</p></li>
-            <li><p>Custom Color Themes! Don't like how the site looks? Not a problem. Head over to the <a href="/stuff/settings">settings</a> page, and have some fun with it.</p></li>
-            <li><p>General bug fixes/ui improvements.</p></li>
-          </ul>
-        </p>
+        <h1>Discord Server</h1>
+        <p>Hi I made a discord for this site if you wanna join</p>
+        <a href="https://discord.gg/FnHykcjjC2">Link to join</a>
+        <p>If you're on a chromebook and Discord is blocked for you, then use your phone to go to <a href="/discord/">https://ellieeet123.github.io/discord/</a>. Or you can just click the link in the header.</p>
       `, 'Awesome');
-      setCookie('msg3', 'seen', 31);
+      setCookie('msg4', 'seen', 100);
     }
   }
 }
